@@ -82,6 +82,7 @@
                                   <a href="cadastro.gsp">Clique Aqui</a>
                                   <input type="submit" class="criarConta" id="criarConta" name="criarConta" value="Criar Conta"/>
                                   <br/>
+                                   <a href="cadastroprofessor.gsp">Cadastro de Professores no sistema</a>
 				</div>
 				<div class="panelBtm">
 				</div>

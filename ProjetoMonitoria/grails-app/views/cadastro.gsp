@@ -117,8 +117,8 @@ text-align:left; /* "remédio" para o hack do IE */
 </fieldset>
 <fieldset class="sexo">
 <legend class="monitor">Sexo: </legend>
-<input class="minimo" type="radio" title="Escolha uma opção" name="sexoM" id="masculino" value="true"><label for="masculino" class="pequeno">&nbsp;Masculino</label><br/>
-<input class="minimo" type="radio" title="Escolha uma opção" name="sexoF" id="feminino" value="false"><label for="feminino" class="pequeno">&nbsp;Feminino</label><br/>
+<input class="minimo" type="radio" title="Escolha uma opção" name="sexoM" id="sexoM"value="true"><label for="sexoM" class="pequeno">&nbsp;Masculino</label><br/>
+<input class="minimo" type="radio" title="Escolha uma opção" name="sexoF" id="sexoF"value="false"><label for="sexoF" class="pequeno">&nbsp;Feminino</label><br/>
 </fieldset>
 
 <fieldset>

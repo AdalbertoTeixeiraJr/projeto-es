@@ -24,7 +24,9 @@ class Monitor {
     float notaDisciplina, cra, notaObtida, mediaFinal
     int classificacao
 
-
+    // falta colocar métodos
+    //ainda não sei como funciona os métodos nessa linguagem
+    //depois tenho que parar pra pesquisar.
     static constraints = {
     }
 }
