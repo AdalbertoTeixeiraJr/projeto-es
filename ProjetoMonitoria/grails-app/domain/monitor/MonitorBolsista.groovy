@@ -5,5 +5,7 @@ class MonitorBolsista extends Monitor{
     String agencia
     
     static constraints = {
+        contacorrente(blank:false)
+        agencia(blank:false)
     }
 }

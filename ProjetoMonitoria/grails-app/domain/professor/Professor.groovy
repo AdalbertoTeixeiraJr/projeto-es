@@ -10,5 +10,12 @@ class Professor {
     String disciplina
     
     static constraints = {
+        nome(blank:false)
+        sobrenome(blank:false)
+        email(email:true)
+        login(blank:false)
+        senha(blank:false)
+        matricula(blank:false)
+        disciplina(blank:false)
     }
 }
