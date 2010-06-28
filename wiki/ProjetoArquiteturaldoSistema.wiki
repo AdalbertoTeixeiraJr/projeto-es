@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+#labels ProjetoArquitetural
+
+= Projeto Arquitetural =
+
+
+A utilização do framework Grails nos induz ao modelo de arquitetura MVC (Model View Controller), que consistem em 3 partes. O “model” trata os dados e interage com o banco de dados, o “view” é a visualização e utilização do sistema por parte do usuário e o “controller” é o onde são tratadas as solicitações do “view”. 
+Como nosso sistema é Web a parte de visualização  será através de um Browser, utilizando páginas gsp (groovy server pages) e terá 6 módulos: Professor, Coordenador, Monitor, Sistema, Tarefas e Funcionário .Cada um desses módulos terá suas páginas gsp específicas. 
+A parte de controle serão basicamente as classes "controller" geradas automaticamente pelo Grails. Tais classes serão responsáveis pelo controle das solicitações feitas pela “view”. Essa parte não terá divisão por módulos, pois os controladores para os 3 módulos de visualização são praticamente os mesmos. 
+No “model”, estarão as classes de domínio (Domain Classes no grails) que tratarão os dados a fim de persisti-los no Banco de Dados. O framework Grails gerencia a comunicação com o banco de dados abstraindo o Hibernate e Spring com a interface GORM (Grails Object Relational Mapping). O Banco de Dados a ser utilizado será o HsqlBD que é nativo do framework.
+
+
