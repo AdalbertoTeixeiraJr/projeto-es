@@ -66,13 +66,7 @@
                                       
                                           <label for="login" class="login" id="login">Login: </label><input type="text" class="login" name="login" id="login"/><br/>
                                           <label for="senha" class="login" id="login">Senha: </label><input type="password" class="login"name="senha" id="login"/><br/>
-                                          <label for="opcao" class="login" id="login">Opção: </label>
-                                          <select class="login" id="opcao" name="opcao">
-                                          <option value="monitor" selected>Monitor</option>
-                                          <option value="professor">Professor</option>
-                                          <option value="coordenador">Coordenador</option>
-                                        </select><br>
-                                        
+                                                                                 
                                     </fieldset>
                                     <input type="submit" name="submitlogin" id="login" value="Entrar" >
                                    </form>
