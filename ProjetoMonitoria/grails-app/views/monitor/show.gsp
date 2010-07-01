@@ -30,6 +30,62 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.nome.label" default="Nome" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "nome")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.sobrenome.label" default="Sobrenome" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "sobrenome")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.matricula.label" default="Matricula" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "matricula")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.curso.label" default="Curso" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "curso")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.cpf.label" default="Cpf" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "cpf")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.email.label" default="Email" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "email")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.identidade.label" default="Identidade" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "identidade")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.senha.label" default="Senha" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "senha")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitor.disciplina.label" default="Disciplina" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "disciplina")}</td>
@@ -46,21 +102,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitor.sexo.label" default="Sexo" /></td>
                             
-                            <td valign="top" class="value"><g:formatBoolean boolean="${monitorInstance?.sexo}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.senha.label" default="Senha" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "senha")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.filiacao.label" default="Filiacao" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "filiacao")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "sexo")}</td>
                             
                         </tr>
                     
@@ -72,6 +114,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitor.nomeMae.label" default="Nome Mae" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "nomeMae")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitor.cra.label" default="Cra" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "cra")}</td>
@@ -79,16 +128,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.cpf.label" default="Cpf" /></td>
+                            <td valign="top" class="name"><g:message code="monitor.hashSenha.label" default="Hash Senha" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "cpf")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.login.label" default="Login" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "login")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "hashSenha")}</td>
                             
                         </tr>
                     
@@ -96,13 +138,6 @@
                             <td valign="top" class="name"><g:message code="monitor.mediaFinal.label" default="Media Final" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "mediaFinal")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.identidade.label" default="Identidade" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "identidade")}</td>
                             
                         </tr>
                     
@@ -149,37 +184,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.matricula.label" default="Matricula" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "matricula")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitor.periodosMonitorBolsista.label" default="Periodos Monitor Bolsista" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "periodosMonitorBolsista")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.sobrenome.label" default="Sobrenome" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "sobrenome")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.curso.label" default="Curso" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "curso")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.email.label" default="Email" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "email")}</td>
                             
                         </tr>
                     
@@ -191,9 +198,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitor.nome.label" default="Nome" /></td>
+                            <td valign="top" class="name"><g:message code="monitor.nomePai.label" default="Nome Pai" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "nome")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorInstance, field: "nomePai")}</td>
                             
                         </tr>
                     

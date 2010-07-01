@@ -24,15 +24,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'monitorBolsista.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="disciplina" title="${message(code: 'monitorBolsista.disciplina.label', default: 'Disciplina')}" />
+                            <g:sortableColumn property="nome" title="${message(code: 'monitorBolsista.nome.label', default: 'Nome')}" />
                         
-                            <g:sortableColumn property="notaObtida" title="${message(code: 'monitorBolsista.notaObtida.label', default: 'Nota Obtida')}" />
+                            <g:sortableColumn property="sobrenome" title="${message(code: 'monitorBolsista.sobrenome.label', default: 'Sobrenome')}" />
                         
-                            <g:sortableColumn property="contacorrente" title="${message(code: 'monitorBolsista.contacorrente.label', default: 'Contacorrente')}" />
+                            <g:sortableColumn property="matricula" title="${message(code: 'monitorBolsista.matricula.label', default: 'Matricula')}" />
                         
-                            <g:sortableColumn property="sexo" title="${message(code: 'monitorBolsista.sexo.label', default: 'Sexo')}" />
+                            <g:sortableColumn property="curso" title="${message(code: 'monitorBolsista.curso.label', default: 'Curso')}" />
                         
-                            <g:sortableColumn property="senha" title="${message(code: 'monitorBolsista.senha.label', default: 'Senha')}" />
+                            <g:sortableColumn property="cpf" title="${message(code: 'monitorBolsista.cpf.label', default: 'Cpf')}" />
                         
                         </tr>
                     </thead>
@@ -42,15 +42,15 @@
                         
                             <td><g:link action="show" id="${monitorBolsistaInstance.id}">${fieldValue(bean: monitorBolsistaInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "disciplina")}</td>
+                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "nome")}</td>
                         
-                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "notaObtida")}</td>
+                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "sobrenome")}</td>
                         
-                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "contacorrente")}</td>
+                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "matricula")}</td>
                         
-                            <td><g:formatBoolean boolean="${monitorBolsistaInstance.sexo}" /></td>
+                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "curso")}</td>
                         
-                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "senha")}</td>
+                            <td>${fieldValue(bean: monitorBolsistaInstance, field: "cpf")}</td>
                         
                         </tr>
                     </g:each>

@@ -98,7 +98,7 @@ text-align:left; /* "remédio" para o hack do IE */
   </head>
   <body>
     <h1>Cadastro Novo Monitor</h1>
-    <form action="">
+    <g:form url="[controller:'monitor',action:'save']">
 <fieldset class="cadastroMonitor">
 <legend class="monitor"> Dados Cadastrais </legend>
 <label for="nome" class="monitor">Nome </label><input type="text" name="nome"class="monitor" />
@@ -141,8 +141,8 @@ text-align:left; /* "remédio" para o hack do IE */
 <label for="disciplina" class="monitor">Disciplina </label><input type="text" name="disciplina"class="monitor"/><br/>
 <label for="unidade" class="monitor">Unidade </label><input type="text" name="unidade" class="monitor"/>
 <label for="codProjeto" class="monitor">Cod. Projeto </label><input type="text" name="codProjeto" class="monitor"/><br/>
-<label for="profOrientador" class="monitor">Nome da Mãe </label><input type="text" name="nomeMae" class="grande"><br/>
-<label for="profOrientador" class="monitor">Nome do Pai </label><input type="text" name="nomePai" class="grande"><br/>
+<label for="nomeMae" class="monitor">Nome da Mãe </label><input type="text" name="nomeMae" class="grande"><br/>
+<label for="nomePai" class="monitor">Nome do Pai </label><input type="text" name="nomePai" class="grande"><br/>
 </fieldset>
 
 <fieldset class="monitor">
@@ -172,6 +172,6 @@ text-align:left; /* "remédio" para o hack do IE */
 <br/>
 <input type="submit" name="enviarInf" value="Enviar Dados"/><br/>
 
-</form>
+</g:form>
   </body>
 </html>

@@ -4,17 +4,19 @@ class RedirecionaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     def login = {
-    	 def login = params["login"]
+    	 def matricula = params["matricula"]
          def senha = params.senha
-         def coordenador = Coordenador.findByLoginAndHashSenha(login, senha.encodeAsPassword())
-         def monitor = Monitor.findByLoginAndHashSenha(login, senha.encodeAsPassword())
-         def professor = Professor.findByLoginAndHashSenha(login, senha.encodeAsPassword())
+         //def coordenador = Coordenador.findByLoginAndHashSenha(matricula, senha.encodeAsPassword())
+         def monitor = Monitor.findByMatriculaAndHashSenha(matricula, senha.encodeAsPassword())
+         def professor = Professor.findByMatriculAndHashSenha(matricula, senha.encodeAsPassword())
 
-         if (coordenador){
-         	 session["coordenador"] = coordenador
-         	 redirect(action:"index",controller:"coordenador")
+//         if (coordenador){
+//         	 session["coordenador"] = coordenador
+//         	 redirect(action:"index",controller:"coordenador")
+//
+//         }else
 
-         }else if (monitor){
+        if (monitor){
          	 session["monitor"] = monitor
          	 redirect(action:"index",controller:"monitor")
 

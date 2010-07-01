@@ -56,7 +56,7 @@ input.grande{
   </head>
   <body>
     <h1>Cadastro Professor </h1>
-   <form action="">
+   <g:form url="[controller:'professor',action:'save']">
      <fieldset class="cadastroMonitor">
       <legend class="monitor"> Dados Cadastrais </legend>
       <label for="nome" class="monitor">Nome </label><input type="text" name="nome"class="monitor" />
@@ -72,6 +72,6 @@ input.grande{
      </fieldset>
      <br/>
      <input type="submit" name="enviarInf" value="Enviar Dados"/><br/>
-   </form>
+   </g:form>
   </body>
 </html>

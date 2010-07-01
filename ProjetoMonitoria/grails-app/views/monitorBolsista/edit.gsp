@@ -32,6 +32,96 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="nome"><g:message code="monitorBolsista.nome.label" default="Nome" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'nome', 'errors')}">
+                                    <g:textField name="nome" value="${monitorBolsistaInstance?.nome}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="sobrenome"><g:message code="monitorBolsista.sobrenome.label" default="Sobrenome" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'sobrenome', 'errors')}">
+                                    <g:textField name="sobrenome" value="${monitorBolsistaInstance?.sobrenome}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="matricula"><g:message code="monitorBolsista.matricula.label" default="Matricula" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'matricula', 'errors')}">
+                                    <g:textField name="matricula" value="${monitorBolsistaInstance?.matricula}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="curso"><g:message code="monitorBolsista.curso.label" default="Curso" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'curso', 'errors')}">
+                                    <g:textField name="curso" value="${monitorBolsistaInstance?.curso}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="cpf"><g:message code="monitorBolsista.cpf.label" default="Cpf" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'cpf', 'errors')}">
+                                    <g:textField name="cpf" value="${monitorBolsistaInstance?.cpf}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="email"><g:message code="monitorBolsista.email.label" default="Email" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'email', 'errors')}">
+                                    <g:textField name="email" value="${monitorBolsistaInstance?.email}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="identidade"><g:message code="monitorBolsista.identidade.label" default="Identidade" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'identidade', 'errors')}">
+                                    <g:textField name="identidade" value="${monitorBolsistaInstance?.identidade}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="senha"><g:message code="monitorBolsista.senha.label" default="Senha" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'senha', 'errors')}">
+                                    <g:textField name="senha" value="${monitorBolsistaInstance?.senha}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="contacorrente"><g:message code="monitorBolsista.contacorrente.label" default="Contacorrente" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'contacorrente', 'errors')}">
+                                    <g:textField name="contacorrente" value="${monitorBolsistaInstance?.contacorrente}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="agencia"><g:message code="monitorBolsista.agencia.label" default="Agencia" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'agencia', 'errors')}">
+                                    <g:textField name="agencia" value="${monitorBolsistaInstance?.agencia}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="disciplina"><g:message code="monitorBolsista.disciplina.label" default="Disciplina" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'disciplina', 'errors')}">
@@ -50,37 +140,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="contacorrente"><g:message code="monitorBolsista.contacorrente.label" default="Contacorrente" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'contacorrente', 'errors')}">
-                                    <g:textField name="contacorrente" value="${monitorBolsistaInstance?.contacorrente}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="sexo"><g:message code="monitorBolsista.sexo.label" default="Sexo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'sexo', 'errors')}">
-                                    <g:checkBox name="sexo" value="${monitorBolsistaInstance?.sexo}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="senha"><g:message code="monitorBolsista.senha.label" default="Senha" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'senha', 'errors')}">
-                                    <g:textField name="senha" value="${monitorBolsistaInstance?.senha}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="filiacao"><g:message code="monitorBolsista.filiacao.label" default="Filiacao" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'filiacao', 'errors')}">
-                                    <g:textField name="filiacao" value="${monitorBolsistaInstance?.filiacao}" />
+                                    <g:textField name="sexo" value="${monitorBolsistaInstance?.sexo}" />
                                 </td>
                             </tr>
                         
@@ -95,10 +158,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="agencia"><g:message code="monitorBolsista.agencia.label" default="Agencia" /></label>
+                                  <label for="nomeMae"><g:message code="monitorBolsista.nomeMae.label" default="Nome Mae" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'agencia', 'errors')}">
-                                    <g:textField name="agencia" value="${monitorBolsistaInstance?.agencia}" />
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'nomeMae', 'errors')}">
+                                    <g:textField name="nomeMae" value="${monitorBolsistaInstance?.nomeMae}" />
                                 </td>
                             </tr>
                         
@@ -113,19 +176,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="cpf"><g:message code="monitorBolsista.cpf.label" default="Cpf" /></label>
+                                  <label for="hashSenha"><g:message code="monitorBolsista.hashSenha.label" default="Hash Senha" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'cpf', 'errors')}">
-                                    <g:textField name="cpf" value="${monitorBolsistaInstance?.cpf}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="login"><g:message code="monitorBolsista.login.label" default="Login" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'login', 'errors')}">
-                                    <g:textField name="login" value="${monitorBolsistaInstance?.login}" />
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'hashSenha', 'errors')}">
+                                    <g:textField name="hashSenha" value="${monitorBolsistaInstance?.hashSenha}" />
                                 </td>
                             </tr>
                         
@@ -135,15 +189,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'mediaFinal', 'errors')}">
                                     <g:textField name="mediaFinal" value="${fieldValue(bean: monitorBolsistaInstance, field: 'mediaFinal')}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="identidade"><g:message code="monitorBolsista.identidade.label" default="Identidade" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'identidade', 'errors')}">
-                                    <g:textField name="identidade" value="${monitorBolsistaInstance?.identidade}" />
                                 </td>
                             </tr>
                         
@@ -203,46 +248,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="matricula"><g:message code="monitorBolsista.matricula.label" default="Matricula" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'matricula', 'errors')}">
-                                    <g:textField name="matricula" value="${monitorBolsistaInstance?.matricula}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="periodosMonitorBolsista"><g:message code="monitorBolsista.periodosMonitorBolsista.label" default="Periodos Monitor Bolsista" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'periodosMonitorBolsista', 'errors')}">
                                     <g:textField name="periodosMonitorBolsista" value="${monitorBolsistaInstance?.periodosMonitorBolsista}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="sobrenome"><g:message code="monitorBolsista.sobrenome.label" default="Sobrenome" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'sobrenome', 'errors')}">
-                                    <g:textField name="sobrenome" value="${monitorBolsistaInstance?.sobrenome}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="curso"><g:message code="monitorBolsista.curso.label" default="Curso" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'curso', 'errors')}">
-                                    <g:textField name="curso" value="${monitorBolsistaInstance?.curso}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="email"><g:message code="monitorBolsista.email.label" default="Email" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'email', 'errors')}">
-                                    <g:textField name="email" value="${monitorBolsistaInstance?.email}" />
                                 </td>
                             </tr>
                         
@@ -257,10 +266,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="nome"><g:message code="monitorBolsista.nome.label" default="Nome" /></label>
+                                  <label for="nomePai"><g:message code="monitorBolsista.nomePai.label" default="Nome Pai" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'nome', 'errors')}">
-                                    <g:textField name="nome" value="${monitorBolsistaInstance?.nome}" />
+                                <td valign="top" class="value ${hasErrors(bean: monitorBolsistaInstance, field: 'nomePai', 'errors')}">
+                                    <g:textField name="nomePai" value="${monitorBolsistaInstance?.nomePai}" />
                                 </td>
                             </tr>
                         

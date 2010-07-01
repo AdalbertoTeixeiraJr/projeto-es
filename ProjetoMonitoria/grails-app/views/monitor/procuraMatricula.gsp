@@ -12,13 +12,13 @@
   </head>
   <script type="text/javascript">
       function verifica(){
-      window.location.href="[controller:'monitor',action:'verificar']"
+      window.location.href="[controller:'monitor',action:'procuraMatricula']"
 
   }</script>
 
 
 <body>
-<g:form name="formverifica" url="[controller:'monitor',action:'verificar']">
+<g:form name="formverifica" url="[controller:'monitor',action:'procuraMatricula']">
 <fieldset class="cadastroMonitor">
 <label for="matricula" class="matrMonitor">Matricula </label><input type="text" name="matricula" class="matrMonitor" maxlength="8"/>
 <br/>

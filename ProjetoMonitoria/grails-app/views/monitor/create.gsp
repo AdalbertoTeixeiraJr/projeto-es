@@ -29,6 +29,78 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="nome"><g:message code="monitor.nome.label" default="Nome" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'nome', 'errors')}">
+                                    <g:textField name="nome" value="${monitorInstance?.nome}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="sobrenome"><g:message code="monitor.sobrenome.label" default="Sobrenome" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'sobrenome', 'errors')}">
+                                    <g:textField name="sobrenome" value="${monitorInstance?.sobrenome}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="matricula"><g:message code="monitor.matricula.label" default="Matricula" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'matricula', 'errors')}">
+                                    <g:textField name="matricula" value="${monitorInstance?.matricula}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="curso"><g:message code="monitor.curso.label" default="Curso" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'curso', 'errors')}">
+                                    <g:textField name="curso" value="${monitorInstance?.curso}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="cpf"><g:message code="monitor.cpf.label" default="Cpf" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'cpf', 'errors')}">
+                                    <g:textField name="cpf" value="${monitorInstance?.cpf}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="email"><g:message code="monitor.email.label" default="Email" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'email', 'errors')}">
+                                    <g:textField name="email" value="${monitorInstance?.email}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="identidade"><g:message code="monitor.identidade.label" default="Identidade" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'identidade', 'errors')}">
+                                    <g:textField name="identidade" value="${monitorInstance?.identidade}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="senha"><g:message code="monitor.senha.label" default="Senha" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'senha', 'errors')}">
+                                    <g:textField name="senha" value="${monitorInstance?.senha}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="disciplina"><g:message code="monitor.disciplina.label" default="Disciplina" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'disciplina', 'errors')}">
@@ -50,25 +122,7 @@
                                     <label for="sexo"><g:message code="monitor.sexo.label" default="Sexo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'sexo', 'errors')}">
-                                    <g:checkBox name="sexo" value="${monitorInstance?.sexo}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="senha"><g:message code="monitor.senha.label" default="Senha" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'senha', 'errors')}">
-                                    <g:textField name="senha" value="${monitorInstance?.senha}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="filiacao"><g:message code="monitor.filiacao.label" default="Filiacao" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'filiacao', 'errors')}">
-                                    <g:textField name="filiacao" value="${monitorInstance?.filiacao}" />
+                                    <g:textField name="sexo" value="${monitorInstance?.sexo}" />
                                 </td>
                             </tr>
                         
@@ -83,6 +137,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="nomeMae"><g:message code="monitor.nomeMae.label" default="Nome Mae" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'nomeMae', 'errors')}">
+                                    <g:textField name="nomeMae" value="${monitorInstance?.nomeMae}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="cra"><g:message code="monitor.cra.label" default="Cra" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'cra', 'errors')}">
@@ -92,19 +155,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="cpf"><g:message code="monitor.cpf.label" default="Cpf" /></label>
+                                    <label for="hashSenha"><g:message code="monitor.hashSenha.label" default="Hash Senha" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'cpf', 'errors')}">
-                                    <g:textField name="cpf" value="${monitorInstance?.cpf}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="login"><g:message code="monitor.login.label" default="Login" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'login', 'errors')}">
-                                    <g:textField name="login" value="${monitorInstance?.login}" />
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'hashSenha', 'errors')}">
+                                    <g:textField name="hashSenha" value="${monitorInstance?.hashSenha}" />
                                 </td>
                             </tr>
                         
@@ -114,15 +168,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'mediaFinal', 'errors')}">
                                     <g:textField name="mediaFinal" value="${fieldValue(bean: monitorInstance, field: 'mediaFinal')}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="identidade"><g:message code="monitor.identidade.label" default="Identidade" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'identidade', 'errors')}">
-                                    <g:textField name="identidade" value="${monitorInstance?.identidade}" />
                                 </td>
                             </tr>
                         
@@ -182,46 +227,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="matricula"><g:message code="monitor.matricula.label" default="Matricula" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'matricula', 'errors')}">
-                                    <g:textField name="matricula" value="${monitorInstance?.matricula}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="periodosMonitorBolsista"><g:message code="monitor.periodosMonitorBolsista.label" default="Periodos Monitor Bolsista" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'periodosMonitorBolsista', 'errors')}">
                                     <g:textField name="periodosMonitorBolsista" value="${monitorInstance?.periodosMonitorBolsista}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="sobrenome"><g:message code="monitor.sobrenome.label" default="Sobrenome" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'sobrenome', 'errors')}">
-                                    <g:textField name="sobrenome" value="${monitorInstance?.sobrenome}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="curso"><g:message code="monitor.curso.label" default="Curso" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'curso', 'errors')}">
-                                    <g:textField name="curso" value="${monitorInstance?.curso}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="email"><g:message code="monitor.email.label" default="Email" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'email', 'errors')}">
-                                    <g:textField name="email" value="${monitorInstance?.email}" />
                                 </td>
                             </tr>
                         
@@ -236,10 +245,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nome"><g:message code="monitor.nome.label" default="Nome" /></label>
+                                    <label for="nomePai"><g:message code="monitor.nomePai.label" default="Nome Pai" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'nome', 'errors')}">
-                                    <g:textField name="nome" value="${monitorInstance?.nome}" />
+                                <td valign="top" class="value ${hasErrors(bean: monitorInstance, field: 'nomePai', 'errors')}">
+                                    <g:textField name="nomePai" value="${monitorInstance?.nomePai}" />
                                 </td>
                             </tr>
                         

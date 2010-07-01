@@ -30,6 +30,76 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.nome.label" default="Nome" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "nome")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.sobrenome.label" default="Sobrenome" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "sobrenome")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.matricula.label" default="Matricula" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "matricula")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.curso.label" default="Curso" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "curso")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.cpf.label" default="Cpf" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "cpf")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.email.label" default="Email" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "email")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.identidade.label" default="Identidade" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "identidade")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.senha.label" default="Senha" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "senha")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.contacorrente.label" default="Contacorrente" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "contacorrente")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="monitorBolsista.agencia.label" default="Agencia" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "agencia")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitorBolsista.disciplina.label" default="Disciplina" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "disciplina")}</td>
@@ -44,30 +114,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.contacorrente.label" default="Contacorrente" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "contacorrente")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitorBolsista.sexo.label" default="Sexo" /></td>
                             
-                            <td valign="top" class="value"><g:formatBoolean boolean="${monitorBolsistaInstance?.sexo}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.senha.label" default="Senha" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "senha")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.filiacao.label" default="Filiacao" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "filiacao")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "sexo")}</td>
                             
                         </tr>
                     
@@ -79,9 +128,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.agencia.label" default="Agencia" /></td>
+                            <td valign="top" class="name"><g:message code="monitorBolsista.nomeMae.label" default="Nome Mae" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "agencia")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "nomeMae")}</td>
                             
                         </tr>
                     
@@ -93,16 +142,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.cpf.label" default="Cpf" /></td>
+                            <td valign="top" class="name"><g:message code="monitorBolsista.hashSenha.label" default="Hash Senha" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "cpf")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.login.label" default="Login" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "login")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "hashSenha")}</td>
                             
                         </tr>
                     
@@ -110,13 +152,6 @@
                             <td valign="top" class="name"><g:message code="monitorBolsista.mediaFinal.label" default="Media Final" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "mediaFinal")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.identidade.label" default="Identidade" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "identidade")}</td>
                             
                         </tr>
                     
@@ -163,37 +198,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.matricula.label" default="Matricula" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "matricula")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="monitorBolsista.periodosMonitorBolsista.label" default="Periodos Monitor Bolsista" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "periodosMonitorBolsista")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.sobrenome.label" default="Sobrenome" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "sobrenome")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.curso.label" default="Curso" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "curso")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.email.label" default="Email" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "email")}</td>
                             
                         </tr>
                     
@@ -205,9 +212,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="monitorBolsista.nome.label" default="Nome" /></td>
+                            <td valign="top" class="name"><g:message code="monitorBolsista.nomePai.label" default="Nome Pai" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "nome")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: monitorBolsistaInstance, field: "nomePai")}</td>
                             
                         </tr>
                     

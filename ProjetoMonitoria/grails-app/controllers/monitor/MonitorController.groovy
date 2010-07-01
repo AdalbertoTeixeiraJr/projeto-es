@@ -5,8 +5,9 @@ class MonitorController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index = {
-        redirect(action: "homeMonitor.gsp", params: params)
+        redirect(action: "cadastro.gsp", params: params)
     }
+
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
@@ -96,17 +97,16 @@ class MonitorController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'monitor.label', default: 'Monitor'), params.id])}"
             redirect(action: "list")
         }
-    }
 
-    def verificar = {
-        def matricula = params["matricula"]
-        def matriculaMonitor = Monitor.findByMatricula(matricula)
-        if (!(matriculaMonitor== matricula)) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'monitor.label', default: 'Monitor'), params.matricula])}"
-            redirect(action: "procuraMatricula.gsp")
-        }
-        else {
-            redirect(action: "cadastro.gsp")
+
+        def procuraMatricula = {
+           def matricula = params.matricula
+           def matriculamonitor = Monitor.monitor.findByMatricula(matricula)
+           if (matriculamonitor==matricula){
+               redirect(action:'index')
+           }else{
+               redirect(action: "monitor/procuraMatricula.gsp")
+           }
         }
     }
 }
