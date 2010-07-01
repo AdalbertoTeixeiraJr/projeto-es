@@ -67,7 +67,7 @@
                                   <g:form name="formlogin" url="[controller:'redireciona',action:'login']">
                                     <fieldset>
                                       
-                                          <label for="matricula" class="login" id="matricula">Matricula: </label><input type="text" class="login" name="matricula" id="matricula"/><br/>
+                                          <label for="matricula" class="login" id="matricula">Matricula: </label><input type="text" class="login" name="login" id="matricula"/><br/>
                                           <label for="senha" class="login" id="login">Senha: </label><input type="password" class="login"name="senha" id="login"/><br/>
                                                                                  
                                     </fieldset>
