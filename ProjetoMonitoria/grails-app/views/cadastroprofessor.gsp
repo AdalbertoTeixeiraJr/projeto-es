@@ -66,7 +66,6 @@ input.grande{
       <label for="email" class="monitor">Email </label><input class="grande" type="text" name="email" /><br/>
         <fieldset>
           <legend class="monitor">Informações de Acesso </legend>
-          <label for="login"class="monitor">Login </label><input type="text" name="login" class="monitor"/><br/>
           <label for="senha"class="monitor">Senha </label><input type="password" name="senha" class="monitor"/><br/>
           <label for="confirmarSenha" class="monitor">Confirmar Senha </label><input type="password" name="confirmarSenhar" class="monitor"/><br/>
         </fieldset>

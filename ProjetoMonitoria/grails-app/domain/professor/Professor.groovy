@@ -7,18 +7,23 @@ class Professor {
     String nome
     String sobrenome
     String email
-    String login
     String senha
     String matricula
     String disciplina
+    String hashSenha
     
     static constraints = {
         nome(blank:false)
         sobrenome(blank:false)
         email(email:true)
-        login(blank:false)
         senha(blank:false)
         matricula(blank:false)
         disciplina(blank:false)
     }
+        void setSenha(String valor){
+        this.senha = valor;
+        if (valor != null) this.hashSenha = valor.encodeAsPassword()
+
+    }
+    static transients = ['senha']
 }

@@ -64,7 +64,7 @@
 				<div class="panelBody">
                                   <h2>Acessar Sistema</h2>
                                   <br>
-                                  <g:form name="formlogin" url="[controller:'redireciona',action:'login'">
+                                  <g:form name="formlogin" url="[controller:'redireciona',action:'login']">
                                     <fieldset>
                                       
                                           <label for="login" class="login" id="login">Login: </label><input type="text" class="login" name="login" id="login"/><br/>

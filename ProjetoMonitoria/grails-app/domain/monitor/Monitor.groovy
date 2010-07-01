@@ -13,9 +13,9 @@ class Monitor {
     String Identidade
     String celular
     String telFixo
-    String login
     String senha
-    String filiacao
+    String nomeMae
+    String nomePai
     String disciplina
     String unidade
     String codigoDoProjeto
@@ -24,6 +24,7 @@ class Monitor {
     String periodosMonitorBolsista
     String avalicaoComplementar
     String sexo
+    String hashSenha
     float notaDisciplina, cra, notaObtida, mediaFinal
     int classificacao
 
@@ -38,9 +39,14 @@ class Monitor {
         cpf(blank:false)
         email(email:true)
         identidade(blank:false)
-        login(blank:false)
         senha(blank:false)
         
 
     }
+    void setSenha(String valor){
+        this.senha = valor;
+        if (valor != null) this.hashSenha = valor.encodeAsPassword()
+
+    }
+    static transients = ['senha']
 }

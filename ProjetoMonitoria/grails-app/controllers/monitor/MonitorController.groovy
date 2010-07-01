@@ -5,7 +5,7 @@ class MonitorController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index = {
-        redirect(action: "list", params: params)
+        redirect(action: "homeMonitor.gsp", params: params)
     }
 
     def list = {
