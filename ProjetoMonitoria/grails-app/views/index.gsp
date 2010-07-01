@@ -52,6 +52,9 @@
 			}
 		</style>
     </head>
+    <script type="text/javascript">
+      function direciona(){window.location.href="[controller:'redireciona',action:'login'"}
+
     <body>
 		<div id="nav">
 			<div class="homePagePanel">
@@ -61,15 +64,16 @@
 				<div class="panelBody">
                                   <h2>Acessar Sistema</h2>
                                   <br>
-                                  <form name="login" action="">
+                                  <g:form name="formlogin" url="[controller:'redireciona',action:'login'">
                                     <fieldset>
                                       
                                           <label for="login" class="login" id="login">Login: </label><input type="text" class="login" name="login" id="login"/><br/>
                                           <label for="senha" class="login" id="login">Senha: </label><input type="password" class="login"name="senha" id="login"/><br/>
                                                                                  
                                     </fieldset>
-                                    <input type="submit" name="submitlogin" id="login" value="Entrar" >
-                                   </form>
+
+                                    <p align="center"><input type="submit" name="submitlogin" id="login" value="Entrar" onclick="direciona()"><br/></p>
+                                    </g:form>
                                   <br>
                                   <h1>Não possui conta Monitoria?</h1>
                                   <br>
