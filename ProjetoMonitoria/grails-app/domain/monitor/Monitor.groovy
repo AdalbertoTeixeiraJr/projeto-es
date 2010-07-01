@@ -23,7 +23,7 @@ class Monitor {
     String periodosMonitorVoluntario
     String periodosMonitorBolsista
     String avalicaoComplementar
-    boolean sexo
+    String sexo
     float notaDisciplina, cra, notaObtida, mediaFinal
     int classificacao
 

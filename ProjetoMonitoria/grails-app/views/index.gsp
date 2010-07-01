@@ -53,8 +53,8 @@
 		</style>
     </head>
     <script type="text/javascript">
-      function direciona(){window.location.href="[controller:'redireciona',action:'login'"}
-
+      function direciona(){window.location.href="[controller:'redireciona',action:'login']"}
+    </script>
     <body>
 		<div id="nav">
 			<div class="homePagePanel">
@@ -77,7 +77,7 @@
                                   <br>
                                   <h1>Não possui conta Monitoria?</h1>
                                   <br>
-                                  <a href="cadastro.gsp">Clique Aqui</a>
+                                  <a href="monitor/procuraMatricula.gsp">Clique Aqui</a>
                                   <input type="submit" class="criarConta" id="criarConta" name="criarConta" value="Criar Conta"/>
                                   <br/>
                                    <a href="cadastroprofessor.gsp">Cadastro de Professores no sistema</a>

@@ -97,4 +97,16 @@ class MonitorController {
             redirect(action: "list")
         }
     }
+
+    def verificar = {
+        def matricula = params["matricula"]
+        def matriculaMonitor = Monitor.findByMatricula(matricula)
+        if (!(matriculaMonitor== matricula)) {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'monitor.label', default: 'Monitor'), params.matricula])}"
+            redirect(action: "procuraMatricula.gsp")
+        }
+        else {
+            redirect(action: "cadastro.gsp")
+        }
+    }
 }
