@@ -1,8 +1,8 @@
 Cliente: Elmar Melcher
 
-Gerente 1ª Etapa: Daniel Lucena Pires
-Gerente 2ª Etapa: Adalberto Teixeira
-Gerente 3ª Etapa: Andrey Menezes
+Gerente 1ª Etapa: Daniel Lucena Pires<br/>
+Gerente 2ª Etapa: Adalberto Teixeira<br/>
+Gerente 3ª Etapa: Andrey Menezes<br/>
 
 Usuários: Alunos da Disciplina de LOAC.
 O nosso publico alvo são os alunos da disciplina de LOAC. Um dos objetivos da disciplina é aprender a manipular um processador. 
