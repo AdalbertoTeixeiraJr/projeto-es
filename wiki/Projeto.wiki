@@ -2,3 +2,5 @@ Desenvolver um compilador de um subconjunto de Java para código de máquina do 
 Como entrada esse compilador deve aceitar um arquivo de código fonte Java que não usa classe e só permite um único método chamado "main". 
 O único tipo de dado suportado é inteiro com sinal de 16 bits. 
 O compilador deve suportar if...else, while, until e expressões com as operações +(soma), -(subtração), &(e), |(ou), ~(negação) somente. O compilador deve gerar em arquivo de saída compatível com o assembler utilizado na disciplina LOAC. O compilador será usado na disciplina LOAC.
+
+Ainda vamos decidir a linguagem, estamos verificando se C será mais adequado e se possui automação de testes de unidade e testes de aceitação.
