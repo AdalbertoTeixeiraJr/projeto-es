@@ -1,0 +1,8 @@
+#labels US01,EstudarLinguagemC
+US01-------------------------------------<br/>
+Estudar Principios e Comandos da Linguagem C
+Verificar se existe possibilidade de fazer testes de unidade e testes de aceitação automáticos.
+Verificar e revisar alguns comandos e sintaxe da linguagem.
+<br/>
+---------------------------------<br/>
+US02
