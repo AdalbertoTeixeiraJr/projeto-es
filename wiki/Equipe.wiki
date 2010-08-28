@@ -9,9 +9,9 @@
 ----
 
 ||* Papéis: *||
-||Adalberto Teixeira  [Programador, Gerente, Arquiteto, Testador].||
-||Andrey Menezes [Programador, Gerente, Arquiteto, Testador].||
-||Daniel Lucena [Programador, Gerente, Arquiteto, Testador].||
+||Adalberto Teixeira: Programador, Gerente, Arquiteto, Testador.||
+||Andrey Menezes: Programador, Gerente, Arquiteto, Testador.||
+||Daniel Lucena: Programador, Gerente, Arquiteto, Testador.||
 
 ----
 
