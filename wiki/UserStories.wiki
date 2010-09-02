@@ -7,6 +7,7 @@ US01
 ||Estudar Compiladores||3h||
 ||Estudar Compilador Mano&Kime||3h||
 ||total||15h||
+
 ----
 US02
 Analisador Léxico
@@ -37,6 +38,7 @@ Analisador Semântico
 US05
 ||Geração de Código.||
 ||Geração de código de três endereçõs para operador NOT||
+
 ----
 US06
 ||Geração de Código.||
@@ -46,10 +48,12 @@ US06
 US07
 ||Geração de Código.||
 ||Geração de código de três endereços para operador OR||
+
 ----
 US08
 ||Geração de Código.||
 ||Geração de código de três endereços para operador AND||
+
 ----
 US09
 ||Geração de Código.||
@@ -60,4 +64,5 @@ US10
 ||Geração de Código.||
 ||Geração de código de três endereços para operador DIF.||
 ||unário e binário.||
+
 ----
