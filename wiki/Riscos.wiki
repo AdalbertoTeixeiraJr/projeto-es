@@ -12,8 +12,9 @@ Medidas: O código gerado tem que ser testado. Muitos testes serão necessários
 Risco 2<br/>
 Probabilidade:Baixa.<br/>
 Status: Ativo<br/>
+Se o cliente por alguma razão resolver colocar mais artefatos, ou user stories, como entrega, a fim de adicionar requisitos no software.
 
-Natureza: Baixa.<br/>
+Medidas: Tentar negociar. Validar os requisitos com antecedencia para fechar o escopo o mais rápido possível. Com o objetivo de satisfazer o cliente.<br/>
 
 
 ----
