@@ -1,0 +1,33 @@
+=Riscos Referentes ao projeto=
+----
+Risco 1<br/>
+Probabilidade: Baixa.<br/>
+Status: Ativo<br/>
+Natureza: Grave<br/>
+Devido ao alto grau de acoplamento de todas os módulos estarem relacionados com o mesmo objetivo, é impossível gerar um compilador que nao seja ocupado entre a linguagem fonte e linguagem destino.<br/> 
+A grande dependencia entre o código gerado em linguagem c, e o código de máquina gerado (equivalência), se alguma função ou comando da geração de código não funcionar devidamente, o código de máquina gerado não será cofiável. Gerar código errado.<br/>
+
+Medidas: O código gerado tem que ser testado. Muitos testes serão necessários.
+----
+Risco 2<br/>
+Probabilidade:Baixa.<br/>
+Status: Ativo<br/>
+
+Natureza: Baixa.<br/>
+
+
+----
+=Risco Referente aos Integrantes=
+----
+Risco 3
+Probabilidade:Baixa
+Status:Ativo
+Se algum integrante não entregar sua tarefa no prazo. Isso será um problema, devido a divisão de tarefas. 
+Medidas:Tarefas serão entregue com antecedencia a fim de evitar imprevisto, e que se forem detectados erros ou imprevisto, a equipe toda possa se reunir e resolver junto.
+----
+Risco 4
+Probabilidade:Baixa
+Status:Ativo.
+
+Medidas:
+----
