@@ -28,6 +28,7 @@ Medidas:Tarefas serão entregue com antecedencia a fim de evitar imprevisto, e q
 Risco 4
 Probabilidade:Baixa
 Status:Ativo.
-
-Medidas:
+Se o computador de algum integrante por algum motivo ficar inutilizável.
+Medidas:Usar algum laboratório (LCC1 OU LCC2) disponível para desenvolver as atividades.
+Evitando atrasos nas entregas dos artefatos.
 ----
