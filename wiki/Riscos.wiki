@@ -45,3 +45,9 @@ Probabilidade: Media<br/>
 Status: Ativo.<br/>
 Se durante o periodo de feriados prolongados algum integrante nao apresentar artefatos. Ausentando-se do desenvolvimento compromentendo o grupo.<br/>
 Medidas: Conversas e Reuniões a fim de sanar essas adversisdades.
+----Risco 7 <br/>
+Probabilidade: Média
+Status: Ativo.
+O estudo de compiladores, pois apenas 1 integrante pagou a disciplina de compiladores.
+Medidas: Dividir melhor as tarefas e determinar mais tempo na entrega dos artefatos.
+----
