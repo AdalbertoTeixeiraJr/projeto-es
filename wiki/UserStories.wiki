@@ -62,13 +62,13 @@ Geração de código para parentisadores. (modificadores de precedência)
 US10<br/>
 Geração de código para operadores Relacionais (==, >, <, <=, >=,!=)
 ||fazer geração de codigo e verificação de equivalencia entre todos os operadores relacionais.||
-||O uso de operadores relacionais será necessário para implenmentar o *IF THEN ELSE* e condiçoes de parada para o *WHILE*.
+||O uso de operadores relacionais será necessário para implenmentar o *IF THEN ELSE* e condiçoes de parada para o *WHILE*||
 ----
 US11<br/>
 Geração de código comando *IF THEN ELSE*, expressão condicional.
-||Geração de código para IF simples.||
+||Geração de código para *IF simples*||
 ||Geração de código para *IF ... ELSE*||
-||Geração de código para *IF composto*.||
+||Geração de código para *IF composto*||
 
 ----
 US12<br/>
