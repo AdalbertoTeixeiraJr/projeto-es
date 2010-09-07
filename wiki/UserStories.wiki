@@ -1,6 +1,5 @@
-#labels US01,EstudarLinguagemC
 ----
-US01
+US01<br/> Estudo
 ||Estudar Principios e Comandos da Linguagem C||3h||
 ||MASM --> Gerador de Código em assembly||3h||
 ||Verificar se existe possibilidade de fazer testes de unidade e testes de aceitação automáticos.||3h||
@@ -9,7 +8,7 @@ US01
 ||total||15h||
 
 ----
-US02
+US02<br/>
 Geração de Código para Declaração 4 Registradores
 ||Verificar sintaxe e construções da linguagem assembly.||
 ||comandos e funções utilizadas.||
@@ -18,51 +17,54 @@ Geração de Código para Declaração 4 Registradores
 ||tratamento de erro e comentários||
 
 ----
-US03
-Geração de Código para atribuição
+US03<br/>
+Geração de Código para atribuição.
 ||Mapear operações realizadas.||
 ||Mapear conversão de tipos.||
-||Fazer verificação de erros de compilação de conversões entre tipo.||
-----
-US04
-Geração de código expressão AND binário e bit a bit
-||Coerção ||
-||Verificação de nomes de variáveis.||
-||Verificação de variáveis ja declaradas.||
-||Verificação de tipos.||
 
 ----
-US05
-Geração de código expressão NOT
+US04<br/>
+Geração de código expressão AND.<br/>
+||Geração de código para AND binário.||
+||Geração de código para AND bit-a-bit.||
 
 ----
-US06
-Geração de código expressão OR binário e bit a bit
+US05<br/>
+Geração de código expressão OR.<br/>
+|| Geração de código para OR binário||
+||Geração de código para OR bit a bit||
+----
+US06<br/>
+
+Geração de código expressão NOT<br/>
+||Geração de código para NOT unário||
+||Geração de código para NOT negação de expressão.||
 
 ----
-US07
-Geração de código operador +[add] (soma)
-||Geração de código para operador soma||
+US07<br/>
+Geração de código operador ADD --> (soma)<br/>
+||Geração de código para soma binária||
+||Geração de código para soma utilizando expressões.||
 
 ----
-US08
-Geração de código operador -[diff] (menos) 
-||Geração de código de três endereços para operador AND||
+US08<br/>
+Geração de código operador DIFF --> (menos)<br/>
+||Geração de código para diferença Binária||
+||Geração de código para diferença de expressoes.||
 
 ----
-
-US09
-Geração de código para parentisadores. (modificadores de precedencia)
+US09<br/>
+Geração de código para parentisadores. (modificadores de precedência)
 
 ----
-US10
+US10<br/>
 Geração de código para operadores Relacionais (==, >, <, <=, >=,!=)
 ----
-US11
+US11<br/>
 Geração de código comando IF THEN ELSE, expressão condicional.
 
 ----
-US12
+US12<br/>
 Geração de Código comando iterativo WHILE
 
 ----
