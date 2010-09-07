@@ -1,2 +1,18 @@
-Em Construção...
-Falta resumir as necessidades do cliente.
+=Visão Geral=
+== Projeto Arquitetural ==
+http://projeto-es.googlecode.com/files/Projeto%20Arquitetural.png
+
+----
+==Descrição==
+
+A arquitetura do sistema é dividida em camadas. A camada de apresentação é o elo de ligação entre o usuário e o sistema. Esta camada é constituída de uma interface texto. O usuário irá acessar essa interface ao clicar em executar o programa. Uma caixa de texto se abre para que o mesmo execute uma sequência de comandos em linguagem C. Depois de digitado o código o usuário irá utilizar um botão para que o código gerado seja transformado na linguagem destino.<br/>
+Ao clicar o botão existe a comunicação entre o programa fonte e os outros módulos que compõe o programa. O analisador léxico irá ler o programa em linguagem fonte, enviar o que foi lido para a tabela de símbolos em forma de código, armazenando tudo que foi lido em uma estrutura de dados. O analisador sintático se comunica com a tabela de símbolos para verificar se a sintaxe da linguagem está correta, após a leitura pelo sintático temos o analisador semântico que vai verificar coerção de tipo, declaração de variáveis já existentes (por exemplo declaração de duas variáveis com mesmo nome) e verificar o escopo de cada variável dentro do programa.<br/>
+Após essas camadas de processamento o código será gerado por outra classe gerador de código que estará então na linguagem destino. Executando assim todo o processo necessário para a transformação da linguagem para outra linguagem.<br/>
+Todo esse processo é feito sem uma interface gráfica. Sem uso de Banco de dados. Todo o processamento é feito instantaneamente ao clique de um botão. <br/>
+O código só pode ser gerado caso não haja nenhum erro de compilação em alguma das fases do processo de geração de código. Ou seja, não deve haver nenhum erro sintático, léxico ou semântico para o código poder ser gerado.<br/>
+Resolvemos manter esse modelo de arquitetura pela sua simplicidade, e divisão de tarefas em módulos a fim de melhor tratar erros e simplificar a implementação do compilador, visto que o processo de compilação se divide naturalmente nessas cinco fases.
+O código gerado é um ultimo passo dessa arquitetura. É mostrado diretamente na tela ou pode ser direcionado para um arquivo texto.<br/>
+Essa arquitetura foi definida de acordo com os requisitos do cliente.<br/>
+
+
+----
