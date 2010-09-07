@@ -1,2 +1,5 @@
-||Reunião 1: 24/08/2010||
-||Reunião 2:A definir||
+||Reunião||Data||Descrição||
+||Reunião 1|| 24/08/2010||Visão geral das necesidades do cliente. Entendimento do escopo do projeto.||
+||Reunião 2||02/08/2010||Duvidas sobre o projeto sanadas, validação das user stories.||
+|| - ||07/08/2010 - 12/08/2010||Viagem do cliente e integrante do grupo||
+||Reunião 3|| A definir|| - ||
