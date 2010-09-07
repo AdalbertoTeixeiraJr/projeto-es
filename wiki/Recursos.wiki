@@ -3,7 +3,7 @@ Recursos Humanos:<br/>
 •	Adalberto Teixeira<br/>
 •	Daniel Lucena
 •	Gean Paulo Barros<br/>
-•	Elmar Melcher (validação e consultas)<br/>
+•	Elmar Melcher (validação  de requisitos e consultoria)<br/>
 
 Recursos de Hardware:<br/>
 •	Computadores do LCC1, LCC2 – configuração variável dependendo de cada laboratório;<br/>
@@ -12,6 +12,6 @@ Recursos de Hardware:<br/>
 Recursos de Software:<br/>
 •	Eclipse Utilizado para programar em C<br/>
 •	Microsoft Word 2007, Power Point 2007, Excel 2007 e Project 2007, BR Office: elaboração, leitura e descrição dos relatórios;<br/>
-•	MagicDraw 15.0 – Modelar o Diagrama UML, de classes, caso de uso, e modelagem DDL para Banco de Dados;<br/>
+•	MagicDraw 15.0 Modelar o Diagrama UML, de classes, caso de uso, e modelagem Projeto Arquitetural;<br/>
 •	CUnit – framework para testes de casos de uso, em Groovy;<br/>
 •	SVN Google Code: controle de versão para melhor gerenciamento do projeto;
