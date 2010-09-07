@@ -10,25 +10,22 @@ US01
 
 ----
 US02
-Analisador Léxico
+Geração de Código para Declaração 4 Registradores
 ||Verificar sintaxe e construções da linguagem assembly.||
 ||comandos e funções utilizadas.||
 ||operadores e tipos de dados.||
 ||Expressoes regulares dos tipos de dados.||
 ||tratamento de erro e comentários||
-||Definição dos tokens da linguagem||
-||A junção de todas as tarefas deve resultar um documento que contém os tokens gerados pela linguagem. Com o documento iremos gerar o analisador léxico usando o lex.||
 
 ----
 US03
-Analisador Sintático
+Geração de Código para atribuição
 ||Mapear operações realizadas.||
 ||Mapear conversão de tipos.||
 ||Fazer verificação de erros de compilação de conversões entre tipo.||
-||Ao final dessas tarefas devemos ter um outro documento. Esse mapeamento deve resultar no analisador léxico.||
 ----
 US04
-Analisador Semântico
+Geração de código expressão AND binário e bit a bit
 ||Coerção ||
 ||Verificação de nomes de variáveis.||
 ||Verificação de variáveis ja declaradas.||
@@ -36,33 +33,36 @@ Analisador Semântico
 
 ----
 US05
-||Geração de Código.||
-||Geração de código de três endereçõs para operador NOT||
+Geração de código expressão NOT
 
 ----
 US06
-||Geração de Código.||
-||Geração de código de três endereços para operador AND||
+Geração de código expressão OR binário e bit a bit
 
 ----
 US07
-||Geração de Código.||
-||Geração de código de três endereços para operador OR||
+Geração de código operador +[add] (soma)
+||Geração de código para operador soma||
 
 ----
 US08
-||Geração de Código.||
+Geração de código operador -[diff] (menos) 
 ||Geração de código de três endereços para operador AND||
 
 ----
+
 US09
-||Geração de Código.||
-||Geração de Código de três endereços para operador ADD||
+Geração de código para parentisadores. (modificadores de precedencia)
 
 ----
 US10
-||Geração de Código.||
-||Geração de código de três endereços para operador DIF.||
-||unário e binário.||
+Geração de código para operadores Relacionais (==, >, <, <=, >=,!=)
+----
+US11
+Geração de código comando IF THEN ELSE, expressão condicional.
+
+----
+US12
+Geração de Código comando iterativo WHILE
 
 ----
