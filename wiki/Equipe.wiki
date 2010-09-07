@@ -15,18 +15,6 @@
 
 ----
 
-*Usuários:* Alunos da Disciplina de LOAC.
-O nosso publico alvo são os alunos da disciplina de LOAC. Um dos objetivos da disciplina é aprender a manipular um processador. 
-Os alunos aprendem na disciplina a construir um processador com operações básicas, no intuíto de conhecer como é um processador e como o mesmo manipula os dados.
-Alocando dados em registradores, passando os dados pela ULA, e vendo na prática como o processo de computação ocorre, como os processadores se comunicam com memoria e alocam e desalocam dados da mesma.
-Serão Beneficiados com esse projeto toda a comunidade do curso de computação, já que a disciplina de LOAC é obrigatória.
-
-Será utilizado como uma ferramenta de auxilio ao ensino do conteúdo da dsiciplina. O mesmo também será usado para fazer demonstrações de como o código gerado por uma linguagem de programação é transformado em código de máquina. 
-
-O uso desse processador tem o objetivo de melhorar o entendimento das operações básicas de um processador, e como o mesmo processa as instruções.
-
-
-----
 
 ||*Reunião Semanal:* Quartas-feiras após as aulas. (16:00 - 18:00).||
 
