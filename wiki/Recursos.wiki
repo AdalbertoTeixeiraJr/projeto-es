@@ -1,8 +1,8 @@
 Abaixo estão listados os recursos de hardware, software e peopleware a serem utilizados no projeto.
 Recursos Humanos:<br/>
 •	Adalberto Teixeira<br/>
-•	Daniel Lucena
-•	Gean Paulo Barros<br/>
+•	Daniel Lucena<br/>
+•	Andrey Menezes<br/>
 •	Elmar Melcher (validação  de requisitos e consultoria)<br/>
 
 Recursos de Hardware:<br/>
