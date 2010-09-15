@@ -33,6 +33,7 @@ US05<br/>
 Geração de código expressão OR.<br/>
 || Geração de código para OR binário||
 ||Geração de código para OR bit a bit||
+
 ----
 US06<br/>
 
@@ -63,6 +64,7 @@ US10<br/>
 Geração de código para operadores Relacionais (==, >, <, <=, >=,!=)<br/>
 ||fazer geração de codigo e verificação de equivalencia entre todos os operadores relacionais.||
 ||O uso de operadores relacionais será necessário para implenmentar o *IF THEN ELSE* e condiçoes de parada para o *WHILE*||
+
 ----
 US11<br/>
 Geração de código comando *IF THEN ELSE*, expressão condicional.<br/>
