@@ -9,6 +9,12 @@ US01<br/> Estudo
 
 ----
 US02<br/>
+Geração dos Analisadores Léxico e Sintático
+||Desenvolver analisador léxico em linguagem C||
+||Desenvolver analisador sintático em linguagem C||
+
+----
+US03<br/>
 Geração de Código para Declaração 4 Registradores
 ||Verificar sintaxe e construções da linguagem assembly.||
 ||comandos e funções utilizadas.||
@@ -17,63 +23,63 @@ Geração de Código para Declaração 4 Registradores
 ||tratamento de erro e comentários||
 
 ----
-US03<br/>
+US04<br/>
 Geração de Código para atribuição.
 ||Mapear operações realizadas.||
 ||Mapear conversão de tipos.||
 
 ----
-US04<br/>
+US05<br/>
 Geração de código expressão AND.<br/>
 ||Geração de código para AND binário.||
 ||Geração de código para AND bit-a-bit.||
 
 ----
-US05<br/>
+US06<br/>
 Geração de código expressão OR.<br/>
 || Geração de código para OR binário||
 ||Geração de código para OR bit a bit||
 
 ----
-US06<br/>
+US07<br/>
 
 Geração de código expressão NOT<br/>
 ||Geração de código para NOT unário||
 ||Geração de código para NOT negação de expressão.||
 
 ----
-US07<br/>
+US08<br/>
 Geração de código operador ADD --> (soma)<br/>
 ||Geração de código para soma binária||
 ||Geração de código para soma utilizando expressões.||
 
 ----
-US08<br/>
+US09<br/>
 Geração de código operador DIFF --> (menos)<br/>
 ||Geração de código para diferença Binária||
 ||Geração de código para diferença de expressoes.||
 
 ----
-US09<br/>
+US10<br/>
 Geração de código para parentisadores. (modificadores de precedência)<br/>
 ||Geração de código para uso de precendencia.||
 ||Executar uma soma ou subtração utilizando precedencia com parênteses.||
 
 ----
-US10<br/>
+US11<br/>
 Geração de código para operadores Relacionais (==, >, <, <=, >=,!=)<br/>
 ||fazer geração de codigo e verificação de equivalencia entre todos os operadores relacionais.||
 ||O uso de operadores relacionais será necessário para implenmentar o *IF THEN ELSE* e condiçoes de parada para o *WHILE*||
 
 ----
-US11<br/>
+US12<br/>
 Geração de código comando *IF THEN ELSE*, expressão condicional.<br/>
 ||Geração de código para *IF simples*||
 ||Geração de código para *IF ... ELSE*||
 ||Geração de código para *IF composto*||
 
 ----
-US12<br/>
+US13<br/>
 Geração de Código comando iterativo *WHILE*.<br/>
 ||Geração de código para comando iterativo *WHILE*||
 
