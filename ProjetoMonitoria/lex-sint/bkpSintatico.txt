@@ -1,0 +1,88 @@
+/*
+*Analisador Sintático
+* UFCG - DSC - LES 2010.2
+* Autores:
+* Adalberto Teixeira
+* Andrey Menezes
+* Daniel Pires
+*/
+%{
+#include "tkvalues.h"
+#include <string.h>
+#include <stdio.h>
+int yylex(void); //funcao do lexico para retornar o token
+int yyerror(char *msg); //funcao de erro (sobrescrita)
+int line = 1; //declarado no lexico
+int col  = 0; // declarado no lexico
+char* yytext = ""; //declarado no lexico
+%}
+
+%union {
+ char* strval;
+
+}
+
+%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEGIN END ATRIB TYPE_INT MAIN
+%token <strval> RELOP
+%token <strval> LOGOP
+%token <strval> INT
+%token <strval> ID
+
+%type <strval> nomeDeclaracao literalId literalNum addOp multOp exprIf expr
+
+%%
+programa: MAIN BEGIN command END;
+command:		exprIf
+	|		exprWhile
+	|		nomeDeclaracao
+	|		atribuicao
+	| 		expr
+	| 		/*vazio*/
+;
+expr:		exprLog;
+exprLog:		exprRel
+	| 		exprRel LOGOP exprLog
+;
+exprRel:		exprAdit 
+	|		exprAdit RELOP exprRel
+;
+exprAdit:		exprMult
+	|		exprMult addOp exprAdit
+;
+addOp:		PLUS {$$="+";}
+	|	MINUS {$$="-";};
+exprMult:		exprMult
+	|		exprMult multOp exprMult
+;
+multOp:		MULT {$$ = "*";}
+	|		DIV {$$ = "/";}
+;
+atribuicao: 		literalId ATRIB literalNum
+;
+exprIf:		IF  expr 
+	|	IF  expr ELSE
+;
+exprWhile:		WHILE expr DO
+;
+nomeDeclaracao:		TYPE_INT literalId 
+;
+literalId:		ID {$$=$1;};
+literalNum:		INT{$$=$1;};
+
+%%
+
+int main(void) {
+yydebug=0;
+return yyparse();
+}
+int yyerror(char *msg){
+//funcao de erro - imprime linha e coluna do erro sintatico
+int tk = YYTRANSLATE(yychar);
+if(strcmp("syntax error", msg) == 0){
+msg = "Erro Sintatico";
+}
+fprintf(stderr,"%s:\n",msg);
+fprintf(stderr,"\tLinha %d, Coluna %d\n", line, col);
+fprintf(stderr,"\tUltimo token lido: %s - %s\n",yytname[tk],yytext);
+return 1;
+}
