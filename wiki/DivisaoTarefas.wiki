@@ -19,6 +19,7 @@ Geração dos Analisadores Lexicos e Sintáticos
 ||Desenvolver o Analisador Sintático usando YACC (BISON)||Daniel||2h||5h||
 ||Desenvolver casos de uso (códigos em linguagem C) dos Alunos disciplina||Adalberto||3h|| - ||
 ||Desenvolver Testes aceitação e Unidade||Adalberto|| 3h ||- ||
+||Definicao de minemonicos do Analisador Semantico||Andrey||2h|| - ||
 
 ----
 ==User Storie 03==
