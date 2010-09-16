@@ -31,5 +31,7 @@ Geração dos Analisadores Lexicos e Sintáticos
 ----
 ==User Storie 04==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
+||Definição Estrutura de dados que servira como tabela de declaracoes||TODOS||1h|| - ||
+||Implementação da Estrutura de Dados|| Daniel || 3h|| - ||
 
 ----
