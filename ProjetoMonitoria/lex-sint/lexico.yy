@@ -12,8 +12,8 @@
 #include "tkvalues.h"
 #include <string.h>
 extern char* yytext;
-extern int col; //inicializado no sintático
-extern int line; //inicializado no sintático
+extern int col; //inicializado no sintatico
+extern int line; //inicializado no sintatico
 int yyerror(char *msg);
 void updateCol();
 void updateLine();
