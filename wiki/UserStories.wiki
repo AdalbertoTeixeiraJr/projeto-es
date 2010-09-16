@@ -2,10 +2,10 @@
 US01<br/> Estudo
 ||Estudar Principios e Comandos da Linguagem C||3h||
 ||MASM --> Gerador de Código em assembly||3h||
-||Verificar se existe possibilidade de fazer testes de unidade e testes de aceitação automáticos.||3h||
+||Verificar se existe possibilidade de fazer testes de unidade e testes de aceitação automáticos.||1h||
 ||Estudar Compiladores||3h||
 ||Estudar Compilador Mano&Kime||3h||
-||total||15h||
+||total||13h||
 
 ----
 US02<br/>
