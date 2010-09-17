@@ -286,15 +286,15 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 24
-#define YY_END_OF_BUFFER 25
+#define YY_NUM_RULES 26
+#define YY_END_OF_BUFFER 27
 static yyconst short int yy_accept[51] =
     {   0,
-        0,    0,   25,   23,    1,    2,    9,   23,   14,   15,
-       12,   11,   10,   13,   22,   19,   16,   19,   21,   21,
-       21,   21,   21,   21,    7,   23,    8,    1,   19,   20,
-       22,   21,   21,    6,   21,    3,   21,   21,   21,   21,
-       17,   21,   21,    4,   21,   21,    0,    5,   18,    0
+        0,    0,   27,   25,    1,    2,    9,   17,   14,   15,
+       12,   11,   10,   13,   24,   21,   16,   21,   23,   23,
+       23,   23,   23,   23,    7,   18,    8,    1,   21,   22,
+       24,   23,   23,    6,   23,    3,   23,   23,   23,   23,
+       19,   23,   23,    4,   23,   23,    0,    5,   20,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -418,8 +418,8 @@ char *yytext;
 #include "tkvalues.h"
 #include <string.h>
 extern char* yytext;
-extern int col; //inicializado no sintático
-extern int line; //inicializado no sintático
+extern int col; //inicializado no sintatico
+extern int line; //inicializado no sintatico
 int yyerror(char *msg);
 void updateCol();
 void updateLine();
@@ -586,7 +586,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 34 "lexico.yy"
+#line 32 "lexico.yy"
 
 
 #line 593 "lexico.c"
@@ -674,126 +674,136 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 36 "lexico.yy"
+#line 34 "lexico.yy"
 {updateCol();}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 37 "lexico.yy"
+#line 35 "lexico.yy"
 {updateLine();}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 38 "lexico.yy"
+#line 36 "lexico.yy"
 {updateCol();return IF;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 39 "lexico.yy"
+#line 37 "lexico.yy"
 {updateCol();return ELSE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 40 "lexico.yy"
+#line 38 "lexico.yy"
 {updateCol();return WHILE;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 41 "lexico.yy"
+#line 39 "lexico.yy"
 {updateCol();return DO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 42 "lexico.yy"
+#line 40 "lexico.yy"
 {updateCol();return BEG;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 43 "lexico.yy"
+#line 41 "lexico.yy"
 {updateCol();return END;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 44 "lexico.yy"
+#line 42 "lexico.yy"
 {updateCol();return NOT;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 45 "lexico.yy"
+#line 43 "lexico.yy"
 {updateCol();return MINUS;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 46 "lexico.yy"
+#line 44 "lexico.yy"
 {updateCol();return PLUS;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 47 "lexico.yy"
+#line 45 "lexico.yy"
 {updateCol();return MULT;} 
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 48 "lexico.yy"
+#line 46 "lexico.yy"
 {updateCol();return DIV;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 49 "lexico.yy"
+#line 47 "lexico.yy"
 {updateCol();return APAREN;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 50 "lexico.yy"
+#line 48 "lexico.yy"
 {updateCol();return FPAREN;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 51 "lexico.yy"
+#line 49 "lexico.yy"
 {updateCol();return ATRIB;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
+#line 50 "lexico.yy"
+{updateCol();return ANDBIT;}
+	YY_BREAK
+case 18:
+YY_RULE_SETUP
+#line 51 "lexico.yy"
+{updateCol();return ORBIT;}
+	YY_BREAK
+case 19:
+YY_RULE_SETUP
 #line 52 "lexico.yy"
 {updateCol();return TYPE_INT;}
 	YY_BREAK
-case 18:
+case 20:
 YY_RULE_SETUP
 #line 53 "lexico.yy"
 {updateCol();return MAIN;}
 	YY_BREAK
-case 19:
+case 21:
 YY_RULE_SETUP
 #line 54 "lexico.yy"
 {updateCol();yylval.strval = strdup(yytext);return RELOP;}
 	YY_BREAK
-case 20:
+case 22:
 YY_RULE_SETUP
 #line 55 "lexico.yy"
 {updateCol();yylval.strval = strdup(yytext);return LOGOP;}
 	YY_BREAK
-case 21:
+case 23:
 YY_RULE_SETUP
 #line 56 "lexico.yy"
 {updateCol();yylval.strval = strdup(yytext);return ID;}
 	YY_BREAK
-case 22:
+case 24:
 YY_RULE_SETUP
 #line 57 "lexico.yy"
 {updateCol();yylval.strval = strdup(yytext);return INT;}
 	YY_BREAK
-case 23:
+case 25:
 YY_RULE_SETUP
 #line 58 "lexico.yy"
 {char msg[25];
                     sprintf(msg,"Erro Lexico <%s>",yytext);yyerror(msg);}
 	YY_BREAK
-case 24:
+case 26:
 YY_RULE_SETUP
 #line 60 "lexico.yy"
 ECHO;
 	YY_BREAK
-#line 797 "lexico.c"
+#line 807 "lexico.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

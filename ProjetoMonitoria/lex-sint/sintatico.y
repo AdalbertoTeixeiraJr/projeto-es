@@ -21,7 +21,7 @@ char* yytext = ""; //declarado no lexico
  char* strval;
 }
 
-%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEGIN END ATRIB TYPE_INT MAIN
+%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEGIN END ATRIB TYPE_INT MAIN ANDBIT ORBIT
 %token <strval> RELOP
 %token <strval> LOGOP
 %token <strval> INT
