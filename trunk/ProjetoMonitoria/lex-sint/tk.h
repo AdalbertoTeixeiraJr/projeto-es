@@ -55,10 +55,12 @@
      ATRIB = 271,
      TYPE_INT = 272,
      MAIN = 273,
-     RELOP = 274,
-     LOGOP = 275,
-     INT = 276,
-     ID = 277
+     ANDBIT = 274,
+     ORBIT = 275,
+     RELOP = 276,
+     LOGOP = 277,
+     INT = 278,
+     ID = 279
    };
 #endif
 /* Tokens.  */
@@ -78,10 +80,12 @@
 #define ATRIB 271
 #define TYPE_INT 272
 #define MAIN 273
-#define RELOP 274
-#define LOGOP 275
-#define INT 276
-#define ID 277
+#define ANDBIT 274
+#define ORBIT 275
+#define RELOP 276
+#define LOGOP 277
+#define INT 278
+#define ID 279
 
 
 
@@ -98,7 +102,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 102 "tk.h"
+#line 106 "tk.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

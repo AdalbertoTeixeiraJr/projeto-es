@@ -29,8 +29,6 @@ id             {letra}+({letra}|{digito})*
 relop          "<"|">"|"=="|"!="|"<="|">="
 logop          "&&"|"||"
 
-
-
 %%
 
 {coldelimi}+        {updateCol();}
@@ -49,6 +47,8 @@ do                  {updateCol();return DO;}
 "("                 {updateCol();return APAREN;}
 ")"                 {updateCol();return FPAREN;}
 "="                 {updateCol();return ATRIB;}
+"&"                 {updateCol();return ANDBIT;}
+"|"                 {updateCol();return ORBIT;}
 "int"               {updateCol();return TYPE_INT;}
 "main()"            {updateCol();return MAIN;}
 {relop}             {updateCol();yylval.strval = strdup(yytext);return RELOP;}
