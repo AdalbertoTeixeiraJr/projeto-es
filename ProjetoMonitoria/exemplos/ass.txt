@@ -1,0 +1,37 @@
+Supersimples
+
+ INC R1,R1
+ INC R1,R1
+ DEC R1,R1
+ DEC R1,R1 
+Carregamento_imediato
+
+ LDI R1,5
+ LDI R2,6 
+Saida
+
+ LDI R3,0
+ DEC R3,R3
+ LDI R2,2
+ ST  R3,R2   ; send value 2 to output S 
+Entrada
+
+ LDI R3,0
+ DEC R3,R3
+ LD  R0,R3   ; get input value from E into register R0 
+Escrita_leitura
+
+ LDI R1,5
+ LDI R2,6 
+ ST  R1,R2   ; store value 6 at memory adress 5
+ LD  R0,R1   ; read value from memory address 5 
+Pulando
+
+ LDI R1,5
+ BRZ R1,30
+ LDI R2,0
+ BRZ R2,2
+ LDI R1,0
+ INC R1,R1
+ LDI R3,1
+ JMP R3 
