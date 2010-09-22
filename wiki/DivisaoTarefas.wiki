@@ -38,5 +38,5 @@ Geração dos Analisadores Lexicos e Sintáticos
 
 ==User Storie 05==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Geração de Código para AND||Andrey||4h|| - ||
-||Testes para Geração de Código|| Daniel || - ||
+||Geração de Código para Operador AND||Andrey||4h|| - ||
+||Testes para Geração de Código|| Daniel || 3h || - ||
