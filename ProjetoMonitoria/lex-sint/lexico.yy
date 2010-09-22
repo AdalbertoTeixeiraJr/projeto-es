@@ -20,7 +20,7 @@ void updateLine();
 
 %}
 
-coldelimi      [\t\r]
+coldelimi      [ \t\r]
 linedelimi     [\n]
 digito         [0-9]
 int            {digito}+
@@ -51,12 +51,14 @@ do                  {updateCol();return DO;}
 "|"                 {updateCol();return ORBIT;}
 "int"               {updateCol();return TYPE_INT;}
 "main()"            {updateCol();return MAIN;}
+";"                 {updateCol();return PTVIR;}
 {relop}             {updateCol();yylval.strval = strdup(yytext);return RELOP;}
 {logop}             {updateCol();yylval.strval = strdup(yytext);return LOGOP;}
 {id}                {updateCol();yylval.strval = strdup(yytext);return ID;}
 {int}               {updateCol();yylval.strval = strdup(yytext);return INT;}
-.                   {char msg[25];
-                    sprintf(msg,"Erro Lexico <%s>",yytext);yyerror(msg);}
+.		{char msg[25];
+		 sprintf(msg,"Erro Léxico <%s>",yytext);
+		 yyerror(msg);}
 %%
 
 void updateLine(){

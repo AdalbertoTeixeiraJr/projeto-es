@@ -12,20 +12,25 @@ Terminals unused in grammar
    APAREN
    FPAREN
    ATRIB
-   TYPE_INT
    ANDBIT
    ORBIT
    RELOP
    LOGOP
    INT
-   ID
 
 
 Grammar
 
     0 $accept: programa $end
 
-    1 programa: MAIN BEGIN END
+    1 programa: MAIN BEG comando END
+
+    2 comando: declaracao
+    3        | /* empty */
+
+    4 declaracao: TYPE_INT nomeDecl PTVIR
+
+    5 nomeDecl: ID
 
 
 Terminals, with rules where they appear
@@ -43,31 +48,38 @@ MULT (265)
 DIV (266)
 APAREN (267)
 FPAREN (268)
-BEGIN (269) 1
+BEG (269) 1
 END (270) 1
 ATRIB (271)
-TYPE_INT (272)
+TYPE_INT (272) 4
 MAIN (273) 1
 ANDBIT (274)
 ORBIT (275)
-RELOP (276)
-LOGOP (277)
-INT (278)
-ID (279)
+PTVIR (276) 4
+RELOP (277)
+LOGOP (278)
+INT (279)
+ID (280) 5
 
 
 Nonterminals, with rules where they appear
 
-$accept (25)
+$accept (26)
     on left: 0
-programa (26)
+programa (27)
     on left: 1, on right: 0
+comando (28)
+    on left: 2 3, on right: 1
+declaracao (29)
+    on left: 4, on right: 2
+nomeDecl (30)
+    on left: 5, on right: 4
 
 
 state 0
 
     0 $accept: . programa $end
-    1 programa: . MAIN BEGIN END
+    1 programa: . MAIN BEG comando END
 
     MAIN  shift, and go to state 1
 
@@ -76,9 +88,9 @@ state 0
 
 state 1
 
-    1 programa: MAIN . BEGIN END
+    1 programa: MAIN . BEG comando END
 
-    BEGIN  shift, and go to state 3
+    BEG  shift, and go to state 3
 
 
 state 2
@@ -90,9 +102,17 @@ state 2
 
 state 3
 
-    1 programa: MAIN BEGIN . END
+    1 programa: MAIN BEG . comando END
+    2 comando: . declaracao
+    3        | .  [END]
+    4 declaracao: . TYPE_INT nomeDecl PTVIR
 
-    END  shift, and go to state 5
+    TYPE_INT  shift, and go to state 5
+
+    $default  reduce using rule 3 (comando)
+
+    comando     go to state 6
+    declaracao  go to state 7
 
 
 state 4
@@ -104,6 +124,51 @@ state 4
 
 state 5
 
-    1 programa: MAIN BEGIN END .
+    4 declaracao: TYPE_INT . nomeDecl PTVIR
+    5 nomeDecl: . ID
+
+    ID  shift, and go to state 8
+
+    nomeDecl  go to state 9
+
+
+state 6
+
+    1 programa: MAIN BEG comando . END
+
+    END  shift, and go to state 10
+
+
+state 7
+
+    2 comando: declaracao .
+
+    $default  reduce using rule 2 (comando)
+
+
+state 8
+
+    5 nomeDecl: ID .
+
+    $default  reduce using rule 5 (nomeDecl)
+
+
+state 9
+
+    4 declaracao: TYPE_INT nomeDecl . PTVIR
+
+    PTVIR  shift, and go to state 11
+
+
+state 10
+
+    1 programa: MAIN BEG comando END .
 
     $default  reduce using rule 1 (programa)
+
+
+state 11
+
+    4 declaracao: TYPE_INT nomeDecl PTVIR .
+
+    $default  reduce using rule 4 (declaracao)

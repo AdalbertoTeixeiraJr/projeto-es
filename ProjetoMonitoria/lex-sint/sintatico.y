@@ -6,10 +6,11 @@
 * Andrey Menezes
 * Daniel Pires
 */
+
 %{
-#include "tkvalues.h"
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
+#include "tkvalues.h"
 int yylex(void); //funcao do lexico para retornar o token
 int yyerror(char *msg); //funcao de erro (sobrescrita)
 int line = 1; //declarado no lexico
@@ -18,36 +19,43 @@ char* yytext = ""; //declarado no lexico
 %}
 
 %union {
- char* strval;
+	char* strval;
 }
 
-%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEGIN END ATRIB TYPE_INT MAIN ANDBIT ORBIT
+%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEG END ATRIB TYPE_INT MAIN ANDBIT ORBIT PTVIR
 %token <strval> RELOP
 %token <strval> LOGOP
 %token <strval> INT
 %token <strval> ID
 
+%type <strval> nomeDecl
 
 
 %%
 
-programa:		MAIN BEGIN END;
+programa:		MAIN BEG comando END;
+comando: 		declaracao
+		| 	/*vazio*/;
+declaracao:		TYPE_INT nomeDecl PTVIR;
+nomeDecl:		ID {printf("VRI %s\n",$1);};
 
 
 %%
 
 int main(void) {
-yydebug=0;
-return yyparse();
+	yydebug=0;
+	return yyparse();
 }
-int yyerror(char *msg){
+
 //funcao de erro - imprime linha e coluna do erro sintatico
-int tk = YYTRANSLATE(yychar);
-if(strcmp("syntax error", msg) == 0){
-msg = "Erro Sintatico";
+int yyerror(char *msg){
+	int tk = YYTRANSLATE(yychar);
+	if(strcmp("syntax error", msg) == 0){
+		msg = "Erro Sintatico";
+	}
+	fprintf(stderr,"%s:\n",msg);
+	fprintf(stderr,"\tLinha %d, Coluna %d\n", line, col);
+	fprintf(stderr,"\tUltimo token lido: %s - %s\n",yytname[tk],yytext);
+	return 1;
 }
-fprintf(stderr,"%s:\n",msg);
-fprintf(stderr,"\tLinha %d, Coluna %d\n", line, col);
-fprintf(stderr,"\tUltimo token lido: %s - %s\n",yytname[tk],yytext);
-return 1;
-}
+
