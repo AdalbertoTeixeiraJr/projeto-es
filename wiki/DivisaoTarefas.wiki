@@ -24,14 +24,19 @@ Geração dos Analisadores Lexicos e Sintáticos
 ----
 ==User Storie 03==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Implementação geração de Código para Atribuição||Andrey||4h||-||
 ||Implementação geração de Código para Declaração||Daniel||2h||-||
 ||Preparação para Scripts de teste automático (CUNIT)||Adalberto||2h||-||
 
 ----
 ==User Storie 04==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Definição Estrutura de dados que servira como tabela de declaracoes||TODOS||1h|| - ||
+||Implementação geração de Código para Atribuição||Andrey||4h||-||
+||Definição Estrutura de dados que servira como tabela de declaracoes||Adalberto||1h|| - ||
 ||Implementação da Estrutura de Dados|| Daniel || 3h|| - ||
 
 ----
+
+==User Storie 05==
+||Tarefa||Alocação||Tempo Estimado||Tempo Real||
+||Geração de Código para AND||Andrey||4h|| - ||
+||Testes para Geração de Código|| Daniel || - ||
