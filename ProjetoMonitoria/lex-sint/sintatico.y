@@ -34,7 +34,7 @@ char* yytext = ""; //declarado no lexico
 %%
 
 programa:		MAIN BEG comando END;
-comando: 		declaracao
+comando: 		declaracao comando
 		| 	/*vazio*/;
 declaracao:		TYPE_INT nomeDecl PTVIR;
 nomeDecl:		ID {printf("VRI %s\n",$1);};

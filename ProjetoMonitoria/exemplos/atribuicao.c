@@ -1,5 +1,3 @@
-// Declaracao de Variavel
-
 main(){
 
 int var1;
