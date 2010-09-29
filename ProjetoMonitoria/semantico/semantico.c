@@ -9,9 +9,9 @@ int main()
   FILE *sint_out;
   char ch;
   int index = 0;
-  char lexico[128][16];
+  char lexico[128][16]; // EDA onde guardamos as ids das variaveis, a posicao que esta no array indica a posicao que ficara na memoria do processador
   char id[16];
-  char operacao[16] = "";
+  char operacao[3] = "";
   char palavra[16] = "";
   int indexPalavra = 0;
   char vazio[16] = "";
@@ -23,44 +23,28 @@ int main()
 	exit(1);
   }
 
-  while((ch = getc(sint_out)) != EOF) {
-  	
-	if(ch == ' ' && (strcmp(palavra,"") != 0) && (strcmp(operacao,"") == 0)) {
-		strcpy(operacao,palavra);
-		indexPalavra = 0;
-		strcpy(palavra,vazio);
-		continue;
-	}
-	if(ch == '\n' && (strcmp(palavra,"") != 0) && (strcmp(operacao,vazio) != 0)) {
-		strcpy(id,palavra);
-		//printf("id: %s\n",id);
-		indexPalavra = 0;
-		if(strcmp(operacao, "VRI") == 0) {
-			int j;
-			for(j=0;j<index+1;j++) {
-				if(strcmp(lexico[j], id) == 0) {
-					printf("Variavel %s ja declarada!\n", id);
-					exit(1);
-				}
+  while(!feof(sint_out)) {
+  	scanf(sint_out," %s",operacao);
+	
+	if(strcmp(operacao,"VRI")){
+		scanf(sint_out,"%s",&id);
+		int j;
+		for(j=0;j<index+1;j++) {
+			if(strcmp(lexico[j], id) == 0) {
+				printf("Variavel %s ja declarada!\n", id);
+				exit(1);
 			}
-			strcpy(lexico[index],id);
-			index+=1;
 		}
-		strcpy(operacao,vazio);
-		strcpy(palavra,vazio);
-		continue;
+		strcpy(lexico[index],id);
+		index+=1;
 	}
-	if(indexPalavra == 0) {
-		int p; for(p=0;p<16;p++) palavra[p]='\0'; 
-	}
-	palavra[indexPalavra] = ch;
-	indexPalavra+=1;
+
   }
 
-fclose(sint_out);
-int j;
-for(j=0;j<index;j++) {
-printf("%s\n",lexico[j]);
-}
+  fclose(sint_out);
+  int j;
+  for(j=0;j<index;j++) {
+  printf("%s\n",lexico[j]);
+  }
 }
 

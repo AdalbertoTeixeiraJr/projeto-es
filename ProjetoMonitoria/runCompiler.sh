@@ -20,7 +20,7 @@ for i in $@; do
 	cat $i | lex-sint/compiler 1> ${out}
 	# verifica ocorrencia de falha lexica/sintatica
 	if [ $? -eq 0 ]; then
-		echo "Iniciando analise semantica e geracao de codigo do arquivo $i"
+		echo "Pode iniciar analise semantica e geracao de codigo do arquivo $i"
 	else
 		echo "Não Concluido possui erro lexico ou sintatico"
 		mv ${out} ${out}.fail
