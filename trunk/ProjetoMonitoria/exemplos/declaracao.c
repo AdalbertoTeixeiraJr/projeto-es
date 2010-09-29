@@ -1,5 +1,5 @@
 main(){
 int var1;
-int var2;
+int var1;
 }
 
