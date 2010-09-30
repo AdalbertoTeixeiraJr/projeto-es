@@ -36,7 +36,6 @@ logop          "&&"|"||"
 if                  {updateCol();return IF;}
 else                {updateCol();return ELSE;}
 while               {updateCol();return WHILE;}
-do                  {updateCol();return DO;}
 "{"                 {updateCol();return BEG;}
 "}"                 {updateCol();return END;}
 "!"                 {updateCol();return NOT;}
