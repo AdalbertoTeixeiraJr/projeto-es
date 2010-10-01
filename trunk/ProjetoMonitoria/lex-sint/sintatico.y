@@ -28,43 +28,33 @@ char* yytext = ""; //declarado no lexico
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> nomeDecl expressaoIf expressaoUna expressaoMult expressaoAditiva expressaoLogica literalNum multiOp addOp unaOp
+%type <strval> nomeDecl expressaoLogica literalNum expressaoC
 
 
 %%
 
-programa:		MAIN BEG comando END;
-comando: 		declaracao comando
+programa	:	MAIN BEG comando END;
+comando		:	declaracao comando
 		| 	atribuicao comando 
-		|	expressaoC comando
-		|	/*vazio*/;
-declaracao:		TYPE_INT nomeDecl PTVIR;
-nomeDecl:		ID {printf("VRI %s\n",$1);};
-atribuicao: 		ID ATRIB literalNum PTVIR;
-expressaoC:		expressaoLogica
-;
-expressaoLogica: 	expressaoRelacional
-		|	expressaoRelacional LOGOP expressaoLogica {printf("VOB::%d,%d::\n",line,col);} 
-;
-expressaoRelacional:	expressaoAditiva
-		|	expressaoMult addOp expressaoAditiva {printf("VON::%d,%d::\n",line,col);} 
-;
-expressaoAditiva:	expressaoMult;
-addOp:			PLUS {$$="+";}| MINUS {$$="-";};
-expressaoMult:		expressaoUna
-		|	expressaoUna multiOp {printf("_CA::%d,%d::%s\n",line,col,$2);} expressaoMult {printf("VON\%d,%d::\n",line,col);}
-;
-multiOp:	 	MULT {$$="*";}| DIV {$$="/";};
-expressaoUna:		unaOp {printf("CRP::%d,%d::\n",line,col);}exprPrima {printf("VOU::%d,%d::%s\n",line,col,$1);};
-unaOp: 			NOT {$$="!";}| MINUS {$$="-";};
-exprPrima:		literalNum {printf("_CA::%d,%d::%s\n",line,col,$1);}
-		|	APAREN {printf("_CA::%d,%d::(\n",line,col);} expressaoC FPAREN{printf("_CA::%d,%d::)\n",line,col);} 
-		| 	expressaoIf{printf("IF::%d,%d::(\n",line,col);}
-		|	expressaoWhile{printf("WHILE::%d,%d::(\n",line,col);};
-expressaoIf:		IF APAREN expressaoC FPAREN BEG expressaoC END ELSE BEG expressaoC END PTVIR
-		|	IF APAREN expressaoC FPAREN BEG expressaoC END PTVIR;
-expressaoWhile:		WHILE APAREN expressaoC FPAREN BEG expressaoC END PTVIR;
-literalNum:		INT {printf("PIN::%d,%d::%s\n",line,col,$1); $$=$1;};
+		|	expressaoC
+		|	/*vazio*/
+		;
+declaracao	:	TYPE_INT nomeDecl PTVIR
+		;
+nomeDecl	:	ID {printf("VRI %s\n",$1);}
+		;
+atribuicao	:	ID ATRIB literalNum PTVIR
+		|	ID ATRIB ID PTVIR
+		;
+expressaoC	:	expressaoLogica 
+		;
+expressaoLogica	: 	termo LOGOP termo {printf("VOB::%d,%d::\n",line,col);} 
+		;
+termo		:	literalNum
+		|	ID
+		;
+literalNum	:	INT {printf("PIN::%d,%d::%s\n",line,col,$1); $$=$1;}
+		;
 
 
 %%

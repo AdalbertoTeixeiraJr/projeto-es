@@ -1,5 +1,3 @@
-// Comando IF
-
 main(){
 
 int var1;
