@@ -400,16 +400,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   7
+#define YYLAST   23
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  26
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  5
+#define YYNNTS  10
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  6
+#define YYNRULES  15
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  13
+#define YYNSTATES  29
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -457,20 +457,25 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     8,    11,    12,    16
+       0,     0,     3,     8,    11,    14,    16,    17,    21,    23,
+      28,    33,    35,    39,    41,    43
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
       27,     0,    -1,    18,    14,    28,    15,    -1,    29,    28,
-      -1,    -1,    17,    30,    21,    -1,    25,    -1
+      -1,    31,    28,    -1,    32,    -1,    -1,    17,    30,    21,
+      -1,    25,    -1,    25,    16,    35,    21,    -1,    25,    16,
+      25,    21,    -1,    33,    -1,    34,    23,    34,    -1,    35,
+      -1,    25,    -1,    24,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    36,    36,    37,    38,    39,    40
+       0,    36,    36,    37,    38,    39,    40,    42,    44,    46,
+      47,    49,    51,    53,    54,    56
 };
 #endif
 
@@ -483,7 +488,8 @@ static const char *const yytname[] =
   "MINUS", "PLUS", "MULT", "DIV", "APAREN", "FPAREN", "BEG", "END",
   "ATRIB", "TYPE_INT", "MAIN", "ANDBIT", "ORBIT", "PTVIR", "RELOP",
   "LOGOP", "INT", "ID", "$accept", "programa", "comando", "declaracao",
-  "nomeDecl", 0
+  "nomeDecl", "atribuicao", "expressaoC", "expressaoLogica", "termo",
+  "literalNum", 0
 };
 #endif
 
@@ -501,13 +507,15 @@ static const yytype_uint16 yytoknum[] =
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    26,    27,    28,    28,    29,    30
+       0,    26,    27,    28,    28,    28,    28,    29,    30,    31,
+      31,    32,    33,    34,    34,    35
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     4,     2,     0,     3,     1
+       0,     2,     4,     2,     2,     1,     0,     3,     1,     4,
+       4,     1,     3,     1,     1,     1
 };
 
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
@@ -515,29 +523,31 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     0,     0,     4,     1,     0,     0,     4,     6,     0,
-       2,     3,     5
+       0,     0,     0,     6,     1,     0,    15,    14,     0,     6,
+       6,     5,    11,     0,    13,     8,     0,     0,     2,     3,
+       4,     0,     7,     0,     0,    14,    12,    10,     9
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     6,     7,     9
+      -1,     2,     8,     9,    16,    10,    11,    12,    13,    14
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -22
+#define YYPACT_NINF -24
 static const yytype_int8 yypact[] =
 {
-     -18,   -13,     2,   -14,   -22,   -21,   -10,   -14,   -22,   -15,
-     -22,   -22,   -22
+      -9,    -3,    10,   -17,   -24,   -13,   -24,    -2,     0,   -17,
+     -17,   -24,   -24,   -10,   -24,   -24,    -5,   -23,   -24,   -24,
+     -24,   -21,   -24,    -1,     1,   -24,   -24,   -24,   -24
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -22,   -22,     0,   -22,   -22
+     -24,   -24,    -4,   -24,   -24,   -24,   -24,   -24,     2,     4
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -547,20 +557,25 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       1,     3,     4,     5,     8,    10,    12,    11
+       5,     6,    23,     6,    25,    19,    20,     6,     7,     1,
+       4,     3,    15,    21,    17,    18,    22,     0,     0,     0,
+      27,    24,    28,    26
 };
 
-static const yytype_uint8 yycheck[] =
+static const yytype_int8 yycheck[] =
 {
-      18,    14,     0,    17,    25,    15,    21,     7
+      17,    24,    25,    24,    25,     9,    10,    24,    25,    18,
+       0,    14,    25,    23,    16,    15,    21,    -1,    -1,    -1,
+      21,    17,    21,    21
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,    18,    27,    14,     0,    17,    28,    29,    25,    30,
-      15,    28,    21
+       0,    18,    27,    14,     0,    17,    24,    25,    28,    29,
+      31,    32,    33,    34,    35,    25,    30,    16,    15,    28,
+      28,    23,    21,    25,    35,    25,    34,    21,    21
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1371,17 +1386,31 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 6:
+        case 8:
 
 /* Line 1455 of yacc.c  */
-#line 40 "sintatico.y"
+#line 44 "sintatico.y"
     {printf("VRI %s\n",(yyvsp[(1) - (1)].strval));}
+    break;
+
+  case 12:
+
+/* Line 1455 of yacc.c  */
+#line 51 "sintatico.y"
+    {printf("VOB::%d,%d::\n",line,col);}
+    break;
+
+  case 15:
+
+/* Line 1455 of yacc.c  */
+#line 56 "sintatico.y"
+    {printf("PIN::%d,%d::%s\n",line,col,(yyvsp[(1) - (1)].strval)); (yyval.strval)=(yyvsp[(1) - (1)].strval);}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1385 "sintatico.c"
+#line 1414 "sintatico.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1593,7 +1622,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 43 "sintatico.y"
+#line 60 "sintatico.y"
 
 
 int main(void) {
