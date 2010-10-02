@@ -1,76 +1,101 @@
 Terminals unused in grammar
 
-   IF
-   ELSE
-   WHILE
    DO
-   NOT
-   MINUS
-   PLUS
-   MULT
-   DIV
-   APAREN
-   FPAREN
    ANDBIT
    ORBIT
-   RELOP
+
+
+State 22 conflicts: 1 shift/reduce
 
 
 Grammar
 
     0 $accept: programa $end
 
-    1 programa: MAIN BEG comando END
+    1 programa: MAIN bloco
 
-    2 comando: declaracao comando
-    3        | atribuicao comando
-    4        | expressaoC
-    5        | /* empty */
+    2 bloco: BEG comandos END
 
-    6 declaracao: TYPE_INT nomeDecl PTVIR
+    3 comandos: comando comandos
+    4         | /* empty */
 
-    7 nomeDecl: ID
+    5 comando: declaracao
+    6        | atribuicao
+    7        | expressaoC
 
-    8 atribuicao: ID ATRIB literalNum PTVIR
-    9           | ID ATRIB ID PTVIR
+    8 declaracao: TYPE_INT nomeDecl PTVIR
 
-   10 expressaoC: expressaoLogica
+    9 nomeDecl: ID
 
-   11 expressaoLogica: termo LOGOP termo
+   10 atribuicao: ID ATRIB literalNum PTVIR
+   11           | ID ATRIB ID PTVIR
 
-   12 termo: literalNum
-   13      | ID
+   12 expressaoC: expressaoLogica
 
-   14 literalNum: INT
+   13 expressaoLogica: expressaoRelacional
+   14                | expressaoRelacional LOGOP expressaoLogica
+
+   15 expressaoRelacional: expressaoAditiva
+   16                    | expressaoAditiva RELOP expressaoRelacional
+
+   17 expressaoAditiva: expressaoMult
+   18                 | expressaoMult addOp expressaoAditiva
+
+   19 addOp: PLUS
+   20      | MINUS
+
+   21 expressaoMult: expressaoUnaria
+   22              | expressaoUnaria multOp expressaoMult
+
+   23 multOp: MULT
+   24       | DIV
+
+   25 expressaoUnaria: expressaoPrimaria
+   26                | unaOp expressaoPrimaria PTVIR
+
+   27 unaOp: NOT
+   28      | MINUS
+
+   29 expressaoPrimaria: literalNum
+   30                  | APAREN expressaoC FPAREN
+   31                  | expressaoIf
+   32                  | expressaoWhile
+
+   33 literalNum: INT
+
+   34 expressaoIf: IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | IF APAREN expressaoC FPAREN bloco PTVIR
+
+   36 expressaoWhile: WHILE APAREN expressaoC FPAREN bloco PTVIR
 
 
 Terminals, with rules where they appear
 
 $end (0) 0
 error (256)
-IF (258)
-ELSE (259)
-WHILE (260)
+IF (258) 34 35
+ELSE (259) 34
+WHILE (260) 36
 DO (261)
-NOT (262)
-MINUS (263)
-PLUS (264)
-MULT (265)
-DIV (266)
-APAREN (267)
-FPAREN (268)
-BEG (269) 1
-END (270) 1
-ATRIB (271) 8 9
-TYPE_INT (272) 6
+NOT (262) 27
+MINUS (263) 20 28
+PLUS (264) 19
+MULT (265) 23
+DIV (266) 24
+APAREN (267) 30 34 35 36
+FPAREN (268) 30 34 35 36
+BEG (269) 2
+END (270) 2
+ATRIB (271) 10 11
+TYPE_INT (272) 8
 MAIN (273) 1
 ANDBIT (274)
 ORBIT (275)
-PTVIR (276) 6 8 9
-RELOP (277)
-LOGOP (278) 11
-INT (279) 14
-ID (280) 7 8 9 13
+PTVIR (276) 8 10 11 26 34 35 36
+RELOP (277) 16
+LOGOP (278) 14
+INT (279) 33
+ID (280) 9 10 11
 
 
 Nonterminals, with rules where they appear
@@ -79,28 +104,50 @@ $accept (26)
     on left: 0
 programa (27)
     on left: 1, on right: 0
-comando (28)
-    on left: 2 3 4 5, on right: 1 2 3
-declaracao (29)
-    on left: 6, on right: 2
-nomeDecl (30)
-    on left: 7, on right: 6
-atribuicao (31)
-    on left: 8 9, on right: 3
-expressaoC (32)
-    on left: 10, on right: 4
-expressaoLogica (33)
-    on left: 11, on right: 10
-termo (34)
-    on left: 12 13, on right: 11
-literalNum (35)
-    on left: 14, on right: 8 12
+bloco (28)
+    on left: 2, on right: 1 34 35 36
+comandos (29)
+    on left: 3 4, on right: 2 3
+comando (30)
+    on left: 5 6 7, on right: 3
+declaracao (31)
+    on left: 8, on right: 5
+nomeDecl (32)
+    on left: 9, on right: 8
+atribuicao (33)
+    on left: 10 11, on right: 6
+expressaoC (34)
+    on left: 12, on right: 7 30 34 35 36
+expressaoLogica (35)
+    on left: 13 14, on right: 12 14
+expressaoRelacional (36)
+    on left: 15 16, on right: 13 14 16
+expressaoAditiva (37)
+    on left: 17 18, on right: 15 16 18
+addOp (38)
+    on left: 19 20, on right: 18
+expressaoMult (39)
+    on left: 21 22, on right: 17 18 22
+multOp (40)
+    on left: 23 24, on right: 22
+expressaoUnaria (41)
+    on left: 25 26, on right: 21 22
+unaOp (42)
+    on left: 27 28, on right: 26
+expressaoPrimaria (43)
+    on left: 29 30 31 32, on right: 25 26
+literalNum (44)
+    on left: 33, on right: 10 29
+expressaoIf (45)
+    on left: 34 35, on right: 31
+expressaoWhile (46)
+    on left: 36, on right: 32
 
 
 state 0
 
     0 $accept: . programa $end
-    1 programa: . MAIN BEG comando END
+    1 programa: . MAIN bloco
 
     MAIN  shift, and go to state 1
 
@@ -109,286 +156,882 @@ state 0
 
 state 1
 
-    1 programa: MAIN . BEG comando END
+    1 programa: MAIN . bloco
+    2 bloco: . BEG comandos END
 
     BEG  shift, and go to state 3
+
+    bloco  go to state 4
 
 
 state 2
 
     0 $accept: programa . $end
 
-    $end  shift, and go to state 4
+    $end  shift, and go to state 5
 
 
 state 3
 
-    1 programa: MAIN BEG . comando END
-    2 comando: . declaracao comando
-    3        | . atribuicao comando
-    4        | . expressaoC
-    5        | .  [END]
-    6 declaracao: . TYPE_INT nomeDecl PTVIR
-    8 atribuicao: . ID ATRIB literalNum PTVIR
-    9           | . ID ATRIB ID PTVIR
-   10 expressaoC: . expressaoLogica
-   11 expressaoLogica: . termo LOGOP termo
-   12 termo: . literalNum
-   13      | . ID
-   14 literalNum: . INT
+    2 bloco: BEG . comandos END
+    3 comandos: . comando comandos
+    4         | .  [END]
+    5 comando: . declaracao
+    6        | . atribuicao
+    7        | . expressaoC
+    8 declaracao: . TYPE_INT nomeDecl PTVIR
+   10 atribuicao: . ID ATRIB literalNum PTVIR
+   11           | . ID ATRIB ID PTVIR
+   12 expressaoC: . expressaoLogica
+   13 expressaoLogica: . expressaoRelacional
+   14                | . expressaoRelacional LOGOP expressaoLogica
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
 
-    TYPE_INT  shift, and go to state 5
-    INT       shift, and go to state 6
-    ID        shift, and go to state 7
+    IF        shift, and go to state 6
+    WHILE     shift, and go to state 7
+    NOT       shift, and go to state 8
+    MINUS     shift, and go to state 9
+    APAREN    shift, and go to state 10
+    TYPE_INT  shift, and go to state 11
+    INT       shift, and go to state 12
+    ID        shift, and go to state 13
 
-    $default  reduce using rule 5 (comando)
+    $default  reduce using rule 4 (comandos)
 
-    comando          go to state 8
-    declaracao       go to state 9
-    atribuicao       go to state 10
-    expressaoC       go to state 11
-    expressaoLogica  go to state 12
-    termo            go to state 13
-    literalNum       go to state 14
+    comandos             go to state 14
+    comando              go to state 15
+    declaracao           go to state 16
+    atribuicao           go to state 17
+    expressaoC           go to state 18
+    expressaoLogica      go to state 19
+    expressaoRelacional  go to state 20
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
 
 
 state 4
+
+    1 programa: MAIN bloco .
+
+    $default  reduce using rule 1 (programa)
+
+
+state 5
 
     0 $accept: programa $end .
 
     $default  accept
 
 
-state 5
-
-    6 declaracao: TYPE_INT . nomeDecl PTVIR
-    7 nomeDecl: . ID
-
-    ID  shift, and go to state 15
-
-    nomeDecl  go to state 16
-
-
 state 6
 
-   14 literalNum: INT .
+   34 expressaoIf: IF . APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | IF . APAREN expressaoC FPAREN bloco PTVIR
 
-    $default  reduce using rule 14 (literalNum)
+    APAREN  shift, and go to state 29
 
 
 state 7
 
-    8 atribuicao: ID . ATRIB literalNum PTVIR
-    9           | ID . ATRIB ID PTVIR
-   13 termo: ID .  [LOGOP]
+   36 expressaoWhile: WHILE . APAREN expressaoC FPAREN bloco PTVIR
 
-    ATRIB  shift, and go to state 17
-
-    $default  reduce using rule 13 (termo)
+    APAREN  shift, and go to state 30
 
 
 state 8
 
-    1 programa: MAIN BEG comando . END
+   27 unaOp: NOT .
 
-    END  shift, and go to state 18
+    $default  reduce using rule 27 (unaOp)
 
 
 state 9
 
-    2 comando: . declaracao comando
-    2        | declaracao . comando
-    3        | . atribuicao comando
-    4        | . expressaoC
-    5        | .  [END]
-    6 declaracao: . TYPE_INT nomeDecl PTVIR
-    8 atribuicao: . ID ATRIB literalNum PTVIR
-    9           | . ID ATRIB ID PTVIR
-   10 expressaoC: . expressaoLogica
-   11 expressaoLogica: . termo LOGOP termo
-   12 termo: . literalNum
-   13      | . ID
-   14 literalNum: . INT
+   28 unaOp: MINUS .
 
-    TYPE_INT  shift, and go to state 5
-    INT       shift, and go to state 6
-    ID        shift, and go to state 7
-
-    $default  reduce using rule 5 (comando)
-
-    comando          go to state 19
-    declaracao       go to state 9
-    atribuicao       go to state 10
-    expressaoC       go to state 11
-    expressaoLogica  go to state 12
-    termo            go to state 13
-    literalNum       go to state 14
+    $default  reduce using rule 28 (unaOp)
 
 
 state 10
 
-    2 comando: . declaracao comando
-    3        | . atribuicao comando
-    3        | atribuicao . comando
-    4        | . expressaoC
-    5        | .  [END]
-    6 declaracao: . TYPE_INT nomeDecl PTVIR
-    8 atribuicao: . ID ATRIB literalNum PTVIR
-    9           | . ID ATRIB ID PTVIR
-   10 expressaoC: . expressaoLogica
-   11 expressaoLogica: . termo LOGOP termo
-   12 termo: . literalNum
-   13      | . ID
-   14 literalNum: . INT
+   12 expressaoC: . expressaoLogica
+   13 expressaoLogica: . expressaoRelacional
+   14                | . expressaoRelacional LOGOP expressaoLogica
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   30                  | APAREN . expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
 
-    TYPE_INT  shift, and go to state 5
-    INT       shift, and go to state 6
-    ID        shift, and go to state 7
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
 
-    $default  reduce using rule 5 (comando)
-
-    comando          go to state 20
-    declaracao       go to state 9
-    atribuicao       go to state 10
-    expressaoC       go to state 11
-    expressaoLogica  go to state 12
-    termo            go to state 13
-    literalNum       go to state 14
+    expressaoC           go to state 31
+    expressaoLogica      go to state 19
+    expressaoRelacional  go to state 20
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
 
 
 state 11
 
-    4 comando: expressaoC .
+    8 declaracao: TYPE_INT . nomeDecl PTVIR
+    9 nomeDecl: . ID
 
-    $default  reduce using rule 4 (comando)
+    ID  shift, and go to state 32
+
+    nomeDecl  go to state 33
 
 
 state 12
 
-   10 expressaoC: expressaoLogica .
+   33 literalNum: INT .
 
-    $default  reduce using rule 10 (expressaoC)
+    $default  reduce using rule 33 (literalNum)
 
 
 state 13
 
-   11 expressaoLogica: termo . LOGOP termo
+   10 atribuicao: ID . ATRIB literalNum PTVIR
+   11           | ID . ATRIB ID PTVIR
 
-    LOGOP  shift, and go to state 21
+    ATRIB  shift, and go to state 34
 
 
 state 14
 
-   12 termo: literalNum .
+    2 bloco: BEG comandos . END
 
-    $default  reduce using rule 12 (termo)
+    END  shift, and go to state 35
 
 
 state 15
 
-    7 nomeDecl: ID .
+    3 comandos: . comando comandos
+    3         | comando . comandos
+    4         | .  [END]
+    5 comando: . declaracao
+    6        | . atribuicao
+    7        | . expressaoC
+    8 declaracao: . TYPE_INT nomeDecl PTVIR
+   10 atribuicao: . ID ATRIB literalNum PTVIR
+   11           | . ID ATRIB ID PTVIR
+   12 expressaoC: . expressaoLogica
+   13 expressaoLogica: . expressaoRelacional
+   14                | . expressaoRelacional LOGOP expressaoLogica
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
 
-    $default  reduce using rule 7 (nomeDecl)
+    IF        shift, and go to state 6
+    WHILE     shift, and go to state 7
+    NOT       shift, and go to state 8
+    MINUS     shift, and go to state 9
+    APAREN    shift, and go to state 10
+    TYPE_INT  shift, and go to state 11
+    INT       shift, and go to state 12
+    ID        shift, and go to state 13
+
+    $default  reduce using rule 4 (comandos)
+
+    comandos             go to state 36
+    comando              go to state 15
+    declaracao           go to state 16
+    atribuicao           go to state 17
+    expressaoC           go to state 18
+    expressaoLogica      go to state 19
+    expressaoRelacional  go to state 20
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
 
 
 state 16
 
-    6 declaracao: TYPE_INT nomeDecl . PTVIR
+    5 comando: declaracao .
 
-    PTVIR  shift, and go to state 22
+    $default  reduce using rule 5 (comando)
 
 
 state 17
 
-    8 atribuicao: ID ATRIB . literalNum PTVIR
-    9           | ID ATRIB . ID PTVIR
-   14 literalNum: . INT
+    6 comando: atribuicao .
 
-    INT  shift, and go to state 6
-    ID   shift, and go to state 23
-
-    literalNum  go to state 24
+    $default  reduce using rule 6 (comando)
 
 
 state 18
 
-    1 programa: MAIN BEG comando END .
+    7 comando: expressaoC .
 
-    $default  reduce using rule 1 (programa)
+    $default  reduce using rule 7 (comando)
 
 
 state 19
 
-    2 comando: declaracao comando .
+   12 expressaoC: expressaoLogica .
 
-    $default  reduce using rule 2 (comando)
+    $default  reduce using rule 12 (expressaoC)
 
 
 state 20
 
-    3 comando: atribuicao comando .
+   13 expressaoLogica: expressaoRelacional .  [IF, WHILE, NOT, MINUS, APAREN, FPAREN, END, TYPE_INT, INT, ID]
+   14                | expressaoRelacional . LOGOP expressaoLogica
 
-    $default  reduce using rule 3 (comando)
+    LOGOP  shift, and go to state 37
+
+    $default  reduce using rule 13 (expressaoLogica)
 
 
 state 21
 
-   11 expressaoLogica: termo LOGOP . termo
-   12 termo: . literalNum
-   13      | . ID
-   14 literalNum: . INT
+   15 expressaoRelacional: expressaoAditiva .  [IF, WHILE, NOT, MINUS, APAREN, FPAREN, END, TYPE_INT, LOGOP, INT, ID]
+   16                    | expressaoAditiva . RELOP expressaoRelacional
 
-    INT  shift, and go to state 6
-    ID   shift, and go to state 25
+    RELOP  shift, and go to state 38
 
-    termo       go to state 26
-    literalNum  go to state 14
+    $default  reduce using rule 15 (expressaoRelacional)
 
 
 state 22
 
-    6 declaracao: TYPE_INT nomeDecl PTVIR .
+   17 expressaoAditiva: expressaoMult .  [IF, WHILE, NOT, MINUS, APAREN, FPAREN, END, TYPE_INT, RELOP, LOGOP, INT, ID]
+   18                 | expressaoMult . addOp expressaoAditiva
+   19 addOp: . PLUS
+   20      | . MINUS
 
-    $default  reduce using rule 6 (declaracao)
+    MINUS  shift, and go to state 39
+    PLUS   shift, and go to state 40
+
+    MINUS     [reduce using rule 17 (expressaoAditiva)]
+    $default  reduce using rule 17 (expressaoAditiva)
+
+    addOp  go to state 41
 
 
 state 23
 
-    9 atribuicao: ID ATRIB ID . PTVIR
+   21 expressaoMult: expressaoUnaria .  [IF, WHILE, NOT, MINUS, PLUS, APAREN, FPAREN, END, TYPE_INT, RELOP, LOGOP, INT, ID]
+   22              | expressaoUnaria . multOp expressaoMult
+   23 multOp: . MULT
+   24       | . DIV
 
-    PTVIR  shift, and go to state 27
+    MULT  shift, and go to state 42
+    DIV   shift, and go to state 43
+
+    $default  reduce using rule 21 (expressaoMult)
+
+    multOp  go to state 44
 
 
 state 24
 
-    8 atribuicao: ID ATRIB literalNum . PTVIR
+   26 expressaoUnaria: unaOp . expressaoPrimaria PTVIR
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
 
-    PTVIR  shift, and go to state 28
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoPrimaria  go to state 45
+    literalNum         go to state 26
+    expressaoIf        go to state 27
+    expressaoWhile     go to state 28
 
 
 state 25
 
-   13 termo: ID .
+   25 expressaoUnaria: expressaoPrimaria .
 
-    $default  reduce using rule 13 (termo)
+    $default  reduce using rule 25 (expressaoUnaria)
 
 
 state 26
 
-   11 expressaoLogica: termo LOGOP termo .
+   29 expressaoPrimaria: literalNum .
 
-    $default  reduce using rule 11 (expressaoLogica)
+    $default  reduce using rule 29 (expressaoPrimaria)
 
 
 state 27
 
-    9 atribuicao: ID ATRIB ID PTVIR .
+   31 expressaoPrimaria: expressaoIf .
 
-    $default  reduce using rule 9 (atribuicao)
+    $default  reduce using rule 31 (expressaoPrimaria)
 
 
 state 28
 
-    8 atribuicao: ID ATRIB literalNum PTVIR .
+   32 expressaoPrimaria: expressaoWhile .
 
-    $default  reduce using rule 8 (atribuicao)
+    $default  reduce using rule 32 (expressaoPrimaria)
+
+
+state 29
+
+   12 expressaoC: . expressaoLogica
+   13 expressaoLogica: . expressaoRelacional
+   14                | . expressaoRelacional LOGOP expressaoLogica
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   34            | IF APAREN . expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   35            | IF APAREN . expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
+
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoC           go to state 46
+    expressaoLogica      go to state 19
+    expressaoRelacional  go to state 20
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
+
+
+state 30
+
+   12 expressaoC: . expressaoLogica
+   13 expressaoLogica: . expressaoRelacional
+   14                | . expressaoRelacional LOGOP expressaoLogica
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
+   36               | WHILE APAREN . expressaoC FPAREN bloco PTVIR
+
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoC           go to state 47
+    expressaoLogica      go to state 19
+    expressaoRelacional  go to state 20
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
+
+
+state 31
+
+   30 expressaoPrimaria: APAREN expressaoC . FPAREN
+
+    FPAREN  shift, and go to state 48
+
+
+state 32
+
+    9 nomeDecl: ID .
+
+    $default  reduce using rule 9 (nomeDecl)
+
+
+state 33
+
+    8 declaracao: TYPE_INT nomeDecl . PTVIR
+
+    PTVIR  shift, and go to state 49
+
+
+state 34
+
+   10 atribuicao: ID ATRIB . literalNum PTVIR
+   11           | ID ATRIB . ID PTVIR
+   33 literalNum: . INT
+
+    INT  shift, and go to state 12
+    ID   shift, and go to state 50
+
+    literalNum  go to state 51
+
+
+state 35
+
+    2 bloco: BEG comandos END .
+
+    $default  reduce using rule 2 (bloco)
+
+
+state 36
+
+    3 comandos: comando comandos .
+
+    $default  reduce using rule 3 (comandos)
+
+
+state 37
+
+   13 expressaoLogica: . expressaoRelacional
+   14                | . expressaoRelacional LOGOP expressaoLogica
+   14                | expressaoRelacional LOGOP . expressaoLogica
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
+
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoLogica      go to state 52
+    expressaoRelacional  go to state 20
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
+
+
+state 38
+
+   15 expressaoRelacional: . expressaoAditiva
+   16                    | . expressaoAditiva RELOP expressaoRelacional
+   16                    | expressaoAditiva RELOP . expressaoRelacional
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
+
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoRelacional  go to state 53
+    expressaoAditiva     go to state 21
+    expressaoMult        go to state 22
+    expressaoUnaria      go to state 23
+    unaOp                go to state 24
+    expressaoPrimaria    go to state 25
+    literalNum           go to state 26
+    expressaoIf          go to state 27
+    expressaoWhile       go to state 28
+
+
+state 39
+
+   20 addOp: MINUS .
+
+    $default  reduce using rule 20 (addOp)
+
+
+state 40
+
+   19 addOp: PLUS .
+
+    $default  reduce using rule 19 (addOp)
+
+
+state 41
+
+   17 expressaoAditiva: . expressaoMult
+   18                 | . expressaoMult addOp expressaoAditiva
+   18                 | expressaoMult addOp . expressaoAditiva
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
+
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoAditiva   go to state 54
+    expressaoMult      go to state 22
+    expressaoUnaria    go to state 23
+    unaOp              go to state 24
+    expressaoPrimaria  go to state 25
+    literalNum         go to state 26
+    expressaoIf        go to state 27
+    expressaoWhile     go to state 28
+
+
+state 42
+
+   23 multOp: MULT .
+
+    $default  reduce using rule 23 (multOp)
+
+
+state 43
+
+   24 multOp: DIV .
+
+    $default  reduce using rule 24 (multOp)
+
+
+state 44
+
+   21 expressaoMult: . expressaoUnaria
+   22              | . expressaoUnaria multOp expressaoMult
+   22              | expressaoUnaria multOp . expressaoMult
+   25 expressaoUnaria: . expressaoPrimaria
+   26                | . unaOp expressaoPrimaria PTVIR
+   27 unaOp: . NOT
+   28      | . MINUS
+   29 expressaoPrimaria: . literalNum
+   30                  | . APAREN expressaoC FPAREN
+   31                  | . expressaoIf
+   32                  | . expressaoWhile
+   33 literalNum: . INT
+   34 expressaoIf: . IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+   35            | . IF APAREN expressaoC FPAREN bloco PTVIR
+   36 expressaoWhile: . WHILE APAREN expressaoC FPAREN bloco PTVIR
+
+    IF      shift, and go to state 6
+    WHILE   shift, and go to state 7
+    NOT     shift, and go to state 8
+    MINUS   shift, and go to state 9
+    APAREN  shift, and go to state 10
+    INT     shift, and go to state 12
+
+    expressaoMult      go to state 55
+    expressaoUnaria    go to state 23
+    unaOp              go to state 24
+    expressaoPrimaria  go to state 25
+    literalNum         go to state 26
+    expressaoIf        go to state 27
+    expressaoWhile     go to state 28
+
+
+state 45
+
+   26 expressaoUnaria: unaOp expressaoPrimaria . PTVIR
+
+    PTVIR  shift, and go to state 56
+
+
+state 46
+
+   34 expressaoIf: IF APAREN expressaoC . FPAREN bloco ELSE bloco PTVIR
+   35            | IF APAREN expressaoC . FPAREN bloco PTVIR
+
+    FPAREN  shift, and go to state 57
+
+
+state 47
+
+   36 expressaoWhile: WHILE APAREN expressaoC . FPAREN bloco PTVIR
+
+    FPAREN  shift, and go to state 58
+
+
+state 48
+
+   30 expressaoPrimaria: APAREN expressaoC FPAREN .
+
+    $default  reduce using rule 30 (expressaoPrimaria)
+
+
+state 49
+
+    8 declaracao: TYPE_INT nomeDecl PTVIR .
+
+    $default  reduce using rule 8 (declaracao)
+
+
+state 50
+
+   11 atribuicao: ID ATRIB ID . PTVIR
+
+    PTVIR  shift, and go to state 59
+
+
+state 51
+
+   10 atribuicao: ID ATRIB literalNum . PTVIR
+
+    PTVIR  shift, and go to state 60
+
+
+state 52
+
+   14 expressaoLogica: expressaoRelacional LOGOP expressaoLogica .
+
+    $default  reduce using rule 14 (expressaoLogica)
+
+
+state 53
+
+   16 expressaoRelacional: expressaoAditiva RELOP expressaoRelacional .
+
+    $default  reduce using rule 16 (expressaoRelacional)
+
+
+state 54
+
+   18 expressaoAditiva: expressaoMult addOp expressaoAditiva .
+
+    $default  reduce using rule 18 (expressaoAditiva)
+
+
+state 55
+
+   22 expressaoMult: expressaoUnaria multOp expressaoMult .
+
+    $default  reduce using rule 22 (expressaoMult)
+
+
+state 56
+
+   26 expressaoUnaria: unaOp expressaoPrimaria PTVIR .
+
+    $default  reduce using rule 26 (expressaoUnaria)
+
+
+state 57
+
+    2 bloco: . BEG comandos END
+   34 expressaoIf: IF APAREN expressaoC FPAREN . bloco ELSE bloco PTVIR
+   35            | IF APAREN expressaoC FPAREN . bloco PTVIR
+
+    BEG  shift, and go to state 3
+
+    bloco  go to state 61
+
+
+state 58
+
+    2 bloco: . BEG comandos END
+   36 expressaoWhile: WHILE APAREN expressaoC FPAREN . bloco PTVIR
+
+    BEG  shift, and go to state 3
+
+    bloco  go to state 62
+
+
+state 59
+
+   11 atribuicao: ID ATRIB ID PTVIR .
+
+    $default  reduce using rule 11 (atribuicao)
+
+
+state 60
+
+   10 atribuicao: ID ATRIB literalNum PTVIR .
+
+    $default  reduce using rule 10 (atribuicao)
+
+
+state 61
+
+   34 expressaoIf: IF APAREN expressaoC FPAREN bloco . ELSE bloco PTVIR
+   35            | IF APAREN expressaoC FPAREN bloco . PTVIR
+
+    ELSE   shift, and go to state 63
+    PTVIR  shift, and go to state 64
+
+
+state 62
+
+   36 expressaoWhile: WHILE APAREN expressaoC FPAREN bloco . PTVIR
+
+    PTVIR  shift, and go to state 65
+
+
+state 63
+
+    2 bloco: . BEG comandos END
+   34 expressaoIf: IF APAREN expressaoC FPAREN bloco ELSE . bloco PTVIR
+
+    BEG  shift, and go to state 3
+
+    bloco  go to state 66
+
+
+state 64
+
+   35 expressaoIf: IF APAREN expressaoC FPAREN bloco PTVIR .
+
+    $default  reduce using rule 35 (expressaoIf)
+
+
+state 65
+
+   36 expressaoWhile: WHILE APAREN expressaoC FPAREN bloco PTVIR .
+
+    $default  reduce using rule 36 (expressaoWhile)
+
+
+state 66
+
+   34 expressaoIf: IF APAREN expressaoC FPAREN bloco ELSE bloco . PTVIR
+
+    PTVIR  shift, and go to state 67
+
+
+state 67
+
+   34 expressaoIf: IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR .
+
+    $default  reduce using rule 34 (expressaoIf)
