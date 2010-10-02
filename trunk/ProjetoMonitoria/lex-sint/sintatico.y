@@ -28,16 +28,20 @@ char* yytext = ""; //declarado no lexico
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> nomeDecl expressaoLogica literalNum expressaoC
+%type <strval> literalNum multOp addOp unaOp nomeDecl
 
 
 %%
 
-programa	:	MAIN BEG comando END;
-comando		:	declaracao comando
-		| 	atribuicao comando 
+programa	:	MAIN bloco
+		;
+bloco		:	BEG comandos END
+		;
+comandos	:	comando comandos
+		|	/*vazio*/;
+comando		:	declaracao
+		| 	atribuicao 
 		|	expressaoC
-		|	/*vazio*/
 		;
 declaracao	:	TYPE_INT nomeDecl PTVIR
 		;
@@ -46,16 +50,39 @@ nomeDecl	:	ID {printf("VRI %s\n",$1);}
 atribuicao	:	ID ATRIB literalNum PTVIR
 		|	ID ATRIB ID PTVIR
 		;
-expressaoC	:	expressaoLogica 
+expressaoC	:	expressaoLogica
 		;
-expressaoLogica	: 	termo LOGOP termo {printf("VOB::%d,%d::\n",line,col);} 
+expressaoLogica	: 	expressaoRelacional
+		|	expressaoRelacional LOGOP expressaoLogica 
 		;
-termo		:	literalNum
-		|	ID
+expressaoRelacional:	expressaoAditiva
+		|	expressaoAditiva RELOP expressaoRelacional
 		;
-literalNum	:	INT {printf("PIN::%d,%d::%s\n",line,col,$1); $$=$1;}
+expressaoAditiva:	expressaoMult
+		|	expressaoMult addOp  expressaoAditiva
 		;
-
+addOp		:	PLUS {$$="+";}| MINUS {$$="-";}
+		;
+expressaoMult	:	expressaoUnaria
+		|	expressaoUnaria multOp expressaoMult
+		;
+multOp		: 	MULT {$$="*";}| DIV {$$="/";};
+expressaoUnaria	:	expressaoPrimaria 
+		|	unaOp expressaoPrimaria PTVIR
+		;
+unaOp		:	NOT {$$="!";}| MINUS {$$="-";}
+		;
+expressaoPrimaria:	literalNum
+		|	APAREN expressaoC FPAREN
+		|	expressaoIf
+		|	expressaoWhile
+		;
+literalNum	:	INT {$$=$1;}
+		;
+expressaoIf	:	IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
+		|	IF APAREN expressaoC FPAREN bloco PTVIR;
+expressaoWhile	:	WHILE APAREN expressaoC FPAREN bloco PTVIR
+		;
 
 %%
 
