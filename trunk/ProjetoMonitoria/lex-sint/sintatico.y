@@ -30,58 +30,59 @@ char* yytext = ""; //declarado no lexico
 
 %type <strval> literalNum multOp addOp unaOp nomeDecl
 
-
 %%
 
-programa	:	MAIN bloco
+
+
+programa	:	MAIN BEG comando END
 		;
-bloco		:	BEG comandos END
+comando		:	expressao PTVIR
+		|	PTVIR
+		|	comandoComposto	
+		|	comandoIf
+		|	comandoWhile
 		;
-comandos	:	comando comandos
-		|	/*vazio*/;
-comando		:	declaracao
-		| 	atribuicao 
-		|	expressaoC
-		;
+comandoComposto	:	BEG comando END
+		|	BEG declaracao END
+		|	BEG END
+		;	
 declaracao	:	TYPE_INT nomeDecl PTVIR
 		;
 nomeDecl	:	ID {printf("VRI %s\n",$1);}
 		;
-atribuicao	:	ID ATRIB literalNum PTVIR
-		|	ID ATRIB ID PTVIR
+expressao	:	expressaoAtribuicao
 		;
-expressaoC	:	expressaoLogica
+expressaoAtribuicao:	expressaoCondicional
+		|	expressaoUnaria ATRIB expressaoCondicional
 		;
-expressaoLogica	: 	expressaoRelacional
-		|	expressaoRelacional LOGOP expressaoLogica 
+expressaoCondicional:	logicaOuExpressao
+		|	logicaOuExpressao '?' expressao ':' logicaOuExpressao
 		;
-expressaoRelacional:	expressaoAditiva
-		|	expressaoAditiva RELOP expressaoRelacional
+logicaOuExpressao:	expressaoUnaria
+		|	expressaoUnaria LOGOP expressaoUnaria
+		|	expressaoUnaria RELOP expressaoUnaria
+		|	expressaoUnaria ORBIT expressaoUnaria
+		|	expressaoUnaria ANDBIT expressaoUnaria
+		|	expressaoUnaria addOp expressaoUnaria
+		|	expressaoUnaria multOp expressaoUnaria
 		;
-expressaoAditiva:	expressaoMult
-		|	expressaoMult addOp  expressaoAditiva
+expressaoUnaria	:	ID
+		|	literalNum
+		|	APAREN expressao FPAREN
+		|	unaOp expressaoUnaria
 		;
 addOp		:	PLUS {$$="+";}| MINUS {$$="-";}
 		;
-expressaoMult	:	expressaoUnaria
-		|	expressaoUnaria multOp expressaoMult
-		;
-multOp		: 	MULT {$$="*";}| DIV {$$="/";};
-expressaoUnaria	:	expressaoPrimaria 
-		|	unaOp expressaoPrimaria PTVIR
+multOp		: 	MULT {$$="*";}| DIV {$$="/";}
 		;
 unaOp		:	NOT {$$="!";}| MINUS {$$="-";}
 		;
-expressaoPrimaria:	literalNum
-		|	APAREN expressaoC FPAREN
-		|	expressaoIf
-		|	expressaoWhile
-		;
 literalNum	:	INT {$$=$1;}
 		;
-expressaoIf	:	IF APAREN expressaoC FPAREN bloco ELSE bloco PTVIR
-		|	IF APAREN expressaoC FPAREN bloco PTVIR;
-expressaoWhile	:	WHILE APAREN expressaoC FPAREN bloco PTVIR
+comandoIf	:	IF APAREN expressao FPAREN comando ELSE comando
+		|	IF APAREN expressao FPAREN comando PTVIR
+		;
+comandoWhile	:	WHILE APAREN expressao FPAREN comando
 		;
 
 %%
