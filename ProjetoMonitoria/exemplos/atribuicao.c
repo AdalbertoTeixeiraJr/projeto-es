@@ -1,14 +1,9 @@
 main(){
 
 int var1;
-int var2;
+int x;
 
 var1 = 10;
-
-
-var2 = 12;
-
-
 
 
 

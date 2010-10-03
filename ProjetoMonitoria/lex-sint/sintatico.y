@@ -28,13 +28,13 @@ char* yytext = ""; //declarado no lexico
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> literalNum multOp addOp unaOp nomeDecl
+%type <strval> literalNum multOp addOp unaOp nomeDecl operadorAtribuicao literalId
 
 %%
 
 
 
-programa	:	MAIN BEG comando END
+programa	:	MAIN comando
 		;
 comando		:	expressao PTVIR
 		|	PTVIR
@@ -46,14 +46,19 @@ comandoComposto	:	BEG comando END
 		|	BEG declaracao END
 		|	BEG END
 		;	
-declaracao	:	TYPE_INT nomeDecl PTVIR
+declaracao	:	tipoDeclaracao nomeDecl PTVIR
+		|	declaracao comando;
+		;
+tipoDeclaracao	:	TYPE_INT
 		;
 nomeDecl	:	ID {printf("VRI %s\n",$1);}
 		;
 expressao	:	expressaoAtribuicao
 		;
 expressaoAtribuicao:	expressaoCondicional
-		|	expressaoUnaria ATRIB expressaoCondicional
+		|	expressaoUnaria operadorAtribuicao expressaoCondicional
+		;
+operadorAtribuicao:	ATRIB {$$="=";}
 		;
 expressaoCondicional:	logicaOuExpressao
 		|	logicaOuExpressao '?' expressao ':' logicaOuExpressao
@@ -66,7 +71,7 @@ logicaOuExpressao:	expressaoUnaria
 		|	expressaoUnaria addOp expressaoUnaria
 		|	expressaoUnaria multOp expressaoUnaria
 		;
-expressaoUnaria	:	ID
+expressaoUnaria	:	literalId
 		|	literalNum
 		|	APAREN expressao FPAREN
 		|	unaOp expressaoUnaria
@@ -78,6 +83,8 @@ multOp		: 	MULT {$$="*";}| DIV {$$="/";}
 unaOp		:	NOT {$$="!";}| MINUS {$$="-";}
 		;
 literalNum	:	INT {$$=$1;}
+		;
+literalId	:	ID {$$=$1;}
 		;
 comandoIf	:	IF APAREN expressao FPAREN comando ELSE comando
 		|	IF APAREN expressao FPAREN comando PTVIR
