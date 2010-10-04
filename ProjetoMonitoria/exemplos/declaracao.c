@@ -6,7 +6,7 @@ else a=2;
 
 while(1) {
  if (var) a=1;
- var=1;
+ else c = d;
 }
 
 }

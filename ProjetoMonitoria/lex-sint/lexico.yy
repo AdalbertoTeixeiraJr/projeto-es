@@ -55,9 +55,6 @@ while               {updateCol();return WHILE;}
 {logop}             {updateCol();yylval.strval = strdup(yytext);return LOGOP;}
 {id}                {updateCol();yylval.strval = strdup(yytext);return ID;}
 {int}               {updateCol();yylval.strval = strdup(yytext);return INT;}
-.		{char msg[25];
-		 sprintf(msg,"Erro Léxico <%s>",yytext);
-		 yyerror(msg);}
 %%
 
 void updateLine(){
