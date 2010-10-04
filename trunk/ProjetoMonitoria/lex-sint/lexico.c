@@ -286,11 +286,11 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 26
-#define YY_END_OF_BUFFER 27
+#define YY_NUM_RULES 25
+#define YY_END_OF_BUFFER 26
 static yyconst short int yy_accept[50] =
     {   0,
-        0,    0,   27,   25,    1,    2,    8,   16,   13,   14,
+        0,    0,   26,   25,    1,    2,    8,   16,   13,   14,
        11,   10,    9,   12,   24,   20,   21,   15,   21,   23,
        23,   23,   23,   23,    6,   17,    7,    1,   21,   22,
        24,   23,   23,   23,    3,   23,   23,   23,   23,   18,
@@ -793,16 +793,9 @@ YY_RULE_SETUP
 case 25:
 YY_RULE_SETUP
 #line 58 "lexico.yy"
-{char msg[25];
-		 sprintf(msg,"Erro Léxico <%s>",yytext);
-		 yyerror(msg);}
-	YY_BREAK
-case 26:
-YY_RULE_SETUP
-#line 61 "lexico.yy"
 ECHO;
 	YY_BREAK
-#line 806 "lexico.c"
+#line 799 "lexico.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1692,7 +1685,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 61 "lexico.yy"
+#line 58 "lexico.yy"
 
 
 void updateLine(){
