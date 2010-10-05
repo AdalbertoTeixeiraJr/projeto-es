@@ -24,10 +24,10 @@ int main()
   }
 
   while(!feof(sint_out)) {
-  	scanf(sint_out," %s",operacao);
-	
+  	fscanf(sint_out," %s",operacao);
+
 	if(strcmp(operacao,"VRI")){
-		scanf(sint_out,"%s",&id);
+		fscanf(sint_out,"%s",&id);
 		int j;
 		for(j=0;j<index+1;j++) {
 			if(strcmp(lexico[j], id) == 0) {
