@@ -6,12 +6,13 @@ var1 = 10;
 
 var1 = !(1);
 
-if (var1) x =1 ;
-else x=2;
+if (var1>1) x =1 ;
+else ;
 
 x = a &&  b;
 y = C || D;
 
 z = x | y;
+w = z & x;
 
 }

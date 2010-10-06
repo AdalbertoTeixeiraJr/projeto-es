@@ -3,6 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+char operacao[3];
+char variavel[16];
+int valor[16];
+
+void separador(){
+
+
+}
 
 int main()
 {
@@ -25,9 +33,9 @@ int main()
 
   while(!feof(sint_out)) {
   	fscanf(sint_out," %s",operacao);
-
+	
 	if(strcmp(operacao,"VRI")){
-		fscanf(sint_out,"%s",&id);
+		fscanf(sint_out,"%s", &id);
 		int j;
 		for(j=0;j<index+1;j++) {
 			if(strcmp(lexico[j], id) == 0) {
