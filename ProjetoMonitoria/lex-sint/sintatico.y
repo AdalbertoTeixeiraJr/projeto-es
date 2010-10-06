@@ -28,7 +28,7 @@ char* yytext = ""; //declarado no lexico
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> literalNum multOp addOp unaOp nomeDecl operadorAtribuicao literalId andOrBit interrog dpt ptvir
+%type <strval> literalNum multOp addOp unaOp nomeDecl operadorAtribuicao literalId andOrBit interrog dpt ptvir literalIdpt literalNumpt
 %%
 
 
@@ -46,34 +46,35 @@ comandoComposto	:	BEG comando END
 		|	BEG declaracao END
 		|	BEG END
 		;	
-declaracao	:	tipoDeclaracao nomeDecl ptvir{printf("VRI %s\n",$2);}
-		|	declaracao comando;
+declaracao	:	tipoDeclaracao nomeDecl ptvir
+		|	declaracao comando
 		;
 tipoDeclaracao	:	TYPE_INT
 		;
-nomeDecl	:	ID {printf("VRI %s\n",$1);}
+nomeDecl	:	ID {printf("VRI VRI %s _ _ \n",$1);}
 		;
 expressao	:	expressaoAtribuicao
 		;
 expressaoAtribuicao:	 expressaoCondicional
-		|	 expressaoUnaria  operadorAtribuicao{printf("%s\n",$2);} expressaoCondicional
+		|	 expressaoUnaria operadorAtribuicao{printf("%s ",$2);} expressaoCondicional
 		;
-operadorAtribuicao:	ATRIB{$$="=";}
+operadorAtribuicao:	ATRIB{$$="ATR ";}
 		;
 expressaoCondicional:	logicaOuExpressao
-		|	logicaOuExpressao interrog{printf("%s\n",$2);} expressao dpt {printf("%s\n",$2);} logicaOuExpressao
+		|	logicaOuExpressao interrog{printf("%s\n",$2);} expressao dpt {printf("%s ",$2);} logicaOuExpressao
 		;
 logicaOuExpressao:	expressaoUnaria
-		|	expressaoUnaria LOGOP {printf("%s\n",$2);} expressaoUnaria
-		|	expressaoUnaria RELOP {printf("%s\n",$2);} expressaoUnaria
-		|	expressaoUnaria andOrBit {printf("%s\n",$2);} expressaoUnaria
-		|	expressaoUnaria addOp {printf("%s\n",$2);}expressaoUnaria
-		|	expressaoUnaria multOp {printf("%s\n",$2);}expressaoUnaria
+		|	expressaoUnaria LOGOP {printf("%s ",$2);} expressaoUnaria
+		|	expressaoUnaria RELOP {printf("%s ",$2);} expressaoUnaria
+		|	expressaoUnaria andOrBit {printf("%s ",$2);} expressaoUnaria
+		|	expressaoUnaria addOp {printf("%s ",$2);}expressaoUnaria
+		|	expressaoUnaria multOp {printf("%s ",$2);}expressaoUnaria
 		;
-expressaoUnaria	:	literalId {printf("%s\n",$1);}
-		|	literalNum{printf("%s\n",$1);}
+expressaoUnaria	:	literalIdpt {printf("%s _ _ \n",$1);} 
+		| 	literalNumpt{printf("%s _ _ \n",$1);}
+		|	literalNum{printf("%s ",$1);}
 		|	APAREN expressao FPAREN
-		|	unaOp{printf("%s\n",$1);} expressaoUnaria
+		|	unaOp{printf("%s ",$1);} expressaoUnaria
 		;
 addOp		:	PLUS {$$="+";} | MINUS {$$="-";}
 		;
@@ -85,7 +86,11 @@ andOrBit	:	ANDBIT {$$="&";} | ORBIT{$$="|";}
 		;
 literalNum	:	INT {$$=$1;}
 		;
+literalNumpt	:	literalNum ptvir
+		;
 literalId	:	ID {$$=$1;}
+		;
+literalIdpt	:	literalId ptvir
 		;
 interrog	:	INTERROG {$$="?";}
 		;
