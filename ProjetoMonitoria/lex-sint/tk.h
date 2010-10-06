@@ -58,10 +58,12 @@
      ANDBIT = 274,
      ORBIT = 275,
      PTVIR = 276,
-     RELOP = 277,
-     LOGOP = 278,
-     INT = 279,
-     ID = 280
+     DPT = 277,
+     INTERROG = 278,
+     RELOP = 279,
+     LOGOP = 280,
+     INT = 281,
+     ID = 282
    };
 #endif
 /* Tokens.  */
@@ -84,10 +86,12 @@
 #define ANDBIT 274
 #define ORBIT 275
 #define PTVIR 276
-#define RELOP 277
-#define LOGOP 278
-#define INT 279
-#define ID 280
+#define DPT 277
+#define INTERROG 278
+#define RELOP 279
+#define LOGOP 280
+#define INT 281
+#define ID 282
 
 
 
@@ -104,7 +108,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 108 "tk.h"
+#line 112 "tk.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

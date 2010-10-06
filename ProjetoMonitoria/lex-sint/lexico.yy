@@ -36,6 +36,7 @@ logop          "&&"|"||"
 if                  {updateCol();return IF;}
 else                {updateCol();return ELSE;}
 while               {updateCol();return WHILE;}
+do		    {updateCol();return DO;}
 "{"                 {updateCol();return BEG;}
 "}"                 {updateCol();return END;}
 "!"                 {updateCol();return NOT;}
@@ -51,6 +52,8 @@ while               {updateCol();return WHILE;}
 "int"               {updateCol();return TYPE_INT;}
 "main()"            {updateCol();return MAIN;}
 ";"                 {updateCol();return PTVIR;}
+":"		    {updateCol();return DPT;}
+"?"		    {updateCol();return INTERROG;}
 {relop}             {updateCol();yylval.strval = strdup(yytext);return RELOP;}
 {logop}             {updateCol();yylval.strval = strdup(yytext);return LOGOP;}
 {id}                {updateCol();yylval.strval = strdup(yytext);return ID;}
