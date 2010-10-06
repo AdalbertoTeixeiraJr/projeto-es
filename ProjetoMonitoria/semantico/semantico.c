@@ -16,7 +16,7 @@ int main()
   int indexPalavra = 0;
   char vazio[16] = "";
 
-  sint_out = fopen("sint_out.txt", "r");
+  sint_out = fopen("sint_out.c", "r");
 
   if (!sint_out) {
 	printf("Arquivo nao pode ser aberto ou nao existe.");
