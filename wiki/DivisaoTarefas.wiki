@@ -41,3 +41,22 @@ Geração dos Analisadores Lexicos e Sintáticos
 ||Geração de Código para Operador AND||Andrey, Daniel||4h|| - ||
 ||Testes para Geração de Código|| Adalberto, Daniel || 3h || - ||
 ||Documentaçao (atualização)|| TODOS|| 4h|| - ||
+
+----
+
+US06<br/>
+||Tarefa||Alocação||Tempo Estimado||Tempo Real||
+|| Geração de código para OR binário|| Daniel, Andrey||4h||-||
+||Geração de código para OR bit a bit||Daniel, Andrey||4h||-||
+||Recolher Casos de Testes; CUnit|| Adalberto||4h||-||
+||Corrigir Sintatico|| Daniel, Adalberto||4h||-|| 
+
+----
+US07<br/>
+
+||Tarefa||Alocação||Tempo Estimado||Tempo Real||
+||Geração de código para NOT unário|| Daniel, Andrey||4h||-||
+||Geração de código para NOT negação de expressão.||Daniel, Andrey||4h||-||
+||Casos de Testes||Adalberto||4h||-||
+
+----
