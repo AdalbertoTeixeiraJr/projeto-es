@@ -44,7 +44,7 @@ Geração dos Analisadores Lexicos e Sintáticos
 
 ----
 
-US06<br/>
+==US06==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
 || Geração de código para OR binário|| Daniel, Andrey||4h||-||
 ||Geração de código para OR bit a bit||Daniel, Andrey||4h||-||
@@ -52,7 +52,7 @@ US06<br/>
 ||Corrigir Sintatico|| Daniel, Adalberto||4h||-|| 
 
 ----
-US07<br/>
+==US07==
 
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
 ||Geração de código para NOT unário|| Daniel, Andrey||4h||-||
