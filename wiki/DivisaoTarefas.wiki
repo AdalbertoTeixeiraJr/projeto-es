@@ -2,63 +2,63 @@
 De acordo com as tarefas definidas nas User Stories temos:
 
 ==User Storie 01==
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Estudar Principios e Comandos Linguagem C||TODOS||3h|| - ||
-||Basico de Linguagem Assembly||TODOS||3h|| - ||
-||Teste de Integracao Como fazer||TODOS||1h|| - ||
-||Estudar Compiladores, funçoes basicas do lexico sintatico e semantico|| Andrey , Adalberto || 3h|| - ||
-||Estudar Compilador Mano&Kime|| TODOS || 3h || - ||
+||Tarefa||Alocação||Tempo Estimado||
+||Estudar Principios e Comandos Linguagem C||TODOS||3h|| 
+||Basico de Linguagem Assembly||TODOS||3h|| 
+||Teste de Integracao Como fazer||TODOS||1h|| 
+||Estudar Compiladores, funçoes basicas do lexico sintatico e semantico|| Andrey , Adalberto || 3h|| 
+||Estudar Compilador Mano&Kime|| TODOS || 3h ||
 
 ----
 
 ==User Storie 02==
 Geração dos Analisadores Lexicos e Sintáticos
 
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Desenvolver o Analisador Lexico usando FLEX(ferramenta)||Daniel||2h||3h||
-||Desenvolver o Analisador Sintático usando YACC (BISON)||Daniel||2h||5h||
-||Desenvolver casos de uso (códigos em linguagem C) dos Alunos disciplina||Adalberto||3h|| - ||
-||Desenvolver Testes aceitação e Unidade||Adalberto|| 3h ||- ||
-||Definicao de minemonicos do Analisador Semantico||Andrey||2h|| - ||
+||Tarefa||Alocação||Tempo Estimado||
+||Desenvolver o Analisador Lexico usando FLEX(ferramenta)||Daniel||2h||
+||Desenvolver o Analisador Sintático usando YACC (BISON)||Daniel||2h||
+||Desenvolver casos de uso (códigos em linguagem C) dos Alunos disciplina||Adalberto||3h|| 
+||Desenvolver Testes aceitação e Unidade||Adalberto|| 3h ||
+||Definicao de minemonicos do Analisador Semantico||Andrey||2h|| 
 
 ----
 ==User Storie 03==
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Implementação geração de Código para Declaração||Daniel||2h||-||
-||Preparação para Scripts de teste automático (CUNIT)||Adalberto||2h||-||
+||Tarefa||Alocação||Tempo Estimado||
+||Implementação geração de Código para Declaração||Daniel||2h||
+||Preparação para Scripts de teste automático (CUNIT)||Adalberto||2h||
 
 ----
 ==User Storie 04==
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Implementação geração de Código para Atribuição||Andrey||4h||-||
-||Definição Estrutura de dados que servira como tabela de declaracoes||Adalberto||1h|| - ||
-||Implementação da Estrutura de Dados|| Daniel || 3h|| - ||
+||Tarefa||Alocação||Tempo Estimado||
+||Implementação geração de Código para Atribuição||Andrey||4h||
+||Definição Estrutura de dados que servira como tabela de declaracoes||Adalberto||1h||
+||Implementação da Estrutura de Dados|| Daniel || 3h|| 
 
 ----
 
 ==User Storie 05==
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Geração de Código para Operador AND||Andrey, Daniel||4h|| - ||
-||Testes para Geração de Código|| Adalberto, Daniel || 3h || - ||
-||Documentaçao (atualização)|| TODOS|| 4h|| - ||
+||Tarefa||Alocação||Tempo Estimado||
+||Geração de Código para Operador AND||Andrey, Daniel||4h|| 
+||Testes para Geração de Código|| Adalberto, Daniel || 3h || 
+||Documentaçao (atualização)|| TODOS|| 4h||
 
 ----
 
 =Divisão das Tarefas Segunda Release=
 
 ==US06==
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-|| Geração de código para OR binário|| Daniel, Andrey||4h||-||
-||Geração de código para OR bit a bit||Daniel, Andrey||4h||-||
-||Recolher Casos de Testes; CUnit|| Adalberto||4h||-||
-||Corrigir Sintatico|| Daniel, Adalberto||4h||-|| 
+||Tarefa||Alocação||Tempo Estimado||
+|| Geração de código para OR binário|| Daniel, Andrey||4h||
+||Geração de código para OR bit a bit||Daniel, Andrey||4h||
+||Recolher Casos de Testes; CUnit|| Adalberto||4h||
+||Corrigir Sintatico|| Daniel, Adalberto||4h|| 
 
 ----
 ==US07==
 
-||Tarefa||Alocação||Tempo Estimado||Tempo Real||
-||Geração de código para NOT unário|| Daniel, Andrey||4h||-||
-||Geração de código para NOT negação de expressão.||Daniel, Andrey||4h||-||
-||Casos de Testes||Adalberto||4h||-||
+||Tarefa||Alocação||Tempo Estimado||
+||Geração de código para NOT unário|| Daniel, Andrey||4h||
+||Geração de código para NOT negação de expressão.||Daniel, Andrey||4h||
+||Casos de Testes||Adalberto||4h||
 
 ----
