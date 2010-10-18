@@ -1,5 +1,5 @@
 =Divisão das Tarefas Primeira Release=
-De acordo com as tarefas definidas nas User Stories Temos:
+De acordo com as tarefas definidas nas User Stories temos:
 
 ==User Storie 01==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
@@ -43,6 +43,8 @@ Geração dos Analisadores Lexicos e Sintáticos
 ||Documentaçao (atualização)|| TODOS|| 4h|| - ||
 
 ----
+
+=Divisão das Tarefas Segunda Release=
 
 ==US06==
 ||Tarefa||Alocação||Tempo Estimado||Tempo Real||
