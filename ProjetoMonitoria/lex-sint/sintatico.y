@@ -41,6 +41,7 @@ comando		:	expressao ptvir
 		|	comandoIf
 		|	comandoWhile
 		|	comandoDo
+		|	/* vazio */
 		;
 comandoComposto	:	declaracao comando
 		;	
@@ -82,7 +83,7 @@ literalNum	:	INT {$$=$1;}
 		;
 literalId	:	ID {$$=$1;}
 		;
-ptvir		:	PTVIR {$$=";";}
+ptvir		:	PTVIR {printf(";\n");$$=";";}
 		;
 comandoIf	:	IF APAREN expressao FPAREN comando ELSE comando ptvir
 		|	IF APAREN expressao FPAREN comando ptvir
