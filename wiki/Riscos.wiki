@@ -1,7 +1,7 @@
 =Riscos Referentes ao Projeto=
 ----
 Risco 1<br/>
-Probabilidade: Alta.<br/>
+Probabilidade: Média.<br/>
 Status: Ativo<br/>
 Natureza: Grave<br/>
 Devido ao alto grau de acoplamento de todas os módulos estarem relacionados com o mesmo objetivo, é impossível gerar um compilador que nao seja ocupado entre a linguagem fonte e linguagem destino.<br/> 
@@ -17,11 +17,11 @@ Se o cliente por alguma razão resolver colocar mais artefatos, ou user stories,
 Medidas: Tentar negociar. Validar os requisitos com antecedencia para fechar o escopo o mais rápido possível. Com o objetivo de satisfazer o cliente.<br/>
 ----
 Risco 3<br/>
-Probabilidade:Alta<br/>
+Probabilidade:Média<br/>
 Status: ativo.<br/>
-Cliente doente e com viagem programada.
+Ausência do cliente.
 
-Medidas: Reunião antecipada.
+Medidas: Marcar mais reuniões com o cliente.
 
 
 ----
