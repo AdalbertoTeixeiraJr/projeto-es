@@ -46,7 +46,7 @@ Status: ativo.<br/>
 Se algum integrante ficar doente, impossibilitando entregar os artefatos no prazo.
 ----
 Risco 7<br/>
-Probabilidade: Média<br/>
+Probabilidade: Baixa<br/>
 Status: Ativo.<br/>
 Se durante o periodo de feriados prolongados algum integrante nao apresentar artefatos. Ausentando-se do desenvolvimento compromentendo o grupo.<br/>
 Medidas: Conversas e Reuniões a fim de sanar essas adversisdades.
