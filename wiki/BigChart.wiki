@@ -7,9 +7,18 @@ http://projeto-es.googlecode.com/files/Big%20Chart%20it1.PNG
 Métricas coletadas até o momento da primeira iteração.
 
 ----
+
 =Big Chart Iteração 2=
 
 http://projeto-es.googlecode.com/files/BigChart2.png
+
+Métricas coletadas até o momento da segunda iteração.
+----
+
+----
+=Big Chart Iteração 3=
+
+http://projeto-es.googlecode.com/files/bigchart_3.jpg
 
 Métricas coletadas até o momento da segunda iteração.
 ----
