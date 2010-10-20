@@ -1,0 +1,24 @@
+#!/bin/bash
+#Script de automatizacao de testes
+
+echo "Digite o numero do teste final: "
+read teste
+num=01
+
+while [$num -le $teste]
+do
+
+#if [-e semantico]
+#then
+    ./runCompiler.sh testes/$num.c
+    mv sint_out.c semantico
+    ./semantico/semantico.bin > testing.txt
+    
+
+    diff -s testing.txt testes/saida_ass/$num.ass
+
+    ((num++))
+done
+#else
+    #echo "Semantico nao existe."
+#fi

@@ -24,8 +24,8 @@ int main()
   sint_out = fopen("sint_out.c", "r");
 
   if (!sint_out) {
-    printf("Arquivo nao pode ser aberto ou nao existe.");
-    exit(1);
+    //printf("Arquivo nao pode ser aberto ou nao existe.");
+    //exit(1);
   }
 
   while(!feof(sint_out)) {
@@ -134,7 +134,6 @@ int main()
 			printf("Variavel %s fora do intervalo\n",valor5 );
 			exit(1);
 		}
-		int k;
 		for(k=0; k<index+1;k++) {
 			if((strcmp(lexico[k], valor5) == 0) && (found3 == 0)) {
 				found2 = 1;
