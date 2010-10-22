@@ -2,12 +2,18 @@ main(){
 
 int var1;
 
+int y;
+
+int b;
+
+
+
 var1 = 10;
+
+int c;
 
 var1 = !(1);
 
-if (var1>1) x =1 ;
-else x = 2;
 
 x = a &&  b;
 y = C || D;
