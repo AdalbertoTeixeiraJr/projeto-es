@@ -28,23 +28,21 @@ char* yytext = ""; //declarado no lexico
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> literalNum multOp addOp unaOp nomeDecl literalId andOrBit ptvir operadorAtribuicao
+%type <strval> literalNum addOp unaOp nomeDecl literalId andOrBit ptvir operadorAtribuicao
 %%
 
-
-
-programa	:	MAIN BEG comando END
-		|	/* vazio */;
+programa	:	MAIN BEG comandos END
+		;
+comandos	:	comandos comando
+		|	/*vazio*/
+		;
 comando		:	expressao ptvir
+		|	declaracao
 		|	ptvir
-		|	comandoComposto	
 		|	comandoIf
 		|	comandoWhile
 		|	comandoDo
-		|	/* vazio */
 		;
-comandoComposto	:	declaracao comando
-		;	
 declaracao	:	tipoDeclaracao nomeDecl ptvir 
 		;
 tipoDeclaracao	:	TYPE_INT
@@ -52,7 +50,6 @@ tipoDeclaracao	:	TYPE_INT
 nomeDecl	:	ID {printf("VRI %s\n",$1);}
 		;
 expressao	:	expressaoAtribuicao
-		|	comando expressaoAtribuicao
 		;
 expressaoAtribuicao:	logicaOuExpressao
 		|	expressaoUnaria operadorAtribuicao{printf("%s\n",$2);} logicaOuExpressao
@@ -64,7 +61,6 @@ logicaOuExpressao:	expressaoUnaria
 		|	expressaoUnaria RELOP {printf("%s\n",$2);} logicaOuExpressao
 		|	expressaoUnaria andOrBit {printf("%s\n",$2);} logicaOuExpressao
 		|	expressaoUnaria addOp {printf("%s\n",$2);} logicaOuExpressao
-		|	expressaoUnaria multOp {printf("%s\n",$2);}logicaOuExpressao 
 		;
 expressaoUnaria	:	literalId {printf("%s\n",$1);} 
 		|	literalNum{printf("%s\n",$1);}
@@ -72,8 +68,6 @@ expressaoUnaria	:	literalId {printf("%s\n",$1);}
 		|	unaOp{printf("%s\n",$1);} expressaoUnaria
 		;
 addOp		:	PLUS {$$="+";} | MINUS {$$="-";}
-		;
-multOp		: 	MULT {$$="*";} | DIV {$$="/";}
 		;
 unaOp		:	NOT {$$="!";} | MINUS {$$="-";}
 		;
