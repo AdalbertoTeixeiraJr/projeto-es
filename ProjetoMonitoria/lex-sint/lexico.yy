@@ -23,7 +23,7 @@ void updateLine();
 coldelimi      [ \t\r]
 linedelimi     [\n]
 digito         [0-9]
-int            {digito}+
+int            0*[0-7]
 letra          [A-Za-z]
 id             {letra}+({letra}|{digito})*
 relop          "<"|">"|"=="|"!="|"<="|">="
@@ -42,8 +42,6 @@ do		    {updateCol();return DO;}
 "!"                 {updateCol();return NOT;}
 "-"                 {updateCol();return MINUS;}
 "+"                 {updateCol();return PLUS;}
-"*"                 {updateCol();return MULT;} 
-"/"                 {updateCol();return DIV;}
 "("                 {updateCol();return APAREN;}
 ")"                 {updateCol();return FPAREN;}
 "="                 {updateCol();return ATRIB;}
@@ -52,8 +50,6 @@ do		    {updateCol();return DO;}
 "int"               {updateCol();return TYPE_INT;}
 "main()"            {updateCol();return MAIN;}
 ";"                 {updateCol();return PTVIR;}
-":"		    {updateCol();return DPT;}
-"?"		    {updateCol();return INTERROG;}
 {relop}             {updateCol();yylval.strval = strdup(yytext);return RELOP;}
 {logop}             {updateCol();yylval.strval = strdup(yytext);return LOGOP;}
 {id}                {updateCol();yylval.strval = strdup(yytext);return ID;}
