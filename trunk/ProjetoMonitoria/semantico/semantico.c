@@ -4,53 +4,85 @@
 #include <stdlib.h>
 #include <string.h>
 
+FILE *sint_out;
+int indice = 0;
+char ids[7][16]; // EDA onde guardamos as ids das variaveis, a posicao que esta no array indica a posicao que ficara na memoria do processador
+char valor[16];
+char variavel[16] = "";
+char numero[16] = "";
+char operacao[16] = "";
+char ptovirg[1] = "";
+char igual[1] = "";
+  
+
+void declaracao();
+void atribuicao(int, int);
+int retornaID(char);
+
 int main()
 {
-  FILE *sint_out;
-  int index = 0;
-  char lexico[128][16] ; // EDA onde guardamos as ids das variaveis, a posicao que esta no array indica a posicao que ficara na memoria do processador
-  char valor1[16], valor2[16], valor3[16], valor4[16], valor5[16];
-  char operacao[16] = "";
-  char temp[16] = "START";
-  char temp2[16] = ""; 
 
   int k;
-  for(k = 0; k < 128; k++) {
+  for(k = 0; k < 7; k++) {
     int l;
     for(l = 0; l < 16; l++){
- 	lexico[k][l] = 0;
+ 	ids[k][l] = 0;
     }
   }
+  
   sint_out = fopen("sint_out.c", "r");
 
   if (!sint_out) {
-    //printf("Arquivo nao pode ser aberto ou nao existe.");
+    printf("Arquivo nao pode ser aberto ou nao existe.");
     //exit(1);
   }
 
   while(!feof(sint_out)) {
-    fscanf(sint_out," %s %s %s %s %s", valor1, valor2, valor3, valor4, valor5);
-/*    printf("valor1: %s\n", valor1);
-    printf("valor2: %s\n", valor2);
-    printf("valor3: %s\n", valor3);
-    printf("valor4: %s\n", valor4);
-    printf("valor5: %s\n", valor5); */
+    fscanf(sint_out," %s\n", operacao);
+    
+    printf("operacao: %s\n", operacao);
     
     //VRI = verifica identificador
-    if(strcmp(valor1,"VRI")==0){
-        int j;
-        for(j=0;j<index+1;j++) {
-            if(strcmp(lexico[j], valor3) == 0) {
-                printf("Variavel %s ja declarada!\n", valor2);
-                exit(1);
-            }
-        }
-        strcpy(lexico[index],valor3);
-        index+=1;
+    if(strcmp(operacao,"VRI")==0){
+    	declaracao();
     }
 
     //ATR = atribuicao
-    else if((strcmp(valor2,"ATR")==0) && (strcmp(valor4,"_")==0)) {
+    else if(retornaID(operacao)!=-1) {
+    	printf("LDI R0, %d\n", retornaID(operacao));
+	fscanf(sint_out," %s\n", igual);
+	if(strcmp(igual,"=")!=0){
+		printf("Faltando '='\n");
+		exit(1);
+	}
+	
+	fscanf(sint_out," %s\n", valor);
+	if(strcmp(valor,"NUM")==0){
+		int neg = 0;
+		fscanf(sint_out," %s\n", numero);
+		if(strcmp(numero,"-")==0){
+			neg = 1;
+			fscanf(sint_out," %s\n", numero);
+			if(atoi(numero) >= 0 && atoi(numero) < 7){
+				printf("LDI R1, %s\n", numero);
+				printf("NOT R1, R1\n");
+				printf("ST R0,R1\n");	
+			}else{
+				printf("Valor %s fora do intervalo [-7:7].\n", numero);
+			}
+		}
+		else if(atoi(numero) >= 0 && atoi(numero) < 7){
+			printf("LDI R1, %s\n", valor3);
+			printf("ST R0,R1\n");	
+		}else{
+			printf("Variavel %s fora do intervalo [-7:7].\n", numero );
+			exit(1);
+		}
+	}
+	else if(strcmp(valor,"VAR")==0){
+	
+	}
+	/*
         int j;
 	int found = 0;
         for(j=0;j<index+1;j++) {
@@ -73,7 +105,7 @@ int main()
 	}
     }
 
-    //ATRV: Atribuicao de variavel a outra variavel
+ /*   //ATRV: Atribuicao de variavel a outra variavel
     else if(strcmp(valor2,"ATRV")==0) {
 	int j;
 	int found = 0;
@@ -162,9 +194,49 @@ int main()
     else{
 	printf("Operacao: %s %s %s %s %s\n", valor1,valor2,valor3,valor4,valor5);
 	exit(1);
-    }   
+    }   */
 
-  }
+  } 
 
   fclose(sint_out);
+}
+
+
+void declaracao(){
+	printf("declaracao\n");
+	fscanf(sint_out," %s\n", variavel);
+	printf("var: %s\n",variavel);
+	fscanf(sint_out," %s\n", ptovirg);
+	printf("po: %s\n",ptovirg,"\n");
+        int j;
+	if(indice >= 7){
+		printf("So e permitido declarar 7 variaveis.\n");
+		exit(1);
+	}
+	
+	if(retornaID(variavel)!=-1){
+		printf("Variavel %s ja declarada!\n", variavel);
+                exit(1);
+	}
+        strcpy(ids[indice],variavel);
+        indice+=1;
+	
+	if(strcmp(ptovirg,";")!=0){
+		printf("Faltando ';'\n");
+		exit(1);
+	}
+}
+
+void atribuicao(int var, int valor){
+	printf("LDI R0, %d\n", var);
+	printf("LDI R1, %s\n", valor);
+	printf("ST R0,R1\n");	
+}
+
+int retornaID(char var){
+	for(j=0;j<indice+1;j++) {
+        	if(strcmp(ids[j], variavel) == 0) {
+			return j;
+	}
+	return -1;
 }
