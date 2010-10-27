@@ -22,7 +22,7 @@ char* yytext = ""; //declarado no lexico
 	char* strval;
 }
 
-%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEG END ATRIB TYPE_INT MAIN ANDBIT ORBIT PTVIR DPT INTERROG
+%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEG END ATRIB TYPE_INT MAIN ANDBIT ORBIT PTVIR 
 %token <strval> RELOP
 %token <strval> LOGOP
 %token <strval> INT
@@ -47,7 +47,7 @@ declaracao	:	tipoDeclaracao nomeDecl ptvir
 		;
 tipoDeclaracao	:	TYPE_INT
 		;
-nomeDecl	:	ID {printf("VRI %s\n",$1);}
+nomeDecl	:	ID {printf("VRI\n%s\n",$1);}
 		;
 expressao	:	expressaoAtribuicao
 		;
