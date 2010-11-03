@@ -62,3 +62,26 @@ Geração dos Analisadores Lexicos e Sintáticos
 ||Casos de Testes||Adalberto||4h||
 
 ----
+==US08==
+||Tarefa||Alocação||Tempo Estimado||
+||Geração de código para soma binária|| Andrey||
+||Geração de código para soma utilizando expressões.|| Adalberto, Daniel || 
+
+----
+==S09==
+||Tarefa||Alocação||Tempo Estimado||
+||Geração de código para diferença Binária|| Daniel || 4h ||
+||Geração de código para diferença de expressoes.|| Adalberto || 4h ||
+|| Casos de Testes|| Andrey|| 4h ||
+
+----
+=Divisão das Tarefas Terceira Release=
+
+==US10==
+||Geração de código para uso de precendencia.|| Adalberto || 3h ||
+||Executar uma soma ou subtração utilizando precedencia com parênteses.|| Andrey, Daniel || 6h ||
+
+----
+==US11==
+||Geração de codigo e verificação de equivalencia entre todos os operadores relacionais.|| Andrey, Daniel || 6h ||
+||Revisão dos testes || Adalberto || 3h ||
