@@ -22,71 +22,70 @@ char* yytext = ""; //declarado no lexico
 	char* strval;
 }
 
-%token IF ELSE WHILE DO NOT MINUS PLUS MULT DIV APAREN FPAREN BEG END ATRIB TYPE_INT MAIN ANDBIT ORBIT PTVIR 
+%token IF ELSE WHILE NOT MINUS PLUS APAREN FPAREN BEG END ATRIB TYPE_INT MAIN ANDBIT ORBIT PTVIR ATR_LOG
 %token <strval> RELOP
-%token <strval> LOGOP
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> literalNum addOp unaOp nomeDecl literalId andOrBit ptvir operadorAtribuicao
+%type <strval> literalNum addOp nomeDecl literalId andOrBit ptvir operadorAtribuicao notOpLog notOpArit
 %%
 
 programa	:	MAIN BEG comandos END
 		;
-comandos	:	comandos comando
+comandos	:	comando comandos
 		|	/*vazio*/
 		;
 comando		:	expressao ptvir
 		|	declaracao
 		|	ptvir
-		|	comandoIf
-		|	comandoWhile
-		|	comandoDo
 		;
-declaracao	:	tipoDeclaracao nomeDecl ptvir 
+declaracao	:	tipoDeclaracao nomeDecl ptvir
 		;
 tipoDeclaracao	:	TYPE_INT
 		;
 nomeDecl	:	ID {printf("VRI\n%s\n",$1);}
 		;
-expressao	:	expressaoAtribuicao
+expressao	:	{printf("ATR\n");} literalId expressaoAtribuicao
 		;
-expressaoAtribuicao:	logicaOuExpressao
-		|	expressaoUnaria operadorAtribuicao{printf("%s\n",$2);} logicaOuExpressao
+expressaoAtribuicao:	operadorAtribuicao expressaoAritmetica
+		|	operadorAtribuicaoLog expressaoLogica
 		;
-operadorAtribuicao:	ATRIB{$$="=";} 
+operadorAtribuicao:	ATRIB {printf("=\n");} 
 		;
-logicaOuExpressao:	expressaoUnaria
-		|	expressaoUnaria LOGOP {printf("%s\n",$2);} logicaOuExpressao
-		|	expressaoUnaria RELOP {printf("%s\n",$2);} logicaOuExpressao
-		|	expressaoUnaria andOrBit {printf("%s\n",$2);} logicaOuExpressao
-		|	expressaoUnaria addOp {printf("%s\n",$2);} logicaOuExpressao
+operadorAtribuicaoLog:	ATR_LOG {printf(":=\n");}
 		;
-expressaoUnaria	:	literalId {printf("%s\n",$1);} 
-		|	literalNum{printf("%s\n",$1);}
-		|	APAREN expressao FPAREN
-		|	unaOp{printf("%s\n",$1);} expressaoUnaria
+expressaoLogica	:	literalId
+		|	literalId andOrBit expressaoLogica
+		|	APAREN expressaoLogica FPAREN
+		| 	notOpLog expressaoLogica
+		|	/*vazio*/
 		;
-addOp		:	PLUS {$$="+";} | MINUS {$$="-";}
+notOpLog	:	NOT {printf("!\n");}
 		;
-unaOp		:	NOT {$$="!";} | MINUS {$$="-";}
+notOpArit	:	MINUS {printf("-\n");}
 		;
-andOrBit	:	ANDBIT {$$="&";} | ORBIT{$$="|";}
+expressaoAritmetica:	expressaoUnaria
+		| 	APAREN expressaoAritmetica FPAREN
+		|	expressaoUnaria addOp expressaoAritmetica
 		;
-literalNum	:	INT {$$=$1;}
+expressaoUnaria	:	notOpArit literal
+		|	literal
 		;
-literalId	:	ID {$$=$1;}
+literal		:	literalId
+		|	literalNum
 		;
-ptvir		:	PTVIR {printf(";\n");$$=";";}
+addOp		:	PLUS {printf("+\n");} 
+		| 	MINUS {printf("-\n");}
 		;
-comandoIf	:	IF APAREN expressao FPAREN comando ELSE comando ptvir
-		|	IF APAREN expressao FPAREN comando ptvir
+andOrBit	:	ANDBIT {printf("&\n");}
+		| 	ORBIT {printf("|\n");}
 		;
-comandoWhile	:	WHILE APAREN expressao FPAREN comando ptvir
+literalNum	:	INT {$$=$1;printf("NUM\n%s\n",$1);}
 		;
-comandoDo	:	DO comando WHILE APAREN expressao FPAREN
+literalId	:	ID {$$=$1;printf("VAR\n%s\n",$1);}
 		;
-
+ptvir		:	PTVIR {printf(";\n");}
+		;
 %%
 
 int main(void) {

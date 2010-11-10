@@ -42,52 +42,46 @@
      IF = 258,
      ELSE = 259,
      WHILE = 260,
-     DO = 261,
-     NOT = 262,
-     MINUS = 263,
-     PLUS = 264,
-     MULT = 265,
-     DIV = 266,
-     APAREN = 267,
-     FPAREN = 268,
-     BEG = 269,
-     END = 270,
-     ATRIB = 271,
-     TYPE_INT = 272,
-     MAIN = 273,
-     ANDBIT = 274,
-     ORBIT = 275,
-     PTVIR = 276,
-     RELOP = 277,
-     LOGOP = 278,
-     INT = 279,
-     ID = 280
+     NOT = 261,
+     MINUS = 262,
+     PLUS = 263,
+     APAREN = 264,
+     FPAREN = 265,
+     BEG = 266,
+     END = 267,
+     ATRIB = 268,
+     TYPE_INT = 269,
+     MAIN = 270,
+     ANDBIT = 271,
+     ORBIT = 272,
+     PTVIR = 273,
+     ATR_LOG = 274,
+     RELOP = 275,
+     INT = 276,
+     ID = 277
    };
 #endif
 /* Tokens.  */
 #define IF 258
 #define ELSE 259
 #define WHILE 260
-#define DO 261
-#define NOT 262
-#define MINUS 263
-#define PLUS 264
-#define MULT 265
-#define DIV 266
-#define APAREN 267
-#define FPAREN 268
-#define BEG 269
-#define END 270
-#define ATRIB 271
-#define TYPE_INT 272
-#define MAIN 273
-#define ANDBIT 274
-#define ORBIT 275
-#define PTVIR 276
-#define RELOP 277
-#define LOGOP 278
-#define INT 279
-#define ID 280
+#define NOT 261
+#define MINUS 262
+#define PLUS 263
+#define APAREN 264
+#define FPAREN 265
+#define BEG 266
+#define END 267
+#define ATRIB 268
+#define TYPE_INT 269
+#define MAIN 270
+#define ANDBIT 271
+#define ORBIT 272
+#define PTVIR 273
+#define ATR_LOG 274
+#define RELOP 275
+#define INT 276
+#define ID 277
 
 
 
@@ -104,7 +98,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 108 "tk.h"
+#line 102 "tk.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

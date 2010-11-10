@@ -27,7 +27,6 @@ int            0*[0-7]
 letra          [A-Za-z]
 id             {letra}+({letra}|{digito})*
 relop          "<"|">"|"=="|"!="|"<="|">="
-logop          "&&"|"||"
 
 %%
 
@@ -36,7 +35,6 @@ logop          "&&"|"||"
 if                  {updateCol();return IF;}
 else                {updateCol();return ELSE;}
 while               {updateCol();return WHILE;}
-do		    {updateCol();return DO;}
 "{"                 {updateCol();return BEG;}
 "}"                 {updateCol();return END;}
 "!"                 {updateCol();return NOT;}
@@ -50,8 +48,8 @@ do		    {updateCol();return DO;}
 "int"               {updateCol();return TYPE_INT;}
 "main()"            {updateCol();return MAIN;}
 ";"                 {updateCol();return PTVIR;}
+":="                 {updateCol();return ATR_LOG;}
 {relop}             {updateCol();yylval.strval = strdup(yytext);return RELOP;}
-{logop}             {updateCol();yylval.strval = strdup(yytext);return LOGOP;}
 {id}                {updateCol();yylval.strval = strdup(yytext);return ID;}
 {int}               {updateCol();yylval.strval = strdup(yytext);return INT;}
 %%
