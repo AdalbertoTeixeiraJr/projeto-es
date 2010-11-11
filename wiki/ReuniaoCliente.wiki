@@ -1,4 +1,4 @@
-||Reunião||Data||Descrição||Integrantes Participantes||
+||Reunião||Data||Descrição||Equipe de Desenvolvimento Participante||
 ||Reunião 1|| 24/08/2010||Visão geral das necesidades do cliente. Entendimento do escopo do projeto.|| Todos ||
 ||Reunião 2||02/08/2010||Dúvidas sobre o projeto sanadas, validação das user stories.|| Adalberto, Daniel||
 || - ||07/08/2010 - 12/08/2010||Viagem do cliente e integrante do grupo.  || - ||
