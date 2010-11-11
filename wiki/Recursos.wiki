@@ -9,15 +9,14 @@ Abaixo estão listados os recursos de hardware, software e peopleware a serem ut
 ----
 
 ===Recursos de Hardware:===
-•	Computadores do LCC1, LCC2 – configuração variável dependendo de cada laboratório;<br/>
-•	Computadores pessoais e notebooks de cada integrante.<br/>
+•	Computadores do Labarc – configuração variável dependendo de cada laboratório;<br/>
+•	Placas DE2.
 
 ----
 
 ===Recursos de Software:===
 
-•	Eclipse Utilizado para programar em C ou DEV c<br/>
-•	Microsoft Word 2007, Power Point 2007, Excel 2007 e Project 2007, BR Office: elaboração, leitura e descrição dos relatórios;<br/>
+•	Eclipse Utilizado para programar em C ou DEV C<br/>
 •	MagicDraw 15.0 Modelar o Diagrama UML, de classes, caso de uso, e modelagem Projeto Arquitetural;<br/>
 •	CUnit – framework para testes de casos de uso e testes de Integracao, em C<br/>
 •	SVN Google Code: controle de versão para melhor gerenciamento do projeto;
