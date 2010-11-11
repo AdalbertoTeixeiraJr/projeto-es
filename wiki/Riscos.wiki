@@ -4,10 +4,9 @@ Risco 1<br/>
 Probabilidade: Média.<br/>
 Status: Ativo<br/>
 Natureza: Grave<br/>
-Devido ao alto grau de acoplamento de todas os módulos estarem relacionados com o mesmo objetivo, é impossível gerar um compilador que nao seja ocupado entre a linguagem fonte e linguagem destino.<br/> 
-A grande dependencia entre o código gerado em linguagem c, e o código de máquina gerado (equivalência), se alguma função ou comando da geração de código não funcionar devidamente, o código de máquina gerado não será cofiável. Gerar código errado.<br/>
+O mapeamento entre o código gerado em linguagem c, e o código de máquina gerado (equivalência), se processador não funcionar devidamente com as intruções geradas, o compilador pode representar algum erro ou o aluno poderá ter desenvolvido o processador com algum erro.<br/>
 
-Medidas: O código gerado tem que ser testado. Muitos testes serão necessários.
+Medidas: O código gerado tem que ser conferido e seguro que funciona seguindo as especificações do processador. 
 ----
 Risco 2<br/>
 Probabilidade:Baixa.<br/>
@@ -29,7 +28,10 @@ Risco 4<br/>
 Probabilidade: Média<br/>
 Status: ativo. <br/>
 A especificação se revela muito mais difícil de cumprir do que previsto por causa de limitações do processador M&K que é extremamente simples e tem muito pouco recursos.
+
+Medidas: Contatar  cliente e resolver como tratar a situação.
 ----
+
 =Risco Referente aos Integrantes []=
 ----
 Risco 5<br/>
