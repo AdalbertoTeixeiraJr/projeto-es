@@ -16,9 +16,7 @@ Abaixo estão listados os recursos de hardware, software e peopleware a serem ut
 
 ===Recursos de Software:===
 
-•	Eclipse Utilizado para programar em C ou DEV C<br/>
-•	MagicDraw 15.0 Modelar o Diagrama UML, de classes, caso de uso, e modelagem Projeto Arquitetural;<br/>
-•	CUnit – framework para testes de casos de uso e testes de Integracao, em C<br/>
+•	Ferramenta de edição para programar em C ou DEV C<br/>
 •	SVN Google Code: controle de versão para melhor gerenciamento do projeto;
 
 
@@ -26,5 +24,3 @@ Abaixo estão listados os recursos de hardware, software e peopleware a serem ut
 ===Ferramentas de Auxilio desenvolvimento do Projeto:===
 •	FLEX - Gerenciador de Análise Léxica (Scanner)
 •	BISON - Gerenciador de Análise Sintática (Gramática)
-•	Placas DE2
-•	Computadores do Labarc – configuração variável.
