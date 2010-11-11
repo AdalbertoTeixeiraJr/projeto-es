@@ -12,9 +12,10 @@ O uso desse processador tem o objetivo de melhorar o entendimento das operaçõe
 --------------------------------------------------------------------------------
 ==Necessidades do Cliente==
 
-Necessidades do cliente: Fazer uso de uma linguagem de programação, mostrando como essa linguagem interage com o processador e memória. Fazendo que os alunos da disciplina tenham maior entendimento de como é o funcionamento de uma máquina. As funções e procedimentos internos. <br/>
-Mostrar essa abordagem de forma didática, por isso a simplicidade do projeto. De não utilizar subrotinas, nem funções, e usar apenas um tipo de dado (integer).<br/>
-O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mostrando o funcionamento real de uma máquina e como o código gerado se torna possível de ser executado. 
+Necessidades do cliente: Esse compilador, em termos de aprendizagem, cria um elo entre as
+disciplinas de linguagens de programação e LOAC, evidenciando que uma
+linguagem de programação é convertido numa linguagem assembly que eles
+já vêm usando em LOAC.
 
 ----
 
