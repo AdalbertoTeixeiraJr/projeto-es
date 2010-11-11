@@ -1,5 +1,5 @@
 ==Projeto==
-Desenvolver um compilador de um subconjunto de Java para código de máquina do processador de Mano&Kime, usado na disciplina de Laboratório e Arquiteturas de Computadores (LOAC). Como entrada esse compilador deve aceitar um arquivo de código fonte C que não usa classe e só permite um único método chamado "main". O único tipo de dado suportado é inteiro com sinal de 16 bits. O compilador deve suportar if...else, , while, e expressões com as operações == (igualdade), < (menor que), > (maior que), <= (menor que), >= (maior que), +(soma), -(subtração), &(e), |(ou), ~(negação) somente. O compilador deve gerar em arquivo de saída compatível com o assembler utilizado na disciplina LOAC. O compilador será usado na disciplina LOAC. 
+Desenvolver um compilador de um subconjunto de Java para código de máquina do processador de Mano&Kime, usado na disciplina de Laboratório e Arquiteturas de Computadores (LOAC). Como entrada esse compilador deve aceitar um arquivo de código fonte C que não usa classe e só permite um único método chamado "main". O compilador deve gerar em arquivo de saída compatível com o assembly usado no compilador desenvolvido na disciplina LOAC, que segue as especificações do livro do Mano&Kime. 
 
 --------------------------------------------------------------------------------
 ==Perfil do Usuário==
