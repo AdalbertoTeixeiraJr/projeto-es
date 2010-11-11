@@ -23,35 +23,38 @@ Ausência do cliente.
 
 Medidas: Marcar mais reuniões com o cliente.
 
-
+Risco 4<br/>
+Probabilidade: Média<br/>
+Status: ativo. <br/>
+A especificação se revela muito mais difícil de cumprir do que previsto por causa de limitações do processador M&K que é extremamente simples e tem muito pouco recursos.
 ----
 =Risco Referente aos Integrantes []=
 ----
-Risco 4<br/>
+Risco 5<br/>
 Probabilidade:Média<br/>
 Status:Ativo<br/>
 Se algum integrante não entregar sua tarefa no prazo. Isso será um problema, devido a divisão de tarefas. <br/>
 Medidas:Tarefas serão entregue com antecedencia a fim de evitar imprevisto, e que se forem detectados erros ou imprevisto, a equipe toda possa se reunir e resolver junto.
 ----
-Risco 5<br/>
+Risco 6<br/>
 Probabilidade:Baixa<br/>
 Status:Ativo.<br/>
 Se o computador de algum integrante por algum motivo ficar inutilizável.
 Medidas:Usar algum laboratório (LCC1 OU LCC2) disponível para desenvolver as atividades.
 Evitando atrasos nas entregas dos artefatos.
 ----
-Risco 6<br/>
+Risco 7<br/>
 Probabilidade:Baixa<br/>
 Status: ativo.<br/>
 Se algum integrante ficar doente, impossibilitando entregar os artefatos no prazo.
 ----
-Risco 7<br/>
+Risco 8<br/>
 Probabilidade: Baixa<br/>
 Status: Ativo.<br/>
 Se durante o periodo de feriados prolongados algum integrante nao apresentar artefatos. Ausentando-se do desenvolvimento compromentendo o grupo.<br/>
 Medidas: Conversas e Reuniões a fim de sanar essas adversisdades.
 ----
-Risco 8<br/>
+Risco 9<br/>
 Probabilidade: Baixa<br/>
 Status: Ativo.
 O estudo de compiladores, pois apenas 1 integrante pagou a disciplina de compiladores.
