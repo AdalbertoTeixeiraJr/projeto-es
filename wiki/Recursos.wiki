@@ -25,5 +25,6 @@ Abaixo estão listados os recursos de hardware, software e peopleware a serem ut
 ----
 ===Ferramentas de Auxilio desenvolvimento do Projeto:===
 •	FLEX - Gerenciador de Análise Léxica (Scanner)
-
 •	BISON - Gerenciador de Análise Sintática (Gramática)
+•	Placas DE2
+•	Computadores do Labarc – configuração variável.
