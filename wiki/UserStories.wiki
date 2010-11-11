@@ -10,8 +10,8 @@ US01<br/> Estudo
 ----
 US02<br/>
 Geração dos Analisadores Léxico e Sintático
-||Desenvolver analisador léxico em linguagem C||
-||Desenvolver analisador sintático em linguagem C||
+||Desenvolver analisador léxico de maneira incremental usando ferramenta o FLEX||
+||Desenvolver analisador sintático de maneira incremental utilizando ferramenta YACC||
 
 ----
 US03<br/>
