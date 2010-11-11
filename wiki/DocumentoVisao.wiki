@@ -34,6 +34,7 @@ O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mo
   * Operadores Relacionais (< (menor que), > (maior que), <= (menor que), >= (maior que) !=(diferente)
   * +(soma), -(subtração)
   * &(e), |(ou), ~(negação)
+  * Suportar apenas um método main()
 
 
 ----
