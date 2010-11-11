@@ -1,18 +1,23 @@
 ==Projeto==
-Desenvolver um compilador de um subconjunto de Java para código de máquina do processador de Mano&Kime, usado na disciplina de Laboratório e Arquiteturas de Computadores (LOAC). Como entrada esse compilador deve aceitar um arquivo de código fonte Java que não usa classe e só permite um único método chamado "main". O único tipo de dado suportado é inteiro com sinal de 16 bits. O compilador deve suportar if...else, , while, e expressões com as operações == (igualdade), < (menor que), > (maior que), <= (menor que), >= (maior que), +(soma), -(subtração), &(e), |(ou), ~(negação) somente. O compilador deve gerar em arquivo de saída compatível com o assembler utilizado na disciplina LOAC. O compilador será usado na disciplina LOAC. 
+Desenvolver um compilador de um subconjunto de Java para código de máquina do processador de Mano&Kime, usado na disciplina de Laboratório e Arquiteturas de Computadores (LOAC). Como entrada esse compilador deve aceitar um arquivo de código fonte C que não usa classe e só permite um único método chamado "main". O único tipo de dado suportado é inteiro com sinal de 16 bits. O compilador deve suportar if...else, , while, e expressões com as operações == (igualdade), < (menor que), > (maior que), <= (menor que), >= (maior que), +(soma), -(subtração), &(e), |(ou), ~(negação) somente. O compilador deve gerar em arquivo de saída compatível com o assembler utilizado na disciplina LOAC. O compilador será usado na disciplina LOAC. 
 
 --------------------------------------------------------------------------------
 ==Perfil do Usuário==
-Usuários: Alunos da Disciplina de LOAC. O nosso publico alvo são os alunos da disciplina de LOAC. Um dos objetivos da disciplina é aprender a manipular um processador. Os alunos aprendem na disciplina a construir um processador com operações básicas, no intuíto de conhecer como é um processador e como o mesmo manipula os dados. Alocando dados em registradores, passando os dados pela ULA, e vendo na prática como o processo de computação ocorre, como os processadores se comunicam com memoria e alocam e desalocam dados da mesma. Serão Beneficiados com esse projeto toda a comunidade do curso de computação, já que a disciplina de LOAC é obrigatória. 
-Será utilizado como uma ferramenta de auxilio ao ensino do conteúdo da dsiciplina. O mesmo também será usado para fazer demonstrações de como o código gerado por uma linguagem de programação é transformado em código de máquina. 
+Usuários: Alunos da Disciplina de LOAC. O nosso publico alvo são os alunos da disciplina de LOAC. <br/>
+Um dos objetivos da disciplina é aprender a manipular um processador. Os alunos aprendem na disciplina a construir um processador com operações básicas, no intuíto de conhecer como é um processador e como o mesmo manipula os dados. Alocando dados em registradores, passando os dados pela ULA, e vendo na prática como o processo de computação ocorre, como os processadores se comunicam com memoria e alocam e desalocam dados da mesma. <br/>
+Será beneficiado com esse projeto toda a comunidade do curso de computação, já que a disciplina de LOAC é obrigatória.
+Esse projeto será utilizado como uma ferramenta de auxílio ao ensino do conteúdo da disciplina. O mesmo também será usado para fazer demonstrações de como o código gerado por uma linguagem de programação é transformado em código de máquina. <br/>
 O uso desse processador tem o objetivo de melhorar o entendimento das operações básicas de um processador, e como o mesmo processa as instruções. 
 
 --------------------------------------------------------------------------------
 ==Necessidades do Cliente==
 
-Necessidades do cliente: Fazer uso de uma linguagem de programação, mostrando como essa linguagem interage com o processador e memória. Fazendo com os alunos da disciplina tenham maior entendimento de como é o funcionamento de uma máquina. As funçoes e procedimentos internos. Mostrar essa abordagem de forma didática, por isso a simplicidade do projeto. De não utilizar subrotinas, nem funçoes, e usar apenas um tipo de dado (integer). O intuito na verdade é abstrair o funcionamendo real de uma máquina. Abstração em nível simplicidade. Porém mostrando o funcionamento real de uma máquina e como o código gerado se torna possível de ser executado. 
+Necessidades do cliente: Fazer uso de uma linguagem de programação, mostrando como essa linguagem interage com o processador e memória. Fazendo que os alunos da disciplina tenham maior entendimento de como é o funcionamento de uma máquina. As funções e procedimentos internos. <br/>
+Mostrar essa abordagem de forma didática, por isso a simplicidade do projeto. De não utilizar subrotinas, nem funções, e usar apenas um tipo de dado (integer).<br/>
+O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mostrando o funcionamento real de uma máquina e como o código gerado se torna possível de ser executado. 
 
 ----
+
 ==Requisitos Funcionais==
 
   * Desenvolver o compilador baseado na sintaxe da linguagem C.
@@ -22,10 +27,11 @@ Necessidades do cliente: Fazer uso de uma linguagem de programação, mostrando 
   * Compilador deve ser desenvolvido para a disciplina de LOAC.
   * Utilizar mesmas funçoes e operaçoes do processador de LOAC.
   * O único tipo de dado suportado é inteiro com sinal de 16 bits.
+  * Atribuição
   * O compilador deve suportar if...else
   * while
   * operações == (igualdade)
-  * Operadores Relacionais (< (menor que), > (maior que), <= (menor que), >= (maior que))
+  * Operadores Relacionais (< (menor que), > (maior que), <= (menor que), >= (maior que) !=(diferente)
   * +(soma), -(subtração)
   * &(e), |(ou), ~(negação)
 
