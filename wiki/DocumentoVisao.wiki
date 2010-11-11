@@ -33,6 +33,7 @@ já vêm usando em LOAC.
   * Para expressões aritméticas podem ser usados os operadores: +(soma), -(subtração).
   * Para expressões lógicas podem ser usados os operadores: &(e), |(ou), !(negação).
   * Suportar apenas um método main().
+  * Aceitar comandos de input/output através da sintaxe "io". 
 
 
 ----
