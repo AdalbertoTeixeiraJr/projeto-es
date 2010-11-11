@@ -21,7 +21,7 @@ O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mo
 ==Requisitos Funcionais==
 
   * Desenvolver o compilador baseado na sintaxe da linguagem C.
-  * Ser eficiente e correto.
+  * Ser correto.
   * Gerar codigo para a linguagem assembly.
   * Não ter interface gráfica.
   * Compilador deve ser desenvolvido para a disciplina de LOAC.
