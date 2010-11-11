@@ -48,5 +48,8 @@ O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mo
 
 ==Escopo Negativo ==
 
+Existem algumas atividades relacionadas com o projeto que estão fora do escopo desse projeto.
+  * Operações de multiplicação e divisão.
+  * Uso de parênteses aninhados.
 
 ----
