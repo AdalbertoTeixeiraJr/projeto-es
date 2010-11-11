@@ -41,8 +41,14 @@ O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mo
 
 ==Requisitos Não-Funcionais==
 
-  * Criar uma interface de fácil usabilidade.
-  * Desenvolver o sistema usando linguagem de programação C (puro).
+  * Rodar e poder ser desenvolvido (recompilado) nos computadores do Labarc.
+  * Ser escrito sem usar Java.
+  * Usar linguagem imperativa C.
+  * Usar ferramentas (analisador léxico e sintático) amplamente conhecidos
+e usados em ambiente Linux.
+  * Deve ser possível que monitores futuros da disciplina LOAC possam
+fazer manutenção do código fonte do projeto (qualidade de codificação
+e documentação).
 
 ----
 
