@@ -23,19 +23,16 @@ já vêm usando em LOAC.
 
   * Desenvolver o compilador baseado na sintaxe da linguagem C.
   * Ser correto.
-  * Gerar codigo para a linguagem assembly.
+  * Gerar codigo para a linguagem assembly de acordo com o processador desenvolvido em LOAC, seguindo as especificações do livro do Mano&Kime.
   * Não ter interface gráfica.
-  * Compilador deve ser desenvolvido para a disciplina de LOAC.
-  * Utilizar mesmas funçoes e operaçoes do processador de LOAC.
+  * Utilizar mesmas funçoes e operaçoes do processador Mano&Kime, utilizando apenas 4 registradores, (R0,R1,R2,R3).
   * O único tipo de dado suportado é inteiro com sinal de 16 bits.
-  * Atribuição
-  * O compilador deve suportar if...else
-  * while
-  * operações == (igualdade)
-  * Operadores Relacionais (< (menor que), > (maior que), <= (menor que), >= (maior que) !=(diferente)
-  * +(soma), -(subtração)
-  * &(e), |(ou), ~(negação)
-  * Suportar apenas um método main()
+  * Aceitar operação de Atribuição, Condicional(if, while).
+  * Para as operação condicionais, utilizar operações relacionais utilizando operadores(< (menor que), > (maior que), <= (menor que), >= (maior que), !=(diferente), == (igualdade))
+  * Para as operações de atribuição, sendo possível atribuir a uma variável o resultado de uma expressão aritmética ou lógica, não podendo misturar os tipos de expressão.
+  * Para expressões aritméticas podem ser usados os operadores: +(soma), -(subtração).
+  * Para expressões lógicas podem ser usados os operadores: &(e), |(ou), !(negação).
+  * Suportar apenas um método main().
 
 
 ----
@@ -57,5 +54,6 @@ e documentação).
 Existem algumas atividades relacionadas com o projeto que estão fora do escopo desse projeto.
   * Operações de multiplicação e divisão.
   * Uso de parênteses aninhados.
+  * Uma expressão não pode ser dos 2 tipos, sendo aritmética ou lógica.
 
 ----
