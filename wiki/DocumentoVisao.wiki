@@ -45,3 +45,8 @@ O intuito na verdade é abstrair o funcionamendo real de uma máquina. Porém mo
   * Desenvolver o sistema usando linguagem de programação C (puro).
 
 ----
+
+==Escopo Negativo ==
+
+
+----
