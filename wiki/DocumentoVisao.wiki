@@ -21,7 +21,13 @@ Necessidades do cliente: Fazer uso de uma linguagem de programação, mostrando 
   * Não ter interface gráfica.
   * Compilador deve ser desenvolvido para a disciplina de LOAC.
   * Utilizar mesmas funçoes e operaçoes do processador de LOAC.
-
+  * O único tipo de dado suportado é inteiro com sinal de 16 bits.
+  * O compilador deve suportar if...else
+  * while
+  * operações == (igualdade)
+  * Operadores Relacionais (< (menor que), > (maior que), <= (menor que), >= (maior que))
+  * +(soma), -(subtração)
+  * &(e), |(ou), ~(negação)
 
 
 ----
