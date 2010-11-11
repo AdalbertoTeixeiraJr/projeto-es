@@ -84,3 +84,9 @@ Geração de Código comando iterativo *WHILE*.<br/>
 ||Geração de código para comando iterativo *WHILE*||
 
 ----
+----
+US14<br/>
+Geração de Código comando de input/output.<br/>
+||Geração de código para comando input.||
+||Geração de código para comando output.||
+----
