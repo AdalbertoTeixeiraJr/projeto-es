@@ -23,6 +23,8 @@ Ausência do cliente.
 
 Medidas: Marcar mais reuniões com o cliente.
 
+----
+
 Risco 4<br/>
 Probabilidade: Média<br/>
 Status: ativo. <br/>
