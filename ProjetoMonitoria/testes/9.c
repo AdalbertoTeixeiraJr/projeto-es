@@ -4,7 +4,7 @@ a = 0;
 int b;
 b = 1;
 int c;
-c := a & b;
+c = a & 1;
 int d;
-d := b & c;
+d = b & 0;
 }
