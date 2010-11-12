@@ -5,11 +5,8 @@ echo "Digite o numero do teste final: "
 read teste
 num=1
 
-while [$num -le $teste]
+while [ $num -le $teste ]
 do
-
-#if [-e semantico]
-#then
     ./runCompiler.sh testes/$num.c
     mv sint_out.c semantico
     ./semantico/semantico.bin > testing.txt
@@ -19,6 +16,3 @@ do
 
     ((num++))
 done
-#else
-    #echo "Semantico nao existe."
-#fi
