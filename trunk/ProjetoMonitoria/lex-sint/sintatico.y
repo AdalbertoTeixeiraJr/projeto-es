@@ -54,11 +54,20 @@ operadorAtribuicao:	ATRIB {printf("=\n");}
 		;
 expressaoLogica	:	literal andOrBit literal 
 		|	literal andOrBit expressaoLogica 
-		|	APAREN expressaoLogica FPAREN 
-		|	APAREN expressaoLogica FPAREN andOrBit expressaoLogica
+		|	aparen expressaoLogAninhada fparen 
+		|	aparen expressaoLogAninhada fparen andOrBit expressaoLogica
 		|	notOpLog literal 
 		| 	notOpLog expressaoLogica
-;
+		;
+expressaoLogAninhada:	literal andOrBit literal
+		|	literal andOrBit expressaoLogAninhada
+		|	notOpLog literal
+		| 	notOpLog expressaoLogAninhada
+		;
+aparen		: 	APAREN {printf("(\n");}
+		;
+fparen		: 	FPAREN {printf(")\n");}
+		; 
 notOpLog	:	NOT {printf("!\n");}
 		;
 notOpArit	:	MINUS {printf("-\n");}
@@ -66,8 +75,12 @@ notOpArit	:	MINUS {printf("-\n");}
 expressaoAritmetica:	literal	
 		|	literal addOp expressaoAritmetica	
 		|	notOpArit expressaoAritmetica
-		| 	APAREN expressaoAritmetica FPAREN 
-		|	APAREN expressaoAritmetica FPAREN addOp expressaoAritmetica
+		| 	aparen expressaoAritAninhada fparen 
+		|	aparen expressaoAritAninhada fparen addOp expressaoAritmetica
+		;
+expressaoAritAninhada:	literal
+		|	literal addOp expressaoAritAninhada
+		|	notOpArit expressaoAritAninhada
 		;
 literal		:	literalId
 		|	literalNum

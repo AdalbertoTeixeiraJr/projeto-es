@@ -12,11 +12,13 @@ char variavel[16] = "";
 char numero[16] = "";
 char operacao[16] = "";
 char operador[16] = "";
+char operadorAninhado[16] = "";
 char tipo[16] = "";
 char ptovirg[1] = "";
 char igual[2] = "";
 char var[3] = "";
 int sinal = 0;
+int sinalAninhado = 0;
   
 
 void declaracao();
@@ -26,7 +28,9 @@ void carregaVariavel(char* reg, int sinal);
 void carregaNumeroLog(char* reg, int sinal);
 void carregaVariavelLog(char* reg, int sinal);
 void atribuicao_arit(char* operador);
+void atribuicao_arit_aninhada(int complemento);
 void atribuicao_log(char* operador);
+void atribuicao_log_aninhada(int sinal);
 
 int main()
 {
@@ -83,6 +87,9 @@ int main()
 			}else if(strcmp(tipo,"VAR")==0){		
 				//printf("Carr Var\n");
 				carregaVariavel("R1",sinal);
+			}else if(strcmp(tipo,"(")==0){
+				atribuicao_arit_aninhada(sinal);
+				printf("MV R1, R2\n");
 			}else{
 				printf("Codigo com erros, nao pode ser gerado.");
 				exit(1);
@@ -153,6 +160,12 @@ void atribuicao_arit(char* operador){
 			carregaNumero("R2",0);
 		}else if(strcmp(tipo,"VAR")==0){
 			carregaVariavel("R2",0);
+		}else if(strcmp(tipo,"(")==0){
+			if((strcmp(operador,"+")==0)){
+				atribuicao_arit_aninhada(2);
+			}else{
+				atribuicao_arit_aninhada(2);
+			}
 		}else{
 			printf("Codigo com erros, nao pode ser gerado.");
 			exit(1);
@@ -170,6 +183,7 @@ void atribuicao_arit(char* operador){
 			exit(1);
 		}
 	}
+	
 	//printf("OP %s", operador);
 	if(strcmp(operador,";")==0){
 		printf("ST R0, R1\n");
@@ -178,6 +192,49 @@ void atribuicao_arit(char* operador){
 		exit(1);
 	}
     
+}
+
+void atribuicao_arit_aninhada(int sinal){
+	sinalAninhado = 0;
+	fscanf(sint_out," %s\n", tipo);
+	if(strcmp("-",tipo)==0){
+		sinalAninhado = 1;
+		fscanf(sint_out," %s\n", tipo);
+	}
+	if(strcmp(tipo,"NUM")==0){
+		carregaNumero("R2",sinalAninhado);
+	}else if(strcmp(tipo,"VAR")==0){
+		carregaVariavel("R2",sinalAninhado);
+	}else{
+		printf("Codigo com erros, nao pode ser gerado.");
+		exit(1);
+	}
+	fscanf(sint_out," %s\n", operadorAninhado);
+	while ((strcmp(operadorAninhado,"+")==0) || (strcmp(operadorAninhado,"-")==0) ){
+		fscanf(sint_out," %s\n", tipo);
+		if(strcmp(tipo,"NUM")==0){
+			carregaNumero("R3",0);
+		}else if(strcmp(tipo,"VAR")==0){
+			carregaVariavel("R3",0);
+		}else{
+			printf("Codigo com erros, nao pode ser gerado.");
+			exit(1);
+		}
+		if(strcmp(operadorAninhado,"+")==0){
+			printf("ADD R2, R2, R3\n");
+		}else{
+			printf("SUB R2, R2, R3\n");
+		}
+		if(!feof(sint_out)){
+			fscanf(sint_out," %s\n", operadorAninhado);
+		}else{
+			printf("Faltando ')'.\n");
+			exit(1);
+		}
+	}
+	if(sinal == 1){
+		printf("NOT R2, R2\n");
+	}
 }
 
 void carregaNumero(char* reg, int sinal){
@@ -227,6 +284,8 @@ void atribuicao_log(char* operador){
 			carregaNumeroLog("R2",sinal);
 		}else if(strcmp(tipo,"VAR")==0){
 			carregaVariavelLog("R2",sinal);
+		}else if(strcmp(tipo,"(")==0){
+			atribuicao_log_aninhada(sinal);
 		}else{
 			printf("Codigo com erros, nao pode ser gerado.");
 			exit(1);
@@ -250,6 +309,55 @@ void atribuicao_log(char* operador){
 
 	printf("ST R0, R1\n");
 
+}
+
+void atribuicao_log_aninhada(int sinal){
+	sinalAninhado = 0;
+	fscanf(sint_out," %s\n", tipo);
+	if(strcmp("-",tipo)==0){
+		sinalAninhado = 1;
+		fscanf(sint_out," %s\n", tipo);
+	}
+	if(strcmp(tipo,"NUM")==0){
+		carregaNumeroLog("R2",sinalAninhado);
+	}else if(strcmp(tipo,"VAR")==0){
+		carregaVariavelLog("R2",sinalAninhado);
+	}else{
+		printf("Codigo com erros, nao pode ser gerado.");
+		exit(1);
+	}
+	fscanf(sint_out," %s\n", operadorAninhado);
+	while ((strcmp(operadorAninhado,"&")==0) || (strcmp(operadorAninhado,"|")==0) ){
+		fscanf(sint_out," %s\n", tipo);
+		if(strcmp(tipo,"!")==0){
+			sinalAninhado = 1;
+			fscanf(sint_out," %s\n", tipo);
+		}else{
+			sinalAninhado = 0;
+		}
+		if(strcmp(tipo,"NUM")==0){
+			carregaNumeroLog("R3",sinalAninhado);
+		}else if(strcmp(tipo,"VAR")==0){
+			carregaVariavelLog("R3",sinalAninhado);
+		}else{
+			printf("Codigo com erros, nao pode ser gerado.");
+			exit(1);
+		}
+		if(strcmp(operadorAninhado,"&")==0){
+			printf("AND R2, R2, R3\n");
+		}else{
+			printf("OR R2, R2, R3\n");
+		}
+		if(!feof(sint_out)){
+			fscanf(sint_out," %s\n", operadorAninhado);
+		}else{
+			printf("Faltando ')'.\n");
+			exit(1);
+		}
+	}
+	if(sinal == 1){
+		printf("NOT R2, R2\n");
+	}
 }
 
 void carregaNumeroLog(char* reg, int sinal){
