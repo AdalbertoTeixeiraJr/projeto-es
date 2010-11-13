@@ -35,41 +35,39 @@ programa	:	MAIN BEG comandos END
 comandos	:	comando comandos
 		|	/*vazio*/
 		;
-comando		:	expressao ptvir
-		|	declaracao
+comando		:	expressao 
+		|	declaracao ptvir 
 		|	ptvir
 		;
-declaracao	:	tipoDeclaracao nomeDecl ptvir
+declaracao	:	tipoDeclaracao nomeDecl 
 		;
 tipoDeclaracao	:	TYPE_INT
 		;
 nomeDecl	:	ID {printf("VRI\n%s\n",$1);}
 		;
-expressao	:	{printf("ATR\n");} literalId expressaoAtribuicao
+expressao	:	{printf("ATR\n");} literalId operadorAtribuicao expressaoResult
 		;
-expressaoAtribuicao:	operadorAtribuicao expressaoAritmetica
-		|	operadorAtribuicaoLog expressaoLogica
+expressaoResult:	expressaoAritmetica 
+		|	expressaoLogica 
 		;
 operadorAtribuicao:	ATRIB {printf("=\n");} 
 		;
-operadorAtribuicaoLog:	ATR_LOG {printf(":=\n");}
-		;
-expressaoLogica	:	literalId
-		|	literalId andOrBit expressaoLogica
-		|	APAREN expressaoLogica FPAREN
+expressaoLogica	:	literal andOrBit literal 
+		|	literal andOrBit expressaoLogica 
+		|	APAREN expressaoLogica FPAREN 
+		|	APAREN expressaoLogica FPAREN andOrBit expressaoLogica
+		|	notOpLog literal 
 		| 	notOpLog expressaoLogica
-		|	/*vazio*/
-		;
+;
 notOpLog	:	NOT {printf("!\n");}
 		;
 notOpArit	:	MINUS {printf("-\n");}
 		;
-expressaoAritmetica:	expressaoUnaria
-		| 	APAREN expressaoAritmetica FPAREN
-		|	expressaoUnaria addOp expressaoAritmetica
-		;
-expressaoUnaria	:	notOpArit literal
-		|	literal
+expressaoAritmetica:	literal	
+		|	literal addOp expressaoAritmetica	
+		|	notOpArit expressaoAritmetica
+		| 	APAREN expressaoAritmetica FPAREN 
+		|	APAREN expressaoAritmetica FPAREN addOp expressaoAritmetica
 		;
 literal		:	literalId
 		|	literalNum

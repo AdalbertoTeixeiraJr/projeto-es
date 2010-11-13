@@ -25,8 +25,8 @@ void carregaNumero(char* reg, int sinal);
 void carregaVariavel(char* reg, int sinal);
 void carregaNumeroLog(char* reg, int sinal);
 void carregaVariavelLog(char* reg, int sinal);
-void atribuicao_arit();
-void atribuicao_log();
+void atribuicao_arit(char* operador);
+void atribuicao_log(char* operador);
 
 int main()
 {
@@ -70,12 +70,37 @@ int main()
 		}
 		fscanf(sint_out," %s\n", igual);
 		//printf("igual %s", igual);
-		if(strcmp(igual,"=")==0){	// Expressao Aritmetica
-			atribuicao_arit();
-		}else if(strcmp(igual,":=")==0){
-			atribuicao_log();	// Expressao Logica
+		if(strcmp(igual,"=")==0){	
+			fscanf(sint_out," %s\n", tipo);
+			sinal = 0;	
+			if(strcmp(tipo,"-")==0 | strcmp(tipo,"!")==0){
+				sinal = 1;
+				fscanf(sint_out," %s\n", tipo);	
+			}		
+			if(strcmp(tipo,"NUM")==0){
+				//printf("Carr Numero, %d\n", sinal);
+				carregaNumero("R1", sinal);
+			}else if(strcmp(tipo,"VAR")==0){		
+				//printf("Carr Var\n");
+				carregaVariavel("R1",sinal);
+			}else{
+				printf("Codigo com erros, nao pode ser gerado.");
+				exit(1);
+			}
+
+			fscanf(sint_out," %s\n", operador);
+			if((strcmp(operador,"&")==0) | (strcmp(operador,"|")==0)){
+				atribuicao_log(operador);
+			}else if((strcmp(operador,"+")==0) | (strcmp(operador,"-")==0)){
+				atribuicao_arit(operador);
+			}else if(strcmp(operador,";")!=0){
+				printf("Faltando ';'\n");
+				exit(1);
+			}else{
+				printf("ST R0, R1\n");
+			}
 		}else{
-			printf("Faltando '=' ou ':='\n");
+			printf("Faltando '='.\n");
 			exit(1);
 		}
 	}
@@ -116,26 +141,9 @@ void declaracao(){
 	}
 }
 
-void atribuicao_arit(){
-	fscanf(sint_out," %s\n", tipo);	
-	if(strcmp(variavel,"-")==0){
-		sinal = 1;
-		fscanf(sint_out," %s\n", tipo);	
-	}else{
-		sinal = 0;
-	}		
-	if(strcmp(tipo,"NUM")==0){
-		//printf("Carr Numero\n");
-		carregaNumero("R1",sinal);
-	}else if(strcmp(tipo,"VAR")==0){		
-		//printf("Carr Var\n");
-		carregaVariavel("R1",sinal);
-	}else{
-		printf("Codigo com erros, nao pode ser gerado.");
-		exit(1);
-	}
+void atribuicao_arit(char* operador){
 	//printf("Ler arquivo\n");
-	fscanf(sint_out," %s\n", operador);	
+	//fscanf(sint_out," %s\n", operador);	
 	//printf("Vou entrar no While operador: %s\n", operador);
 
 	while ((strcmp(operador,"+")==0) || (strcmp(operador,"-")==0) ){
@@ -161,29 +169,24 @@ void atribuicao_arit(){
 			printf("Faltando ';'.\n");
 			exit(1);
 		}
-	} 
-	if(strcmp(operador,";")!=0){
-		if(strcmp(operador,"")==0){
-			printf("Esta faltando ';'\n");
-			exit(1);
-		}else{	
-			printf("Operador '%s' nao e valido.\n",operador);
-			exit(1);
-		}
 	}
-
-	printf("ST R0, R1\n");
-
+	//printf("OP %s", operador);
+	if(strcmp(operador,";")==0){
+		printf("ST R0, R1\n");
+	}else{
+		printf("Operador '%s' nao e valido.\n",operador);
+		exit(1);
+	}
+    
 }
 
 void carregaNumero(char* reg, int sinal){
 	//printf("%s\n",numero);
 	fscanf(sint_out," %s\n", numero);
-	if(atoi(numero) >= 0 && atoi(numero) < 7){ 
+	if(atoi(numero) >= 0 && atoi(numero) <= 7){ 
 		printf("LDI %s, %s\n", reg, numero);
 		if(sinal == 1){
-			printf("NOT %s, %s\n", reg, reg);	//Numero Negativo
-			//printf("Numero neg\n");		
+			printf("NOT %s, %s\n", reg, reg);	//Numero Negativo	
 		}
 	}else{
 		printf("Variavel %s fora do intervalo [-7:7].\n", numero);
@@ -209,24 +212,8 @@ void carregaVariavel(char* reg, int sinal){
 	
 }
 
-void atribuicao_log(){
-	fscanf(sint_out," %s\n", tipo);	
-	if(strcmp(tipo,"!")==0){
-		sinal = 1;
-		fscanf(sint_out," %s\n", tipo);	
-	}else{
-		sinal = 0;
-	}	
-			
-	if(strcmp(tipo,"NUM")==0){
-		carregaNumeroLog("R1",sinal);
-	}else if(strcmp(tipo,"VAR")==0){
-		carregaVariavelLog("R1",sinal);
-	}else{
-		printf("Codigo com erros, nao pode ser gerado.\n");
-		exit(1);
-	}
-	fscanf(sint_out," %s\n", operador);
+void atribuicao_log(char* operador){
+	//fscanf(sint_out," %s\n", operador);
 	//printf("Operador: %s\n", operador);
 	while((strcmp(operador,"&")==0) || (strcmp(operador,"|")==0) ){
 		fscanf(sint_out," %s\n", tipo);
@@ -267,7 +254,7 @@ void atribuicao_log(){
 
 void carregaNumeroLog(char* reg, int sinal){
 	fscanf(sint_out," %s\n", numero);
-	if(atoi(numero) >= 0 && atoi(numero) < 7){
+	if(atoi(numero) >= 0 && atoi(numero) <= 7){
 		printf("LDI %s, %s\n", reg, numero);
 		if(sinal==1){ 		//Numero Negativo
 			printf("NOT %s, %s\n", reg, reg);	
@@ -283,7 +270,7 @@ void carregaVariavelLog(char* reg, int sinal){
 	if(retornaID(variavel)!= -1){
 		printf("LDI R3, %i\n",retornaID(variavel));
 		printf("LD %s, R3\n", reg);
-		if(sinal == 1){
+		if(sinal == 1){		
 			printf("NOT %s, %s\n",reg, reg);
 		}
 	}

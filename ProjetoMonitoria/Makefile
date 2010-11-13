@@ -1,6 +1,6 @@
 
 
-file=testes/01.c
+file=testes/1.c
 
 complete: lex_sint semantico
 	
@@ -19,6 +19,9 @@ semantico:
 	cd semantico
 	./semantico.bin > assembly.txt
 
+testes:
+	./test
+
 clean: 
-	rm -rf *.c *.txt *.fail
+	rm -rf *.c *.txt *.fail *~
 

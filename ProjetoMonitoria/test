@@ -9,7 +9,7 @@ while [ $num -le $teste ]
 do
     echo "Teste $num"
     ./runCompiler.sh testes/$num.c
-    mv sint_out.c semantico
+    #mv sint_out.c semantico
     ./semantico/semantico.bin > testing.txt
     
     diff -s testing.txt testes/saida_ass/$num.ass
