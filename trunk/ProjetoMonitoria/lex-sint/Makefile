@@ -22,4 +22,4 @@ $(lexico).o: $(lexico).yy
 	$(CC) $(CFLAGS) -o $@ -c $(lexico).c
 
 clean:
-	rm -f *.o *.c compiler
+	rm -f *.o *.c *~ compiler
