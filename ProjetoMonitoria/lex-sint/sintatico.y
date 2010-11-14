@@ -27,7 +27,7 @@ char* yytext = ""; //declarado no lexico
 %token <strval> INT
 %token <strval> ID
 
-%type <strval> literalNum addOp nomeDecl literalId andOrBit ptvir operadorAtribuicao notOpLog notOpArit
+%type <strval> literalNum addOp nomeDecl literalId andOrBit ptvir operadorAtribuicao notOpLog notOpArit if else beg end
 %%
 
 programa	:	MAIN BEG comandos END
@@ -38,7 +38,22 @@ comandos	:	comando comandos
 comando		:	expressao 
 		|	declaracao ptvir 
 		|	ptvir
+		|	ifElse
 		;
+ifElse		:	if aparen relacional fparen beg comandos end 
+		|	if aparen relacional fparen beg comandos end else beg comandos end
+		;
+beg 		:	BEG {printf("{\n");}
+		;
+end		:	END {printf("}\n");}	
+relacional	:	expressaoResult operadorRelacional expressaoResult
+		;
+operadorRelacional:	RELOP {printf("%s\n",$1);}
+		;
+if		:	IF {printf("IF\n");}
+		;
+else		:	ELSE {printf("ELSE\n");}
+		;	
 declaracao	:	tipoDeclaracao nomeDecl 
 		;
 tipoDeclaracao	:	TYPE_INT
