@@ -39,6 +39,9 @@ comando		:	expressao
 		|	declaracao ptvir 
 		|	ptvir
 		|	ifElse
+		|	while
+		;
+while		:	WHILE {printf("WHILE\n");} aparen relacional fparen beg comandos end
 		;
 ifElse		:	if aparen relacional fparen beg comandos end 
 		|	if aparen relacional fparen beg comandos end else beg comandos end
