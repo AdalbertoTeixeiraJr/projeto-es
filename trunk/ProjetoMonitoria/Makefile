@@ -1,25 +1,23 @@
 
 
-file=testes/1.c
+file=testes/2.c
 
 complete: lex_sint semantico
 	
 
-lex_sint_compile:
-	cd lex-sint
-	make clean
-	make 
-	cd ..
+lex_sint_compile: cd lex-sint
+		make clean
+		make 
+		cd ..
 
 lex_sint: $(file)
 	./runCompiler.sh $(file) 
 	 
 
-semantico:
-	cd semantico
-	./semantico.bin > assembly.txt
+semantico: 
+	./semantico/semantico.bin 
 
-testes:
+testes:	
 	./test
 
 clean: 

@@ -98,7 +98,7 @@ int main()
 		imprime(instrucoes,condicional);
 	}else{	
 		if(strcmp(instrucao2,"")!=0){
-			sprintf(instrucao,"%s%d%s%d\n",instrucao1, numeroInstrucoes+2, instrucao2, numeroInstrucoes+1);
+			sprintf(instrucao,"%s%d\n%s%d\n",instrucao1, numeroInstrucoes+2, instrucao2, numeroInstrucoes+1);
 		}else{
 			sprintf(instrucao,"%s%d\n",instrucao1, numeroInstrucoes+1);	
 		}
@@ -160,6 +160,31 @@ int main()
 	printf("ERRO: Faltando expressao condicional.\n");
 	exit(1);
     }
+
+    else if(strcmp(operacao,"WHILE")==0){
+	fscanf(sint_out," %s\n", parentese);
+	if(strcmp("(",parentese)!= 0){
+		printf("Erro: Faltando '('.\n");
+		exit(1);
+	}
+	int pcAtual = pc;
+	expressao(1);	//Carregando resultado da 1ª expressao no R0	
+	expressao(2);	//Carregando resultado da 2ª expressao no R1
+	int numeroInstrucoes = relacional(operadorRelacional);
+	if(strcmp(instrucao2,"")!=0){
+		sprintf(instrucao,"%s%d\n%s%d\n",instrucao1, numeroInstrucoes+4, instrucao2, numeroInstrucoes+3);
+	}else{
+		sprintf(instrucao,"%s%d\n",instrucao1, numeroInstrucoes+3);	
+	}		
+	imprime(instrucao,condicional);
+	imprime(instrucoes, condicional);
+	imprime("LDI R0, 0\n", condicional);
+	pc++;
+	pc++;
+	sprintf(instrucao, "BRZ R0, -%d\n", pc-pcAtual);
+	imprime(instrucao, condicional);
+	
+    }
     
   }
   
@@ -169,6 +194,8 @@ int main()
 
 int subrotina(){
  int pcAtual =  pc;
+ //printf("SUBROTINA: %d\n", pcAtual);
+	
  condicional = 1;
  ifElse = 0;
 
@@ -178,15 +205,19 @@ int subrotina(){
     //printf("operacao: %s\n", operacao);
     
     if(strcmp(operacao,"}")==0){
+	//printf("INSTRUCOES: %s\n TERMINA AQUI\n",instrucoes);
 	condicional = 0;
+	//printf("RETORNO SUB: %d\n", pc-pcAtual);
 	return pc-pcAtual;	
     }
 
     if(ifElse == 1){
+	//printf("ifELse - SUBROTINA\n");
 	int numeroInstrucoes = relacional(operadorRelacional);
 	pc++;	
 	fscanf(sint_out," %s\n", operacao);
 	if(strcmp(operacao,"ELSE")==0){
+		//printf("ELSE - subrotina\n");
 		ifElse = 1;
 		if(strcmp(instrucao2,"")!=0){
 			sprintf(instrucao,"%s%d\n%s%d\n",instrucao1, numeroInstrucoes+4, instrucao2, numeroInstrucoes+3);
@@ -207,8 +238,9 @@ int subrotina(){
 		imprime(instrucao,condicional);
 		imprime(instrucoes,condicional);
 	}else{	
+		//printf("NOT ELSE - subrotina\n");
 		if(strcmp(instrucao2,"")!=0){
-			sprintf(instrucao,"%s%d%s%d\n",instrucao1, numeroInstrucoes+2, instrucao2, numeroInstrucoes+1);
+			sprintf(instrucao,"%s%d\n%s%d\n",instrucao1, numeroInstrucoes+2, instrucao2, numeroInstrucoes+1);
 		}else{
 			sprintf(instrucao,"%s%d\n",instrucao1, numeroInstrucoes+1);	
 		}
@@ -270,6 +302,8 @@ int subrotina(){
 	printf("ERRO: Faltando expressao condicional.\n");
 	exit(1);
     }
+
+    
     
   }
 return 0;
