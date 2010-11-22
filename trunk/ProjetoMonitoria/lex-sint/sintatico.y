@@ -23,6 +23,7 @@ char* yytext = ""; //declarado no lexico
 }
 
 %token IF ELSE WHILE NOT MINUS PLUS APAREN FPAREN BEG END ATRIB TYPE_INT MAIN ANDBIT ORBIT PTVIR ATR_LOG
+%token <strval> IO
 %token <strval> RELOP
 %token <strval> INT
 %token <strval> ID
@@ -30,12 +31,14 @@ char* yytext = ""; //declarado no lexico
 %type <strval> literalNum addOp nomeDecl literalId andOrBit ptvir operadorAtribuicao notOpLog notOpArit if else beg end
 %%
 
-programa	:	MAIN BEG comandos END
+programa	:	main BEG comandos END
+		;
+main		:	MAIN APAREN FPAREN
 		;
 comandos	:	comando comandos
 		|	/*vazio*/
 		;
-comando		:	expressao 
+comando		:	expressao ptvir 
 		|	declaracao ptvir 
 		|	ptvir
 		|	ifElse
@@ -64,9 +67,11 @@ tipoDeclaracao	:	TYPE_INT
 nomeDecl	:	ID {printf("VRI\n%s\n",$1);}
 		;
 expressao	:	{printf("ATR\n");} literalId operadorAtribuicao expressaoResult
+		|	IO {printf("IO\n");} operadorAtribuicao expressaoResult
 		;
-expressaoResult:	expressaoAritmetica 
-		|	expressaoLogica 
+expressaoResult	:	expressaoAritmetica 
+		|	expressaoLogica
+		|	IO {printf("IO\n");}
 		;
 operadorAtribuicao:	ATRIB {printf("=\n");} 
 		;
