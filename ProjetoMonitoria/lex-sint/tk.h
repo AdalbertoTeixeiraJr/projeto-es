@@ -56,9 +56,10 @@
      ORBIT = 272,
      PTVIR = 273,
      ATR_LOG = 274,
-     RELOP = 275,
-     INT = 276,
-     ID = 277
+     IO = 275,
+     RELOP = 276,
+     INT = 277,
+     ID = 278
    };
 #endif
 /* Tokens.  */
@@ -79,9 +80,10 @@
 #define ORBIT 272
 #define PTVIR 273
 #define ATR_LOG 274
-#define RELOP 275
-#define INT 276
-#define ID 277
+#define IO 275
+#define RELOP 276
+#define INT 277
+#define ID 278
 
 
 
@@ -98,7 +100,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 102 "tk.h"
+#line 104 "tk.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

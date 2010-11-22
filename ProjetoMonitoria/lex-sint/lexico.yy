@@ -46,8 +46,9 @@ while               {updateCol();return WHILE;}
 "&"                 {updateCol();return ANDBIT;}
 "|"                 {updateCol();return ORBIT;}
 "int"               {updateCol();return TYPE_INT;}
-"main()"            {updateCol();return MAIN;}
+"main" 	            {updateCol();return MAIN;}
 ";"                 {updateCol();return PTVIR;}
+"io"		    {updateCol();return IO;}	
 {relop}             {updateCol();yylval.strval = strdup(yytext);return RELOP;}
 {id}                {updateCol();yylval.strval = strdup(yytext);return ID;}
 {int}               {updateCol();yylval.strval = strdup(yytext);return INT;}
