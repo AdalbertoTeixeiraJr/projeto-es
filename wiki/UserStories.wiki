@@ -76,7 +76,6 @@ US12<br/>
 Geração de código comando *IF THEN ELSE*, expressão condicional.<br/>
 ||Geração de código para *IF simples*||
 ||Geração de código para *IF ... ELSE*||
-||Geração de código para *IF composto*||
 
 ----
 US13<br/>
