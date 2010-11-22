@@ -85,3 +85,18 @@ Geração dos Analisadores Lexicos e Sintáticos
 ==User Story 11==
 ||Geração de codigo e verificação de equivalencia entre todos os operadores relacionais.|| Andrey, Daniel || 6h ||
 ||Revisão dos testes || Adalberto || 3h ||
+
+----
+==User Story 12==
+||Geração de código para IF.|| Andrey, Daniel || 6h ||
+||Revisão dos testes || Adalberto || 3h ||
+
+----
+==User Story 13==
+||Geração de código para comando iterativo WHILE.|| Adalberto, Daniel || 6h ||
+||Geração de testes.|| Andrey || 2h ||
+
+----
+==User Story 14==
+||Geração de código para comando input.||
+||Geração de código para comando output.||
