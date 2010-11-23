@@ -30,3 +30,10 @@ http://projeto-es.googlecode.com/files/bigchart_4.png
 
 Métricas coletadas até o momento da quarta iteração.
 ----
+
+=Big Chart Iteração 5=
+
+http://projeto-es.googlecode.comfiles/bigcchart_5.png
+
+Métricas coletadas até o momento da quinta iteração.
+----
