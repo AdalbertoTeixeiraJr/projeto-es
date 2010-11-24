@@ -10,3 +10,4 @@
 ||Reunião 5||26/10/2010|| Validação de alguns casos de testes. || Adalberto ||
 ||Reunião 6||07/11/2010|| Esclarecimentos sobre requisitos|| Adalberto||
 ||Reunião 7||10/11/2010|| Validação 2ª release || Adalberto, Daniel||
+||Reunião 7||16/11/2010|| Instalação da 1ª versão no laboratório || Adalberto||
