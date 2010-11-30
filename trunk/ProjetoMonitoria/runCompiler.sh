@@ -4,8 +4,8 @@ tmp=/tmp
 
 
 if [ $# -lt 1 ]; then
-	echo "Numero errado de argumentos"
-	echo "use $! <arquivos Linguagem C>"
+	echo "Faltou arquivo C de entrada"
+	echo "use $! <arquivo Linguagem C>"
 	exit 1
 fi
 
