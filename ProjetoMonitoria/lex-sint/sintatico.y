@@ -31,7 +31,7 @@ char* yytext = ""; //declarado no lexico
 %type <strval> literalNum addOp nomeDecl literalId andOrBit ptvir operadorAtribuicao notOpLog notOpArit if else beg end
 %%
 
-programa	:	main BEG comandos END
+programa	:	main beg comandos end
 		;
 main		:	MAIN APAREN FPAREN
 		;
