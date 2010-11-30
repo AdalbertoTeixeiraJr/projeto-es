@@ -1,0 +1,15 @@
+#! /bin/bash
+
+
+if [ $# -lt 1 ]; then
+	echo "Faltou arquivo C de entrada"
+	echo "use $! <arquivo Linguagem C>"
+	exit 1
+fi
+cat $@ | ./compiler 1> sint_out.c
+if [ $? -eq 1 ]; then
+	echo "Nao Concluido possui erro lexico ou sintatico"
+else
+	./semantico
+fi
+rm sint_out.c
