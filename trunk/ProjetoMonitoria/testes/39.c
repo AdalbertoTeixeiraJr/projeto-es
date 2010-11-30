@@ -4,8 +4,8 @@ a = 1;
 int b;
 b = 1;
 int c;
-if (a != 1){
-	c = 0;
+while ((a + b) != 3){
+	a = a + 1;
 }
-c = c + 1;
+b = b + a;
 }
