@@ -3,7 +3,7 @@
 
 if [ $# -lt 1 ]; then
 	echo "Faltou arquivo C de entrada"
-	echo "use $! <arquivo Linguagem C>"
+	echo "use 'compilerMK <arquivo Linguagem C>'"
 	exit 1
 fi
 cat $@ | ./compiler 1> sint_out.c
