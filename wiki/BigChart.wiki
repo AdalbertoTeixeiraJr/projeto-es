@@ -37,3 +37,9 @@ http://projeto-es.googlecode.com/files/bigchart_5.png
 
 Métricas coletadas até o momento da quinta iteração.
 ----
+
+=Big Chart Iteração 6=
+
+http://projeto-es.googlecode.com/files/bigchart_6.png
+
+Métricas coletadas até o momento da sexta iteração.
