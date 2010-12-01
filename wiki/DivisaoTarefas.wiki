@@ -98,5 +98,6 @@ Geração dos Analisadores Lexicos e Sintáticos
 
 ----
 ==User Story 14==
-||Geração de código para comando input.||
-||Geração de código para comando output.||
+||Geração de código para comando input.|| Adalberto, Andrey|| 3h||
+||Geração de código para comando output.||Adalberto, Andrey|| 3h||
+||Geração de testes.|| Daniel|| 2h||
