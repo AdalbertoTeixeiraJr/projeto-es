@@ -8,22 +8,18 @@ YACC    = bison -y
 REPORT  = --report=all --report-file=../sint-report.txt 
 lexico 	= lexico
 sintatico = sintatico
-semantico = semantico
 tk	= tk.h
     
-compiler: $(sintatico).o $(lexico).o $(semantico).o
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ $^ -ll -ly
+compiler: $(sintatico).o $(lexico).o 
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ $^ -ll 
 
 $(sintatico).o: $(sintatico).y
-	$(YACC) -t --define=$(tk) $(REPORT) -o$(sintatico).c $^
+	$(YACC) -t --define=$(tk) -o$(sintatico).c $^
 	$(CC) $(CFLAGS) -o $@ -c $(sintatico).c
 
 $(lexico).o: $(lexico).yy
 	$(LEX) -o$(lexico).c $^
 	$(CC) $(CFLAGS) -o $@ -c $(lexico).c
-
-$(semantico).o: $(semantico).c
-	$(CC) -o $@ -c $(semantico).c
 
 clean:
 	rm -f *.o *.c *~ compiler
