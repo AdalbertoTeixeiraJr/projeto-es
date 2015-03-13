@@ -1,0 +1,1 @@
+Nosso projeto não utilizará interface gráfica, a unica interface entre o usuário e o sistema será um terminal, tudo será feito via texto, inclusive o tratamento  e visualização de erros.
